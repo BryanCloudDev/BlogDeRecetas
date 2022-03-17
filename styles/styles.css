@@ -1,5 +1,85 @@
-footer{
+:root {
+	--main-bg-color: #2ba05a;
+    /* background-color: #36c970; */
+	/* background-color: #f7543e; */
+    /* background-color: #d90a18; */
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+}
+header{
     width: 100%;
-    height: 300px;
-    border: red 1px solid;
+    padding: 10px;
+    background-color: var(--main-bg-color);
+}
+header .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+header .links{
+    display: flex;
+    align-items: baseline;
+}
+header p, header a{
+    margin: 5px 8px;
+}
+header a{
+    text-decoration: none;
+    color: white;
+}
+footer {
+	position: fixed;
+	bottom: 0px;
+	width: 100%;
+	min-width: 500px;
+	padding: 10px;
+	display: inline-block;
+	background-color: var(--main-bg-color);
+}
+
+footer .container {
+	width: 80%;
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+footer .texto {
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+
+footer p {
+	margin: 10px;
+}
+footer p span{
+    font-weight:700;
+}
+footer .redes {
+	width: 100%;
+}
+
+footer .redes ul {
+	display: flex;
+	justify-content: center;
+	padding: 0px;
+	margin: 0;
+}
+
+footer .redes ul li {
+	list-style: none;
+	margin: 0px 20px;
+}
+
+footer .redes ul li a {
+	color: white;
 }
