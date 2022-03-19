@@ -24,7 +24,7 @@
             <p>Logo del OWO</p>
         </div>
         <div class="links">
-            <p>Hola Pepita<?= $user['name'];?>!</p>
+            <p>Hola Pepita<?php //$user['name'];?>!</p>
             <a href="./index.php">Inicio</a>
             <a href="./logout.php">Cerrar sesion</a>
         </div>
