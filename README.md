@@ -22,6 +22,3 @@ Se podran ver recetas de todo tipo.
 
 ## Proceso
 Como grupo nos reunimos y decidimos llevar acabo el proyecto de un blog en donde se puedan compartir recetas, todos acordamos hacerlo debido a nusetro nivel de experiencia y conocimientos en las teconologias mostradas en el bootcamp y tambien que la complejidad del proyecto es acorde a lo conocido.
-
-
-Esto es una prueba.
