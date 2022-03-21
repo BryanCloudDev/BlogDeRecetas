@@ -1,8 +1,12 @@
+/*Variables*/
+
 :root {
 	--main-bg-color: #2ba05a;
 	/* background-color: #36c970; */
 	/* background-color: #f7543e; */
 	/* background-color: #d90a18; */
+	--primary-font-family: "Roboto", sans-serif;
+	--secondary-font-family: "Sriracha", cursive;
 }
 
 * {
@@ -20,7 +24,7 @@
 }
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: var(--primary-font-family);
 	background-color: rgb(252, 252, 252);
 }
 
@@ -29,30 +33,47 @@ body {
 .header {
 	width: 100%;
 	min-width: 400px;
-	padding: 10px;
 	background-color: var(--main-bg-color);
 }
 .header .container {
 	display: flex;
-	width: 90%;
+	width: 95%;
 	justify-content: space-between;
 	align-items: center;
 }
 .header .links {
 	display: flex;
-	align-items: baseline;
+	align-items: center;
+}
+.header .imgContainer {
+	width: 30px;
+	height: 30px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+.imgContainer img {
+	width: auto;
+	height: 100%;
 }
 .header p,
 .header a {
 	margin: 5px 8px;
 }
-.header a {
+.header .links a {
 	text-decoration: none;
 	color: white;
+	padding: 10px;
+	transition: ease 0.5s;
+	border-radius: 5px;
 }
 
-.header .logo a{
-	font-family: 'Sriracha', cursive;
+.header .links a:hover{
+	background-color: #37bf6e;
+}
+
+.header .logo a {
+	text-decoration: none;
+	font-family: var(--secondary-font-family);
 	color: white;
 	font-size: 23px;
 }
@@ -65,15 +86,14 @@ body {
 
 .main.login .container {
 	width: 70%;
-	/* border: red solid 1px; */
 	align-items: center;
 	max-width: 715px;
 }
 
 .main.login .container .texto {
+	border-radius: 5px;
 	width: 290px;
 	height: 290px;
-	/* border: red solid 1px; */
 	display: flex;
 	flex-wrap: wrap;
 	padding: 40px 40px;
@@ -95,9 +115,9 @@ body {
 }
 
 .main.login .container .formLogin {
+	border-radius: 5px;
 	width: 320px;
 	height: 320px;
-	/* border: red solid 1px; */
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -153,26 +173,26 @@ body {
 	transition: ease 0.5s;
 }
 
-.formLogin .form-group input[type="submit"]:hover{
+.formLogin .form-group input[type="submit"]:hover {
 	background-color: #37bf6e;
 }
 
 .formLogin p,
-.formLogin a{
+.formLogin a {
 	color: white;
 	width: 100%;
 	text-align: center;
 	margin: 3px 0px;
 	font-size: 12px;
 }
-.formLogin p{
+.formLogin p {
 	margin-top: 10px;
 }
 
-.formLogin a{
+.formLogin a {
 	text-decoration: none;
 }
-.formLogin a:hover{
+.formLogin a:hover {
 	text-decoration: underline;
 }
 
@@ -185,6 +205,7 @@ body {
 	padding: 10px;
 	display: inline-block;
 	background-color: var(--main-bg-color);
+	font-size: 13px;
 }
 
 .footer .container {

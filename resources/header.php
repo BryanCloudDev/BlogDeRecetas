@@ -25,8 +25,10 @@
             <a href="./index.php">Recetas en 5 minutos</a>
         </div>
         <div class="links">
+            <div class="imgContainer">
+                <img src="http://misimagenesde.com/wp-content/uploads/2017/05/foto-de-perfil-11.jpg" alt="Foto de perfil">
+            </div>
             <p>Hola Pepita<?php //$user['name'];?>!</p>
-            <a href="./index.php">Inicio</a>
             <a href="./logout.php">Cerrar sesion</a>
         </div>
     </div>
