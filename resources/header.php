@@ -18,7 +18,9 @@
     <title>Blog de recetas - Landing</title>
 </head>
 <body>
-<?php if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == true):?>
+    <div class="wrap">
+    <!-- comentado de momento para poder trabajar el header y poder ver el index -->
+<?php //if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == true):?>
     <header class="header">
     <div class="container">
         <div class="logo">
@@ -26,11 +28,11 @@
         </div>
         <div class="links">
             <div class="imgContainer">
-                <img src="http://misimagenesde.com/wp-content/uploads/2017/05/foto-de-perfil-11.jpg" alt="Foto de perfil">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil">
             </div>
             <p>Hola Pepita<?php //$user['name'];?>!</p>
             <a href="./logout.php">Cerrar sesion</a>
         </div>
     </div>
     </header>
-<?php endif;?>
+<?php //endif;?>

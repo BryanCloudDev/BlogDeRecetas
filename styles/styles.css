@@ -12,7 +12,12 @@
 * {
 	box-sizing: border-box;
 }
-
+.wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+}
 /*estilos generales*/
 .container {
 	width: 80%;
@@ -25,7 +30,7 @@
 
 body {
 	font-family: var(--primary-font-family);
-	background-color: rgb(252, 252, 252);
+	background: url('https://i.imgur.com/Ufw33Fj.gif') rgb(252, 252, 252);
 }
 
 /*estilos del header*/
@@ -81,7 +86,6 @@ body {
 /*estilos del main*/
 .main {
 	width: 100%;
-	padding: 268px 89px;
 }
 
 .main.login .container {
@@ -195,11 +199,49 @@ body {
 .formLogin a:hover {
 	text-decoration: underline;
 }
+/*estilos del index*/
+.main.index .container{
+	flex-wrap: wrap;
+}
+.main.index .post{
+	width: 100%;
+	margin: 30px 0px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	background-color: white;
+	padding: 20px 50px;
+	border-radius: 5px;
+}
+
+.main.index h1{
+	margin-top: 40px;
+	text-align: left;
+	width: 100%;
+}
+
+.main.index h2 a{
+	text-decoration: none;
+	color: black;
+}
+
+.main.index p a{
+	text-decoration: none;
+	color: rgb(107, 107, 107);
+}
+
+.post .imgContainer{
+	width: 70%;
+}
+
+.post .imgContainer img{
+	width: 100%;
+}
 
 /*estilos del footer*/
 .footer {
-	position: fixed;
-	bottom: 0px;
+	/* position: fixed;
+	bottom: 0px; */
 	width: 100%;
 	min-width: 500px;
 	padding: 10px;

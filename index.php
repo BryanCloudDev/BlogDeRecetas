@@ -14,15 +14,72 @@ session_start();
  * Usamos la funcion isset para verificar si la sesion esta definidao "seteada", para mas informacion sobre el funcionamiento
  * anexo un link.
  * https://www.w3schools.com/php/func_var_isset.asp*/
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
-}
-?>
 
-<?php require('./resources/header');?>
+// if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+//     header("location: login.php");
+//     exit;
+// }
 
-<h1 class="my-5">Holaaaaaa, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenido a nuestro Blog!.</h1>
+//comentado de momento para poder trabajar el header y poder ver el index
 
-</body>
-</html>
+// ?>
+
+<?php require('./resources/header.php');?>
+
+<main class="main index">
+    <div class="container">
+        <h1>Posts mas recientes de la comunidad</h1>
+        <article class="post">
+            <div class="imgContainer">
+                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
+            </div>
+            <div class="texto">
+                <h2><a href="#">Titulo de la receta</a></h2>
+                <p>Publicado el 3 de Diciembre de 2021</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
+            </div>
+        </article>
+        <article class="post">
+            <div class="imgContainer">
+                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
+            </div>
+            <div class="texto">
+                <h2><a href="#">Titulo de la receta</a></h2>
+                <p>Publicado el 3 de Diciembre de 2021</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
+            </div>
+        </article>
+        <article class="post">
+            <div class="imgContainer">
+                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
+            </div>
+            <div class="texto">
+                <h2><a href="#">Titulo de la receta</a></h2>
+                <p>Publicado el 3 de Diciembre de 2021</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
+            </div>
+        </article>
+        <article class="post">
+            <div class="imgContainer">
+                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
+            </div>
+            <div class="texto">
+                <h2><a href="#">Titulo de la receta</a></h2>
+                <p>Publicado el 3 de Diciembre de 2021</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
+            </div>
+        </article>
+        <article class="post">
+            <div class="imgContainer">
+                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
+            </div>
+            <div class="texto">
+                <h2><a href="#">Titulo de la receta</a></h2>
+                <p>Publicado el 3 de Diciembre de 2021</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
+            </div>
+        </article>
+    </div>
+</main>
+
+<?php require('./resources/footer.php')?>
