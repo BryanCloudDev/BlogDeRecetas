@@ -1,39 +1,183 @@
 :root {
 	--main-bg-color: #2ba05a;
-    /* background-color: #36c970; */
+	/* background-color: #36c970; */
 	/* background-color: #f7543e; */
-    /* background-color: #d90a18; */
+	/* background-color: #d90a18; */
 }
 
 * {
 	box-sizing: border-box;
 }
 
+/*estilos generales*/
+.container {
+	width: 80%;
+	max-width: 1200px;
+	min-width: 400px;
+	margin: 0px auto;
+	display: flex;
+	justify-content: center;
+}
+
 body {
 	font-family: "Roboto", sans-serif;
+	background-color: rgb(252, 252, 252);
 }
-header{
-    width: 100%;
-    padding: 10px;
-    background-color: var(--main-bg-color);
+
+/*estilos del header*/
+
+.header {
+	width: 100%;
+	min-width: 400px;
+	padding: 10px;
+	background-color: var(--main-bg-color);
 }
-header .container {
+.header .container {
 	display: flex;
+	width: 90%;
 	justify-content: space-between;
 	align-items: center;
 }
-header .links{
-    display: flex;
-    align-items: baseline;
+.header .links {
+	display: flex;
+	align-items: baseline;
 }
-header p, header a{
-    margin: 5px 8px;
+.header p,
+.header a {
+	margin: 5px 8px;
 }
-header a{
-    text-decoration: none;
-    color: white;
+.header a {
+	text-decoration: none;
+	color: white;
 }
-footer {
+
+.header .logo a{
+	font-family: 'Sriracha', cursive;
+	color: white;
+	font-size: 23px;
+}
+
+/*estilos del main*/
+.main {
+	width: 100%;
+	padding: 268px 89px;
+}
+
+.main.login .container {
+	width: 70%;
+	/* border: red solid 1px; */
+	align-items: center;
+	max-width: 715px;
+}
+
+.main.login .container .texto {
+	width: 290px;
+	height: 290px;
+	/* border: red solid 1px; */
+	display: flex;
+	flex-wrap: wrap;
+	padding: 40px 40px;
+	background-color: white;
+}
+
+.main.login .container .texto h1,
+.main.login .container .texto p {
+	width: 100%;
+}
+
+.main.login .container .texto h1 {
+	font-size: 39px;
+}
+
+.main.login .container .texto p {
+	font-size: 16px;
+	color: #b8b7b7;
+}
+
+.main.login .container .formLogin {
+	width: 320px;
+	height: 320px;
+	/* border: red solid 1px; */
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	padding: 40px 20px;
+	box-shadow: 0px 0px 36px -8px rgba(0, 0, 0, 0.75);
+	-webkit-box-shadow: 0px 0px 36px -8px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow: 0px 0px 36px -8px rgba(0, 0, 0, 0.75);
+	background-color: var(--main-bg-color);
+}
+
+.formLogin .form-group {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.formLogin .form-group label,
+.formLogin .form-group input[type="text"],
+.formLogin .form-group [type="password"] {
+	width: 100%;
+	margin: 5px 0px;
+	padding: 8px 5px;
+	outline: none;
+	background-color: var(--main-bg-color);
+	color: white;
+}
+.formLogin .form-group input[type="text"],
+.formLogin .form-group [type="password"] {
+	margin: 3px 0px;
+	border: none;
+	border-bottom: 1px solid var(--main-bg-color);
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.formLogin .form-group input[type="text"]::placeholder,
+.formLogin .form-group [type="password"]::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.formLogin .form-group input[type="text"]:focus,
+.formLogin .form-group [type="password"]:focus {
+	border-bottom: 1px solid white;
+}
+
+.formLogin .form-group input[type="submit"] {
+	margin: 25px auto 0px auto;
+	width: 100%;
+	text-align: center;
+	background-color: var(--main-bg-color);
+	border: none;
+	padding: 6px;
+	border-radius: 5px;
+	color: white;
+	transition: ease 0.5s;
+}
+
+.formLogin .form-group input[type="submit"]:hover{
+	background-color: #37bf6e;
+}
+
+.formLogin p,
+.formLogin a{
+	color: white;
+	width: 100%;
+	text-align: center;
+	margin: 3px 0px;
+	font-size: 12px;
+}
+.formLogin p{
+	margin-top: 10px;
+}
+
+.formLogin a{
+	text-decoration: none;
+}
+.formLogin a:hover{
+	text-decoration: underline;
+}
+
+/*estilos del footer*/
+.footer {
 	position: fixed;
 	bottom: 0px;
 	width: 100%;
@@ -43,7 +187,7 @@ footer {
 	background-color: var(--main-bg-color);
 }
 
-footer .container {
+.footer .container {
 	width: 80%;
 	margin: 0px auto;
 	display: flex;
@@ -52,34 +196,34 @@ footer .container {
 	flex-wrap: wrap;
 }
 
-footer .texto {
+.footer .texto {
 	width: 100%;
 	text-align: center;
 	color: white;
 }
 
-footer p {
+.footer p {
 	margin: 10px;
 }
-footer p span{
-    font-weight:700;
+.footer p span {
+	font-weight: 700;
 }
-footer .redes {
+.footer .redes {
 	width: 100%;
 }
 
-footer .redes ul {
+.footer .redes ul {
 	display: flex;
 	justify-content: center;
 	padding: 0px;
 	margin: 0;
 }
 
-footer .redes ul li {
+.footer .redes ul li {
 	list-style: none;
 	margin: 0px 20px;
 }
 
-footer .redes ul li a {
+.footer .redes ul li a {
 	color: white;
 }

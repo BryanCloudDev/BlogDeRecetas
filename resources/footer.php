@@ -1,4 +1,4 @@
-<footer>
+<footer class="footer">
     <div class="container">
         <div class="texto">
             <p><span>KODIGO Devs:</span> Bootcamp Fullstack Junior</p>

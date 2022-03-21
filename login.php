@@ -88,31 +88,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 <?php require('./resources/header.php')?>
-<div class="wrapper">
-    <h2>Login</h2>
-    <p>Por favor rellena los campos para iniciar sesion.</p>
-
-    <?php
-    if(!empty($login_err)){
-        echo '<div class="alert alert-danger">' . $login_err . '</div>';
-    }
-    ?>
-
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-        <div class="form-group">
-            <label>Usuario</label>
-            <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+<main class="main login">
+    <div class="container">
+        <?php
+        if(!empty($login_err)){
+            echo '<div class="alert alert-danger">' . $login_err . '</div>';
+        }
+        ?>
+        <div class="texto">
+            <h1>Login</h1>
+            <p>Por favor rellena los campos para iniciar sesion.</p>
         </div>
-        <div class="form-group">
-            <label>Password</label>
-            <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-            <span class="invalid-feedback"><?php echo $password_err; ?></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary" value="Login">
-        </div>
-        <p>Aun no tienes una cuenta? 😱 <a href="register.php">Crea una ahora 🤠</a>.</p>
-    </form>
-</div>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="formLogin">
+            <div class="form-group">
+                <label for="usuario">Usuario</label>
+                <input id="usuario"type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" placeholder="tuemail@email.com">
+                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input id="password" type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" placeholder="*******">
+                <span class="invalid-feedback"><?php echo $password_err; ?></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Login">
+            </div>
+            <p>Aun no tienes una cuenta?</p>
+            <a href="register.php">Crea una ahora</a>
+        </form>
+    </div>
+</main>
 <?php require('./resources/footer.php');?>
