@@ -24,12 +24,13 @@ class Receta
             }
     }
 */
-
+require 'config.php';
 
 
 $tituloPost = $_POST['tituloPost'];
 $descripcionPost = $_POST ['descripcionPost'];
 $pasosPost = $_POST['pasosPost'];
 
+$sqlinsert = "INSERT INTO receta (tituloPost, descripcionPost, pasosPost) VALUES ($tituloPost, $descripcionPost, $pasosPost)";
 
 ?>
