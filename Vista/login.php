@@ -1,5 +1,5 @@
 <?php
-require "Controlador/config.php";
+require "../Controlador/config.php";
 session_start();
 if(isset($_POST["login"]))
 {
