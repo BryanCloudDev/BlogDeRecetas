@@ -30,7 +30,8 @@ require 'config.php';
 $tituloPost = $_POST['tituloPost'];
 $descripcionPost = $_POST ['descripcionPost'];
 $pasosPost = $_POST['pasosPost'];
+$imagenPost = $_POST['imagenPost'];
 
-$sqlinsert = "INSERT INTO receta (tituloPost, descripcionPost, pasosPost) VALUES ($tituloPost, $descripcionPost, $pasosPost)";
+$sqlinsert = "INSERT INTO receta (tituloPost, descripcionPost, pasosPost, imagenPost) VALUES ($tituloPost, $descripcionPost, $pasosPost, $imagenPost)";
 
 ?>
