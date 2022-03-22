@@ -29,7 +29,7 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil">
             </div>
             <p>Hola <?php //echo $_POST["nombre"]; ?>!</p>
-            <a href="./logout.php">Cerrar sesion</a>
+            <a href="../Controlador/logout.php">Cerrar sesion</a>
         </div>
     </div>
     </header>

@@ -1,7 +1,7 @@
 <?php
 require "../Controlador/config.php";
 session_start();
-if(isset($_POST["login"]))
+if(isset($_POST["../Vista/login.php"]))
 {
     if(empty($_POST["username"]) || empty($_POST["password"]))
     {
@@ -21,7 +21,7 @@ if(isset($_POST["login"]))
         if($count > 0)
         {
             $_SESSION["username"] = $_POST["username"];
-            readdir("location:login_success.php");
+            readdir("location:../Controlador/login_success.php");
         }
         else
         {

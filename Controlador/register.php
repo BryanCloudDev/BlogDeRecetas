@@ -1,3 +1,3 @@
 <?php
-echo "Holis";
+echo "Registro";
 ?>
