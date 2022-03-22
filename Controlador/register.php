@@ -19,15 +19,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = ?";
 
-        if($stmt = $mysqli->prepare($sql)){
+        if($stmt = getConn()->prepare($sql)){
+
+            // Preparamos los parametros
+            $param_username = trim($_POST["username"]);
             /*
              * Con la funcion "bind_param" preparamos el query del SQL que luego le pasara los parametros
              * a la base de datos.
              * */
             $stmt->bind_param("s", $param_username);
-
-            // Preparamos los parametros
-            $param_username = trim($_POST["username"]);
 
             // Ejecutamos el parametro preparado
             if($stmt->execute()){
@@ -72,13 +72,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Prepare an insert statement
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
-        if($stmt = $mysqli->prepare($sql)){
-            // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ss", $param_username, $param_password);
-
+        if($stmt = getConn()->prepare($sql)){
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+
+            // Bind variables to the prepared statement as parameters
+            $stmt->bind_param("ss", $param_username, $param_password);
 
             // Attempt to execute the prepared statement
             if($stmt->execute()){
@@ -94,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Close connection
-    $mysqli->close();
+    getConn()->close();
 }
 ?>
 

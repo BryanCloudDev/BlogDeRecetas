@@ -19,8 +19,6 @@
 </head>
 <body>
     <div class="wrap">
-    <!-- comentado de momento para poder trabajar el header y poder ver el index -->
-<?php //if(isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] == true):?>
     <header class="header">
     <div class="container">
         <div class="logo">
@@ -30,9 +28,8 @@
             <div class="imgContainer">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil">
             </div>
-            <p>Hola Pepita<?php //$user['name'];?>!</p>
+            <p>Hola <?php //echo $_POST["nombre"]; ?>!</p>
             <a href="./logout.php">Cerrar sesion</a>
         </div>
     </div>
     </header>
-<?php //endif;?>

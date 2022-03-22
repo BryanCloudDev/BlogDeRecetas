@@ -2,7 +2,7 @@
     <div class="container">
         <div class="texto">
             <p><span>KODIGO Devs:</span> Bootcamp Fullstack Junior</p>
-            <p>All rights reserved ©, April <span>2022</span></p>
+            <p>All rights reserved © April <span>2022</span></p>
         </div>
         <div class="redes">
             <ul>
