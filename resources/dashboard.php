@@ -27,6 +27,22 @@
             </div>
         </div>
  
+        <br>
+        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+ 
+            <div class="menu_section">
+                <h3>Ajustes</h3>
+                <ul class="nav side-menu">
+                    <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="2.html">Dashboard</a></li>
+                        </ul>
+                    </li>
+                    <li><a><i class="fa fa-edit"></i> Ajustes 2 <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="3.html">modificar luego</a></li>
+                        </ul>
+                    </li>
   </body>
 </html>
 
