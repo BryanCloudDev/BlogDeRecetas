@@ -29,6 +29,7 @@ session_start();
 <main class="main index">
     <div class="container">
         <h1>Posts mas recientes de la comunidad</h1>
+        <?php for($i = 1;$i <= 5;$i++):?>
         <article class="post">
             <div class="imgContainer">
                 <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
@@ -39,46 +40,7 @@ session_start();
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
             </div>
         </article>
-        <article class="post">
-            <div class="imgContainer">
-                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
-            </div>
-            <div class="texto">
-                <h2><a href="#">Titulo de la receta</a></h2>
-                <p>Publicado el 3 de Diciembre de 2021</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
-            </div>
-        </article>
-        <article class="post">
-            <div class="imgContainer">
-                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
-            </div>
-            <div class="texto">
-                <h2><a href="#">Titulo de la receta</a></h2>
-                <p>Publicado el 3 de Diciembre de 2021</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
-            </div>
-        </article>
-        <article class="post">
-            <div class="imgContainer">
-                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
-            </div>
-            <div class="texto">
-                <h2><a href="#">Titulo de la receta</a></h2>
-                <p>Publicado el 3 de Diciembre de 2021</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
-            </div>
-        </article>
-        <article class="post">
-            <div class="imgContainer">
-                <img src="https://www.paulinacocina.net/wp-content/uploads/2020/01/untitled-copy.jpg" alt="img">
-            </div>
-            <div class="texto">
-                <h2><a href="#">Titulo de la receta</a></h2>
-                <p>Publicado el 3 de Diciembre de 2021</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio.Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum rem excepturi iste. Alias, autem delectus eligendi repudiandae explicabo rerum dolorum error exercitationem, quisquam corrupti adipisci ratione ipsa vero distinctio... <a href="#">Seguir leyendo</a></p>
-            </div>
-        </article>
+        <?php endfor;?>
     </div>
 </main>
 
