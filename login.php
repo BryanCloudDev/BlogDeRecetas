@@ -20,14 +20,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
+        $username_err = "Porfavor ingresa un nombre de usuario";
     } else{
         $username = trim($_POST["username"]);
     }
 
     // Check if password is empty
     if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
+        $password_err = "Porfavor ingresa una contraseña";
     } else{
         $password = trim($_POST["password"]);
     }
