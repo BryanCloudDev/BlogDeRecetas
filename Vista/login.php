@@ -1,5 +1,5 @@
 <?php
-require "config.php";
+require "Controlador/config.php";
 session_start();
 if(isset($_POST["login"]))
 {
@@ -31,7 +31,7 @@ if(isset($_POST["login"]))
 }
 
 ?>
-<?php require('./resources/header.php')?>
+<?php require('./resources/header.php') ?>
 <main class="main login">
     <div class="container">
         <div class="texto">
@@ -53,7 +53,7 @@ if(isset($_POST["login"]))
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Aun no tienes una cuenta?</p>
-            <a href="register.php">Crea una ahora</a>
+            <a href="../Controlador/register.php">Crea una ahora</a>
         </form>
     </div>
 </main>

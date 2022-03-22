@@ -1,7 +1,4 @@
 <?php
-// Initialize the session
-session_start();
-
 // Unset all the session variables
 $_SESSION = array();
 
@@ -9,6 +6,6 @@ $_SESSION = array();
 session_destroy();
 
 // Redirect to login page
-header("location: login");
+header("location: Vista/login");
 exit;
 ?>

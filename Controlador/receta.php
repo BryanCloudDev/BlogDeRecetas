@@ -24,7 +24,7 @@ class Receta
             }
     }
 */
-require 'config.php';
+require "Controlador/config.php";
 
 
 $tituloPost = $_POST['tituloPost'];
