@@ -53,7 +53,8 @@ class Receta
 }
 
 
-#funcion eliminar receta tengo que hacer la funcion de eliminar y de editar
+#funcion eliminar receta tengo que hacer la funcion de eliminar ->>> Rodrigo Soriano
+# y de editar->>>>Kevin Flores
 ######################################
 ########################
 ##############
