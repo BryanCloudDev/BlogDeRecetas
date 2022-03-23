@@ -14,7 +14,8 @@ try {
 
 #FUNCION PARA INGRESAR VALORES A LA BD
 
-class Receta{
+class Receta
+{
 
     public string $tituloReceta;
     public string $descripcionReceta;
@@ -33,7 +34,7 @@ class Receta{
     }
 
 
-    public function InsertReceta(){
+    public function insertReceta(){
         $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost) 
                     VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost)";
 
@@ -63,8 +64,12 @@ class Receta{
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-
 }
+
+
+#funcion eliminar receta tengo que hacer la funcion de eliminar y de editar
+
+
 
 function randomDIR($n){
     $options = "abcdefghijklmnoprstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
