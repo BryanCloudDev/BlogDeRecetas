@@ -3,6 +3,7 @@
 require "./Controlador/crl.config.php";
 
 session_start();
+
 if(isset($_POST["../Vista/login.php"]))
 {
     if(empty($_POST["username"]) || empty($_POST["password"]))

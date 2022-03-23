@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require "./Controlador/crl.config.php";
 
 if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"])){
