@@ -76,6 +76,26 @@ body {
 	background-color: #37bf6e;
 }
 
+.header .links form{
+	width: 200px;
+	margin: 0px 10px;
+}
+.header form input{
+	width: 100%;
+	outline: none;
+	background-color: var(--main-bg-color);
+	border: 1px solid white;
+	border-radius: 5px;
+	padding: 4.5px;
+	caret-color: white;
+	color: white;
+}
+
+.header form input::placeholder{
+	color: white;
+	font-size: 14px;
+}
+
 .header .logo a {
 	text-decoration: none;
 	font-family: var(--secondary-font-family);

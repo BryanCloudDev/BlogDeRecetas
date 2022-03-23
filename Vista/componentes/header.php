@@ -24,6 +24,9 @@
         <div class="logo">
             <a href="./index.php">Recetas en 5 minutos</a>
         </div>
+        <form action="" method="GET">
+                <input type="search" name="search" placeholder="Buscar...">
+            </form>
         <div class="links">
             <div class="imgContainer">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil">
