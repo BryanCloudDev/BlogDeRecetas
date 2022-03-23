@@ -11,4 +11,19 @@ try {
 } catch(PDOException $e) {
     echo "Connection failed: " . $e->getMessage();
 }
+
+
+
+
+
+
+
+
+#FUNCION PARA INGRESAR VALORES A LA BD
+
+function insertarDatosBD($sqlinsert)
+    {
+        $sqlinsert = "INSERT INTO receta (tituloPost, descripcionPost, pasosPost, imagenPost) VALUES ($tituloPost, $descripcionPost, $pasosPost, $imagenPost)";
+    }
+
 ?>
