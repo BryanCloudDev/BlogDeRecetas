@@ -1,18 +1,4 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-try {
-    $conn = new PDO("mysql:host=$servername;port=3306;dbname=blogreceta", $username, $password);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    //echo "Connected successfully";
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
-
-#FUNCION PARA INGRESAR VALORES A LA BD
 
 class Receta
 {
@@ -48,7 +34,7 @@ class Receta
         
     }
 
-    static function getRecetaById($id){
+    public function getRecetaById($id){
         global $conn;
         $query = "SELECT * FROM receta WHERE idReceta = :id";
         $statement = $conn->prepare($query);
@@ -57,7 +43,7 @@ class Receta
         return $statement->fetch(PDO::FETCH_ASSOC);
     }
 
-    static function getAllRecetas(){
+    public function getAllRecetas(){
         global $conn;
         $query = "SELECT * FROM receta";
         $statement = $conn->prepare($query);
@@ -68,7 +54,10 @@ class Receta
 
 
 #funcion eliminar receta tengo que hacer la funcion de eliminar y de editar
-
+######################################
+########################
+##############
+############################
 
 
 function randomDIR($n){
@@ -81,5 +70,4 @@ function randomDIR($n){
 
     return $result;
 }
-
 ?>
