@@ -1,6 +1,6 @@
 <?php
 
-require "../Controlador/config.php";
+require "./Controlador/crl.config.php";
 
 session_start();
 if(isset($_POST["../Vista/login.php"]))

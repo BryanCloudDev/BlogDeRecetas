@@ -1,6 +1,6 @@
 <?php
 
-require_once "./config.php";
+require "./Controlador/crl.config.php";
 
 if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"])){
 
@@ -23,6 +23,6 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath);
     $receta->insertReceta();
 
-    header("Location ../Vista/index.php");
+    header("Location ./index.php");
 }
 ?>

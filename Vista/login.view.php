@@ -1,6 +1,4 @@
-<?php 
-
-require('./resources/header.php') ?>
+<?php require("./Vista/componentes/header.php");?>
 
 <main class="main login">
     <div class="container">
@@ -23,11 +21,9 @@ require('./resources/header.php') ?>
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Aun no tienes una cuenta?</p>
-            <a href="../Controlador/register.php">Crea una ahora</a>
+            <a href="./registro_usuario.php">Crea una ahora</a>
         </form>
     </div>
 </main>
 
-<?php 
-
-require('./resources/footer.php');?>
+<?php require("./Vista/componentes/footer.php") ?>

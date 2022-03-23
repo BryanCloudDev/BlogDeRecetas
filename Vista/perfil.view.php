@@ -1,7 +1,5 @@
-<?php
+<?php require("./Vista/componentes/header.php");?>
 
+<!-- Tu codigo HTML va aca-->
 
-#html del perfil de usuario donde se tendra la vista de editar datos personales
-
-
-?>
+<?php require("./Vista/componentes/footer.php"); ?>

@@ -1,10 +1,5 @@
-<?php
+<?php require("./Vista/componentes/header.php");?>
 
+<!-- Tu codigo HTML va aca-->
 
-
-#aqui ira el codigo html de cuando se genere una busqueda
-
-
-
-
-?>
+<?php require("./Vista/componentes/footer.php"); ?>

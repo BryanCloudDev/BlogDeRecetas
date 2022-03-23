@@ -1,10 +1,5 @@
-<?php
+<?php require("./Vista/componentes/header.php");?>
 
+<!-- Tu codigo HTML va aca-->
 
-
-#html de la pagina registro de usuario.
-
-
-
-
-?>
+<?php require("./Vista/componentes/footer.php"); ?>

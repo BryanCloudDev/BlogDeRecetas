@@ -1,4 +1,4 @@
-<?php require("Vista/resources/header.php");?>
+<?php require("./Vista/componentes/header.php");?>
 
 <main class="main index">
     <div class="container">
@@ -25,4 +25,4 @@
     </section>
 </main>
 
-<?php require("Vista/resources/footer.php") ?>
+<?php require("./Vista/componentes/footer.php"); ?>

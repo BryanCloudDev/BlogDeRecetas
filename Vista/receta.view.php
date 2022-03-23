@@ -1,5 +1,5 @@
-<?php
+<?php require("./Vista/componentes/header.php");?>
 
-#html para mostrar en pantalla la receta
+<!-- Tu codigo HTML va aca-->
 
-?>
+<?php require("./Vista/componentes/footer.php"); ?>

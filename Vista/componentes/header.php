@@ -13,8 +13,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sriracha&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/styles/normalize.css">
-    <link rel="stylesheet" href="./resources/styles/styles.css">
+    <link rel="stylesheet" href="./Vista/componentes/styles/normalize.css">
+    <link rel="stylesheet" href="./Vista/componentes/styles/styles.css">
     <title>Blog de recetas - Landing</title>
 </head>
 <body>
@@ -29,7 +29,7 @@
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil">
             </div>
             <p>Hola <?php //echo $_POST["nombre"]; ?>!</p>
-            <a href="../Controlador/logout.php">Cerrar sesion</a>
+            <a href="./Controlador/crl.logout.php">Cerrar sesion</a>
         </div>
     </div>
     </header>
