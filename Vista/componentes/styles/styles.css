@@ -56,6 +56,11 @@ body {
 	overflow: hidden;
 	border-radius: 50%;
 }
+
+.header .links .imgContainer a{
+	margin: 0px;
+	padding: 0px;
+}
 .imgContainer img {
 	width: auto;
 	height: 100%;

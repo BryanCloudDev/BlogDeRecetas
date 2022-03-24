@@ -29,7 +29,7 @@
             </form>
         <div class="links">
             <div class="imgContainer">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil">
+                <a href="./perfil.php"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil"></a>
             </div>
             <p>Hola <?php //echo $_POST["nombre"]; ?>!</p>
             <a href="./Controlador/crl.logout.php">Cerrar sesion</a>
