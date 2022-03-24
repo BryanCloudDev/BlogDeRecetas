@@ -2,9 +2,10 @@
 
 session_start();
 
-require "./Controlador/crl.config.php";
 
 if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"])){
+    require_once "crl.config.php";
+    require_once "Modelos/funciones.receta.php";
 
     ["tituloPost" => $tituloPost, 
     "descripcionPost" => $descripcionPost, 
@@ -25,6 +26,6 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath);
     $receta->insertReceta();
 
-    header("Location ./index.php");
+    header("Location: index.php");
 }
 ?>

@@ -31,27 +31,53 @@ class Receta
         $statement->bindValue(":pasosPost", $this->pasosReceta);
 
         $statement->execute();
+        $statement->closeCursor();
         
     }
 
-    public function getRecetaById($id){
+    static public function getRecetaById($id){
         global $conn;
         $query = "SELECT * FROM receta WHERE idReceta = :id";
         $statement = $conn->prepare($query);
         $statement->bindValue(":id", $id);
         $statement->execute();
-        return $statement->fetch(PDO::FETCH_ASSOC);
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $result;
     }
 
-    public function getAllRecetas(){
+    static public function getAllRecetas(){
         global $conn;
         $query = "SELECT * FROM receta";
         $statement = $conn->prepare($query);
         $statement->execute();
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $result;
+    }
+
+    static public function deleteById($id){
+        global $conn;
+        $query = "DELETE FROM receta WHERE idReceta = :id";
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":id",$id);
+        $statement->execute();
+        $statement->closeCursor();
+    }
+
+    public function updateRecetaById($id){
+        $query = "UPDATE receta SET tituloPost = :tituloPost, descripcionPost = :descripcionPost, imagenPost = :imagenPost, 
+                    pasosPost = :pasosPost WHERE idReceta = :id";
+        $statement = $this->db->prepare($query);
+        $statement->bindValue(":tituloPost",$this->tituloReceta);
+        $statement->bindValue(":descripcionPost",$this->descripcionReceta);
+        $statement->bindValue(":imagenPost",$this->imagenReceta);
+        $statement->bindValue(":pasosPost",$this->pasosReceta);
+        
+        $statement->execute();
+        $statement->closeCursor();
     }
 }
-
 
 #funcion eliminar receta tengo que hacer la funcion de eliminar ->>> Rodrigo Soriano
 # y de editar->>>>Kevin Flores
@@ -62,6 +88,7 @@ class Receta
 
 
 function randomDIR($n){
+
     $options = "abcdefghijklmnoprstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     $result = "";
     for($i = 0; $i < $n; $i++){
