@@ -10,12 +10,10 @@
             <div class="form-group">
                 <label for="usuario">Usuario</label>
                 <input id="usuario"type="text" name="username" class="form-control" placeholder="MiUsuario">
-                <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
                 <input id="password" type="password" name="password" class="form-control" placeholder="*******">
-                <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">

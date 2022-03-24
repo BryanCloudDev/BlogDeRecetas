@@ -12,7 +12,7 @@
 * {
 	box-sizing: border-box;
 }
-.wrap{
+.wrap {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -30,7 +30,7 @@
 
 body {
 	font-family: var(--primary-font-family);
-	background: url('https://i.imgur.com/Ufw33Fj.gif') rgb(252, 252, 252);
+	background: url("https://i.imgur.com/Ufw33Fj.gif") rgb(252, 252, 252);
 }
 
 /*estilos del header*/
@@ -72,15 +72,15 @@ body {
 	border-radius: 5px;
 }
 
-.header .links a:hover{
+.header .links a:hover {
 	background-color: #37bf6e;
 }
 
-.header .links form{
+.header .links form {
 	width: 200px;
 	margin: 0px 10px;
 }
-.header form input{
+.header form input {
 	width: 100%;
 	outline: none;
 	background-color: var(--main-bg-color);
@@ -91,7 +91,7 @@ body {
 	color: white;
 }
 
-.header form input::placeholder{
+.header form input::placeholder {
 	color: white;
 	font-size: 14px;
 }
@@ -103,21 +103,23 @@ body {
 	font-size: 23px;
 }
 
-/*estilos del main*/
+/*estilos del main login*/
 .main {
 	width: 100%;
 }
 
-.main.login .container {
+.main.login .container,
+.main.register .container {
 	width: 70%;
 	align-items: center;
 	max-width: 715px;
 }
 
-.main.login .container .texto {
+.main.login .container .texto,
+.main.register .container .texto {
 	border-radius: 5px;
-	width: 320px;
-	height: 320px;
+	width: 260px;
+	height: 260px;
 	display: flex;
 	flex-wrap: wrap;
 	padding: 40px 40px;
@@ -125,23 +127,28 @@ body {
 }
 
 .main.login .container .texto h1,
-.main.login .container .texto p {
+.main.login .container .texto p,
+.main.register .container .texto h1,
+.main.register .container .texto p {
 	width: 100%;
 }
 
-.main.login .container .texto h1 {
+.main.login .container .texto h1,
+.main.register .container .texto h1 {
 	font-size: 39px;
 }
 
-.main.login .container .texto p {
+.main.login .container .texto p,
+.main.register .container .texto p {
 	font-size: 16px;
 	color: #b8b7b7;
 }
 
-.main.login .container .formLogin {
+.main.login .container .formLogin,
+.main.register .container .formLogin {
 	border-radius: 5px;
-	width: 360px;
-	height: 360px;
+	width: 313px;
+	height: 313px;
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
@@ -152,10 +159,20 @@ body {
 	background-color: var(--main-bg-color);
 }
 
-.form-control{
+/*Redimensiones de contenedores de register*/
+.main.register .container .texto {
+	height: 336px;
+}
+
+.main.register .container .formLogin {
+	max-width: 330px;
+	height: 420px;
+}
+
+.form-control {
 	border-radius: 0px;
 }
-.form-control:focus{
+.form-control:focus {
 	box-shadow: 0 0 0 0;
 }
 .formLogin .form-group {
@@ -165,16 +182,16 @@ body {
 }
 .formLogin .form-group label,
 .formLogin .form-group input[type="text"],
-.formLogin .form-group [type="password"] {
+.formLogin .form-group input[type="password"] {
 	width: 100%;
-	margin: 5px 0px;
-	padding: 8px 5px;
+	padding: 3px 5px;
 	outline: none;
 	background-color: var(--main-bg-color);
 	color: white;
 }
 .formLogin .form-group input[type="text"],
-.formLogin .form-group [type="password"] {
+.formLogin .form-group input[type="password"],
+.formLogin .form-group input[type="file"] {
 	margin: 3px 0px;
 	border: none;
 	border-bottom: 1px solid var(--main-bg-color);
@@ -200,6 +217,28 @@ body {
 	border-radius: 5px;
 	color: white;
 	transition: ease 0.5s;
+	margin: 10px 0px;
+}
+
+/*Estilos de boton para subir imagenes de perfil o imagenes en general*/
+.custom-input-file {
+	width: 100%;
+	border: 1px solid white;
+	border-radius: 5px;
+	background-color: var(--main-bg-color);
+	color: #fff;
+	cursor: pointer;
+	min-height: 30px;
+	overflow: hidden;
+	position: relative;
+}
+
+.formLogin .form-group .custom-input-file .input-file {
+	cursor: pointer;
+	left: -78px;
+	margin:2px 2px;
+	outline: 0 none;
+	position: absolute;
 }
 
 .formLogin .form-group input[type="submit"]:hover {
@@ -225,10 +264,10 @@ body {
 	text-decoration: underline;
 }
 /*estilos del index*/
-.main.index .container{
+.main.index .container {
 	flex-wrap: wrap;
 }
-.main.index .post{
+.main.index .post {
 	width: 100%;
 	margin: 30px 0px;
 	display: flex;
@@ -239,48 +278,47 @@ body {
 	border-radius: 5px;
 }
 
-.main.index h2 a{
+.main.index h2 a {
 	text-decoration: none;
 	color: black;
 }
 
-.main.index p a{
+.main.index p a {
 	text-decoration: none;
 	color: rgb(107, 107, 107);
 }
 
-.post .imgContainer{
+.post .imgContainer {
 	width: 70%;
 }
 
-.post .imgContainer img{
+.post .imgContainer img {
 	width: 100%;
 }
 
 /*Paginacion*/
 
-.paginacion{
+.paginacion {
 	width: 100%;
 	margin-bottom: 10px;
 	padding: 15px;
 }
-.paginacion ul{
+.paginacion ul {
 	height: auto;
 	display: flex;
 	justify-content: center;
-	
 }
-.paginacion ul li{
+.paginacion ul li {
 	margin: 0px 5px;
 	list-style: none;
 }
-.paginacion a{
+.paginacion a {
 	background-color: gray;
 	text-decoration: none;
 	color: white;
 	padding: 10px 20px;
 }
-.paginacion a:hover{
+.paginacion a:hover {
 	background-color: rgb(161, 161, 161);
 }
 
