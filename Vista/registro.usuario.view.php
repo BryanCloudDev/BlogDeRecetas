@@ -1,39 +1,40 @@
 <?php require("./Vista/componentes/header.php"); ?>
-
+<!-- contenedor del main de crear ussuario -->
 <main class="main register">
+    <!-- contenedor para centrar pagina -->
     <div class="container">
         <div class="texto">
             <h1>Registrate</h1>
             <p>Por favor rellena los campos para poder registrarte, es gratis.</p>
         </div>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="formLogin">
+        <!-- aca cada input se agrupa en un div(contenedor) con la clase form_group para poder centrarlos y darles el espaciado apropiado -->
             <div class="form-group">
+                <!-- label nos permite poder linkear el texto a un input para que al darle click se nos seleccione el campo y asi poder escribir en el -->
                 <label for="usuario">Nombre</label>
                 <input id="usuario" type="text" name="name" class="form-control" placeholder="John Doe">
-                <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
                 <input id="usuario" type="text" name="username" class="form-control" placeholder="MiUsuario01">
-                <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <label for="usuario">Correo</label>
                 <input id="usuario" type="text" name="email" class="form-control" placeholder="micorreo@micorreo.com">
-                <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
                 <input id="password" type="password" name="password" class="form-control" placeholder="********">
-                <span class="invalid-feedback"></span>
             </div>
             <div class="form-group">
                 <label for="foto">Subir foto de perfil</label>
+                <!-- este contenedor nos permite poder generar un contenedor para poder mover el elemento con la clase .custom-input-file de manera libre y asi poder ocultar el boton "SUBIR IMAGEN" y solo nos muestre el nombre del archivo -->
                 <div class="custom-input-file">
                     <input type="file" id="foto" class="input-file">
                 </div>
             </div>
             <div class="form-group">
+                <!-- este input:submit nos permite poder enviar el formulario atraves del metodo seleccionado, POST o GET -->
                 <input type="submit" class="btn btn-primary" value="Sign Up">
             </div>
         </form>
