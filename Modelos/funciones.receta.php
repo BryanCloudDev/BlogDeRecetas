@@ -122,7 +122,7 @@ class Receta
 
 
 
-#$prueba1 = new Receta('titulo de receta','descripcion','pasos','imagen')
+#$prueba1 = new Receta('titulo de receta','descripcion','pasos','imagen');
 
 
 
