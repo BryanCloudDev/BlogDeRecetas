@@ -2,10 +2,10 @@
 
 session_start();
 
+require_once "crl.config.php";
+require_once "Modelos/funciones.receta.php";
 
 if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"])){
-    require_once "crl.config.php";
-    require_once "Modelos/funciones.receta.php";
 
     ["tituloPost" => $tituloPost, 
     "descripcionPost" => $descripcionPost, 
@@ -13,12 +13,12 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
 
     $imagenPost = $_FILES["imagenPost"] ?? null;
 
-    if(!is_dir(__DIR__ . "/images")){
-        mkdir(__DIR__ . "/images");
+    if(!is_dir("Controlador/images")){
+        mkdir("Controlador/images");
     }
 
     if($imagenPost && $imagenPost["tmp_name"]){
-        $imagenPostPath = "images/" . randomDIR(8) . "/" . $imagenPost["name"] ;
+        $imagenPostPath = "Controlador/images/" . randomDIR(8) . "/" . $imagenPost["name"] ;
         mkdir(dirname($imagenPostPath));
         move_uploaded_file($imagenPost["tmp_name"],$imagenPostPath);
     }

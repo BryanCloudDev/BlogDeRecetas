@@ -1,8 +1,5 @@
 <?php
 
-require '../Controlador/crl.config.php';
-
-
 class Receta
     {
 
@@ -64,7 +61,7 @@ class Receta
         static public function getAllRecetas()
             {
                 global $conn;
-                $query = "SELECT * FROM receta";
+                $query = "SELECT * FROM receta ORDER BY idReceta DESC";
                 $statement = $conn->prepare($query);
                 $statement->execute();
                 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -103,34 +100,6 @@ class Receta
             }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#$prueba1 = new Receta('titulo de receta','descripcion','pasos','imagen');
-
-
-
-
-
-/* 
-QUEDA COMENTARIADA ESTA FUNCION PORQUE DA ERROR DE SINTAXIS POR FAVOR ARREGLAR
-
 function randomDIR($n)
 
     {
@@ -145,6 +114,6 @@ function randomDIR($n)
 
         return $result;
     }
-*/
+
 
 ?>

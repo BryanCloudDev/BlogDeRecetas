@@ -1,4 +1,5 @@
 <?php require_once "./Vista/componentes/header.php" ?>
+<a href="index.php">Volver al sitio</a>
 <form name="form" action="registrar_receta.php" method="post" enctype="multipart/form-data">
     
     <div class="form-group-2">
