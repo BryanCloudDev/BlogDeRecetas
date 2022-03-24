@@ -100,6 +100,9 @@ class Receta
             }
     }
 
+
+#Devuelve un nuevo directorio con nombre aleatorio
+
 function randomDIR($n)
 
     {
