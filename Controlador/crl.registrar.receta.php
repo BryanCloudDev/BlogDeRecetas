@@ -24,7 +24,7 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     }
 
     $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath);
-    $receta->insertReceta();
+    $receta->createReceta();
 
     header("Location: index.php");
 }

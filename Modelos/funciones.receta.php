@@ -6,12 +6,16 @@ require '../Controlador/crl.config.php';
 class Receta
     {
 
+#Declaracion de variables dentro de la clase tambien llamado atributos de clase
+
         public string $tituloReceta;
         public string $descripcionReceta;
         public string $pasosReceta;
         public string $imagenReceta;
         public object $db;
-        
+
+#Declaracion del metodo constructor para pasar argumentos
+
         public function __construct($tituloReceta,$descripcionReceta,$pasosReceta,$imagenReceta)
             {
                 global $conn;
@@ -22,8 +26,9 @@ class Receta
                  $this->db = $conn;
             }
 
+# Este bloque crea una receta dentro de la base de datos
 
-        public function insertReceta()
+        public function createReceta()
             {
                 $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost) 
                             VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost)";
@@ -39,6 +44,8 @@ class Receta
                 
             }
 
+#Este bloque busca una receta por ID
+
         static public function getRecetaById($id)
             {
                 global $conn;
@@ -52,6 +59,8 @@ class Receta
                 return $result;
             }
 
+#Este bloque obtiene todas las recetas de la base de datos
+
         static public function getAllRecetas()
             {
                 global $conn;
@@ -64,6 +73,8 @@ class Receta
                 return $result;
             }
 
+#Este bloque borra la receta de la base de datos buscada por ID
+
         static public function deleteById($id)
             {
 
@@ -74,6 +85,8 @@ class Receta
                 $statement->execute();
                 $statement->closeCursor();
             }
+
+#Este bloque actualiza una receta buscada por ID dentro de la base de datos
 
         public function updateRecetaById($id)
             {
@@ -91,22 +104,32 @@ class Receta
     }
 
 
-#$prueba1 = new Receta('titulo de receta','descripcion','pasos','imagen');
-
-
-#funcion eliminar receta tengo que hacer la funcion de eliminar ->>> Rodrigo Soriano
 
 
 
-# y de editar->>>>Kevin Flores
-######################################
-########################
-##############
-############################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#$prueba1 = new Receta('titulo de receta','descripcion','pasos','imagen')
+
+
+
 
 
 /* 
-QUEDA COMENTARIADA ESTA FUNCION PORQUE DA ERROR DE SINTAXIS POR FAVOR ARREGLAR EN LA LINEA 111
+QUEDA COMENTARIADA ESTA FUNCION PORQUE DA ERROR DE SINTAXIS POR FAVOR ARREGLAR
 
 function randomDIR($n)
 
@@ -123,4 +146,5 @@ function randomDIR($n)
         return $result;
     }
 */
+
 ?>
