@@ -11,7 +11,7 @@
                     <img src="<?= $receta["imagenPost"] ?>" alt="Comida o algo">
                 </div>
                 <div class="texto">
-                    <h2><a href="./post?id="><?= $receta["tituloPost"] ?></a></h2>
+                    <h2><a href="index.php?id=<?= $receta["idReceta"] ?>"><?= $receta["tituloPost"] ?></a></h2>
                     <p>Este post fue creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
                     <p>Descripción : <?= $receta["descripcionPost"] ?></p>
                     <p><?= $receta["pasosPost"] ?></p>
