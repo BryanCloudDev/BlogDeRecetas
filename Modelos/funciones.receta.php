@@ -1,5 +1,6 @@
 <?php
 
+$conn = Conexion::conn();
 class Receta
     {
 
@@ -72,6 +73,20 @@ class Receta
                 
                 return $result;
             }
+
+#Obtiene las recetas que cumplan un cierto string
+
+        static public function getRecetaByTitle($title){
+            global $conn;
+            $query = "SELECT * FROM receta WHERE tituloPost LIKE :tituloPost ORDER BY idReceta DESC";
+            $statement = $conn->prepare($query);
+            $statement->bindValue(":tituloPost","%$title%");
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $statement->closeCursor();
+
+            return $result;
+        }
 
 #Este bloque borra la receta de la base de datos buscada por ID
 
