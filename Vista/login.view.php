@@ -1,4 +1,4 @@
-<?php require("./Vista/componentes/header.php");?>
+<?php require("../Vista/componentes/header.php");?>
 
 <main class="main login">
     <div class="container">
@@ -24,4 +24,4 @@
     </div>
 </main>
 
-<?php require("./Vista/componentes/footer.php") ?>
+<?php require("../Vista/componentes/footer.php") ?>

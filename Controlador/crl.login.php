@@ -8,7 +8,7 @@ if(isset($_POST["../Vista/login.php"]))
 {
     if(empty($_POST["username"]) || empty($_POST["password"]))
     {
-        $message = '<label>All fields are required</label>';
+        $message = '<label>Se requieren todos los campos</label>';
     }
     else
     {
@@ -21,14 +21,16 @@ if(isset($_POST["../Vista/login.php"]))
             )
         );
         $count = $statement->rowCount();
+        
         if($count > 0)
         {
             $_SESSION["username"] = $_POST["username"];
-            readdir("location:../Controlador/login_success.php");
+            echo "FUNCIONA PERRO";
+            //header("location: ../Controlador/ctl.index.php");
         }
         else
         {
-            $message = '<label>Wrong Data</label>';
+            $message = '<label>Algo valio pija xd</label>';
         }
     }
 }

@@ -18,9 +18,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Sriracha&display=swap" rel="stylesheet">
     <!-- reset de estilos del navegador -->
-    <link rel="stylesheet" href="./Vista/componentes/styles/normalize.css">
+    <link rel="stylesheet" href="../Vista/componentes/styles/normalize.css">
     <!-- links de estilos css del proyecto -->
-    <link rel="stylesheet" href="./Vista/componentes/styles/styles.css">
+    <link rel="stylesheet" href="../Vista/componentes/styles/styles.css">
     <!-- titulo -->
     <title>Blog de recetas - Landing</title>
 </head>
@@ -41,10 +41,10 @@
         <!-- contenedor de los links -->
         <div class="links">
             <div class="imgContainer">
-                <a href="./perfil.php"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil"></a>
+                <a href="../perfil.php"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil"></a>
             </div>
             <p>Hola <?php //echo $_POST["nombre"]; ?>!</p>
-            <a href="./Controlador/crl.logout.php">Cerrar sesion</a>
+            <a href="../Controlador/crl.logout.php">Cerrar sesion</a>
         </div>
     </div>
     </header>
