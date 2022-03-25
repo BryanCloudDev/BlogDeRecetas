@@ -12,7 +12,7 @@
             <div class="form-group">
                 <!-- label nos permite poder linkear el texto a un input para que al darle click se nos seleccione el campo y asi poder escribir en el -->
                 <label for="usuario">Nombre</label>
-                <input id="usuario" type="text" name="name" class="form-control" placeholder="John Doe">
+                <input id="usuario" type="text" name="nombre" class="form-control" placeholder="John Doe">
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
@@ -20,7 +20,7 @@
             </div>
             <div class="form-group">
                 <label for="usuario">Correo</label>
-                <input id="usuario" type="text" name="email" class="form-control" placeholder="micorreo@micorreo.com">
+                <input id="usuario" type="text" name="correo" class="form-control" placeholder="micorreo@micorreo.com">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>

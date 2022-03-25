@@ -1,2 +1,2 @@
-<?php require('./Controlador/crl.login.php')?>
-<?php require('./Vista/login.view.php')?>
+<?php require __DIR__."/Controlador/crl.login.php"?>
+<?php require __DIR__."/Vista/login.view.php"?>

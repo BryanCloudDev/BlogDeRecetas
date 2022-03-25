@@ -27,7 +27,7 @@ class ModeloRegistroUsuarios{
 		$stmt->bindParam(":nombre", $datos["nombre"], PDO::PARAM_STR);
 		$stmt->bindParam(":correo", $datos["correo"], PDO::PARAM_STR);
 		$stmt->bindParam(":password", $datos["password"], PDO::PARAM_STR);
-		$stmt->bindParam(":imagenUsuario", $datos["imagenUsuario"], PDO::PARAM_STR);
+		//$stmt->bindParam(":imagenUsuario", $datos["imagenUsuario"], PDO::PARAM_STR);
 
 		if($stmt->execute()){
 

@@ -1,14 +1,16 @@
 <?php
-    class RegistroUsuario{
+require "Modelos/funciones.registro.php";
+
+class RegistroUsuario{
         
         #Fuction para Registro de Usuarios
           
           static public function ctrRegistro(){
-              if(isset($_POST["registroNombre"])){
+              if(isset($_POST["registroUsuario"])){
                     $tabla = "usuarios";
 
                     $datos= array("nombre" =>$_POST["registroNombre"],
-                                 "email" =>$_POST["registroEmail"],
+                                 "correo" =>$_POST["registroCorreo"],
                                  "password" =>$_POST["registroPassword"]
                                 );
                 $respuesta =  ModeloRegistroUsuarios::Registro($tabla , $datos);
