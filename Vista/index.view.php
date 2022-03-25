@@ -12,7 +12,8 @@
                 </div>
                 <div class="texto">
                     <h2><a href="./post?id="><?= $receta["tituloPost"] ?></a></h2>
-                    <p>Publicado el 3 de Diciembre de 2021 </p>
+                    <p>Este post fue creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
+                    <p>Descripción : <?= $receta["descripcionPost"] ?></p>
                     <p><?= $receta["pasosPost"] ?></p>
                 </div>
             </article>

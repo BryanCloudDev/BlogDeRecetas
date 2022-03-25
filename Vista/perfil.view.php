@@ -28,16 +28,16 @@
         <section>
             <h1>Posts creados por <?php //nombre de usuario?></h1>
         </section>
-        <section class="post">
+        <!-- <section class="post">
             <div class="imgContainer">
-                <img src="<?= $receta["imagenPost"] ?>" alt="Comida o algo">
+                <img src="<?php #$receta["imagenPost"] ?>" alt="Comida o algo">
             </div>
             <div class="texto">
-                <h2><a href="./post?id="><?= $receta["tituloPost"] ?></a></h2>
+                <h2><a href="./post?id="><?php #$receta["tituloPost"] ?></a></h2>
                 <p>Publicado el 3 de Diciembre de 2021 </p>
-                <p><?= $receta["pasosPost"] ?></p>
+                <p><?php #$receta["pasosPost"] ?></p>
             </div>
-        </section>
+        </section> -->
         </article>
     </div>
 </main>

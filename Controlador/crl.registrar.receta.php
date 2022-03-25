@@ -4,6 +4,7 @@ session_start();
 
 require_once "crl.config.php";
 require_once "Modelos/funciones.receta.php";
+require_once "Modelos/funciones.spanishdate.php";
 
 if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"])){
 
@@ -12,6 +13,8 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     "pasosPost" => $pasosPost] = $_POST;
 
     $imagenPost = $_FILES["imagenPost"] ?? null;
+
+    $spanishDate = SpanishDate();
 
     if(!is_dir("Controlador/images")){
         mkdir("Controlador/images");
@@ -23,7 +26,7 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
         move_uploaded_file($imagenPost["tmp_name"],$imagenPostPath);
     }
 
-    $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath);
+    $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath,$spanishDate);
     $receta->createReceta();
 
     header("Location: index.php");

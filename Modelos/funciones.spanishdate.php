@@ -34,8 +34,6 @@
        "12" => "Diciembre",
     ];
    
-    return "Post creado el {$spanishDays[$day]} $dayMonth de {$spanishMonths[$month]} del año $year";
+    return "{$spanishDays[$day]} $dayMonth de {$spanishMonths[$month]} del año $year";
 
  }
-
- echo SpanishDate();

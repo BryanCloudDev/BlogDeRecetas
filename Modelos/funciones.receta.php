@@ -9,32 +9,35 @@ class Receta
         public string $descripcionReceta;
         public string $pasosReceta;
         public string $imagenReceta;
+        public string $dateReceta;
         public object $db;
 
 #Declaracion del metodo constructor para pasar argumentos
 
-        public function __construct($tituloReceta,$descripcionReceta,$pasosReceta,$imagenReceta)
+        public function __construct($tituloReceta,$descripcionReceta,$pasosReceta,$imagenReceta,$dateReceta)
             {
                 global $conn;
                 $this->tituloReceta = $tituloReceta;
                 $this->descripcionReceta = $descripcionReceta;
                 $this->pasosReceta = $pasosReceta;
                 $this->imagenReceta = $imagenReceta;
-                 $this->db = $conn;
+                $this->dateReceta = $dateReceta;
+                $this->db = $conn;
             }
 
 # Este bloque crea una receta dentro de la base de datos
 
         public function createReceta()
             {
-                $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost) 
-                            VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost)";
+                $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost, fecha) 
+                            VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost , :fecha)";
 
                 $statement = $this->db->prepare($query);
                 $statement->bindValue(":tituloPost", $this->tituloReceta);
                 $statement->bindValue(":descripcionPost", $this->descripcionReceta);
                 $statement->bindValue(":imagenPost", $this->imagenReceta);
                 $statement->bindValue(":pasosPost", $this->pasosReceta);
+                $statement->bindValue(":fecha", $this->dateReceta);
 
                 $statement->execute();
                 $statement->closeCursor();
@@ -87,8 +90,8 @@ class Receta
 
         public function updateRecetaById($id)
             {
-                $query = "UPDATE receta SET tituloPost = :tituloPost, descripcionPost = :descripcionPost, imagenPost = :imagenPost, 
-                            pasosPost = :pasosPost WHERE idReceta = :id";
+                $query = "UPDATE receta SET tituloPost = :tituloPost, descripcionPost = :descripcionPost, 
+                        imagenPost = :imagenPost, pasosPost = :pasosPost WHERE idReceta = :id";
                 $statement = $this->db->prepare($query);
                 $statement->bindValue(":tituloPost",$this->tituloReceta);
                 $statement->bindValue(":descripcionPost",$this->descripcionReceta);
