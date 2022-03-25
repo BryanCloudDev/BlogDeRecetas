@@ -32,6 +32,12 @@ main {
         <img id="" src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w" width="100px" height="100px" />
         <h1>Admin dashboard</h1>
     </header>
+    <style>
+    body {
+  font-family: "Helvetica", Sans-Serif;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/cool-website-background-02.jpg");
+}
+    </style>
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
 
