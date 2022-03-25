@@ -2,15 +2,35 @@
 <html>
 
 <head>
-    <title>Admin dashboard</title>
+    <title>Admin</title>
 </head>
 
-<body>
-    <header style="background-color:red;">
+<body style="background-color:aquamarine;">
+    <header class="page-header">
+        <style>
+    header.page-header {
+    background: no-repeat left/cover url(https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w);
+    display: flex;
+    height: 120px;
+    min-width: 120px;
+    align-items: center;
+    color: #fff;
+    text-shadow: #000 0 0 .2em;
+}
+
+header.page-header > h1 {
+    font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+        fantasy;
+    margin: 2%;
+}
+
+main {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+</style>
         <!-- La siguiente linea necesita mejorarse y/o completarse -->
-        <img id="" src="" width="100px" height="100px" />
+        <img id="" src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w" width="100px" height="100px" />
         <h1>Admin dashboard</h1>
-        <p>Admin dashboard</p>
     </header>
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
@@ -22,7 +42,7 @@
             <div class="profile">
                 <!--img_2 -->
                 <div class="profile_pic">
-                    <img src="images/img.jpg" alt="..." class="img-circle pro_img">
+                    <img src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w" alt="..." class="img-circle pro_img">
                 </div>
                 <div class="profile_info">
                     <span>Admin area</span>
@@ -36,26 +56,24 @@
                 <div class="menu_section">
                     <h3>Ajustes</h3>
                     <ul class="nav side-menu">
-                        <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-home"></i> Eliminar usuario <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="2.html">Dashboard</a></li>
+                                <li><a href="2.html"><button>Eliminar usuario</button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-edit"></i> Ajustes 2 <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-edit"></i> Crear post <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="3.html">modificar luego</a></li>
+                                <li><a href="3.html"><button>Crear post</button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-desktop"></i> Ajustes 3 <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-desktop"></i> Comentar post <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="4.html">Botón 1</a></li>
-                                <li><a href="5.html">Botón 2</a></li>
-
+                                <li><a href="4.html"><button>Comentar post</button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-table"></i> Eliminar post <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="5.html">Tables</a></li>
+                                <li><a href="5.html"><button>Eliminar post</button></a></li>
                             </ul>
                         </li>
                         <li><a><i class="fa fa-bar-chart-o"></i> Ajustes 4 <span class="fa fa-chevron-down"></span></a>

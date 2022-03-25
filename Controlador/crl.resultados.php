@@ -7,7 +7,7 @@ require_once "../Modelos/funciones.receta.php";
 
 #instanciamiento de la funcion sin parametros para mostrar todas las recetas
 
-$resultadoGlobal = Receta::getAllRecetas();
+$recetas = Receta::getAllRecetas();
 
 
 ?>
