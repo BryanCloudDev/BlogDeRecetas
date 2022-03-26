@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once "crl.config.php";
 require_once "Modelos/funciones.receta.php";
 require_once "Modelos/funciones.spanishdate.php";
@@ -26,7 +24,10 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
         move_uploaded_file($imagenPost["tmp_name"],$imagenPostPath);
     }
 
-    $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath,$spanishDate);
+    session_start();
+    $id_usuario = $_SESSION["user"];
+
+    $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath,$spanishDate,$id_usuario);
     $receta->createReceta();
 
     header("Location: index.php");

@@ -1,5 +1,9 @@
 <?php
-require "Modelos/funciones.registro.php";
+
+require_once "Controlador/crl.config.php";
+require_once "Modelos/funciones.registro.php";
+require_once "Modelos/funciones.receta.php";
+require_once "Modelos/funciones.user.php";
 
 class RegistroUsuario{
         
@@ -71,6 +75,31 @@ class RegistroUsuario{
             }
          }
          
+    }
+
+
+    if(isset($_POST["nombre"]) && isset($_POST["username"]) && isset($_POST["correo"]) && isset($_POST["password"]) && isset($_FILES["user_image"])){
+
+        ["nombre" => $name,
+        "username" => $username,
+        "correo" => $correo,
+        "password" => $password]  = $_POST;
+
+        ["user_image" => $userImage] = $_FILES;
+
+        if(!is_dir("Controlador/User_Images")){
+            mkdir("Controlador/User_Images");
+        }
+
+        if($userImage && $userImage["tmp_name"]){
+            $UserImagePath = "Controlador/User_Images/" . randomDIR(8) . "/" . $userImage["name"];
+            mkdir(dirname($UserImagePath));
+            move_uploaded_file($userImage["tmp_name"],$UserImagePath);
+        }
+
+        $User = new Usuarios($name,$username,$password,$correo,$UserImagePath);
+        $User->makeUser();
+
     }
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 
 require_once "Controlador/crl.config.php";
 require_once "Modelos/funciones.receta.php";
@@ -12,6 +12,4 @@ if(isset($_GET["id"])){
 }else{
     $recetas = Receta::getAllRecetas();
 }
-
-
 ?>

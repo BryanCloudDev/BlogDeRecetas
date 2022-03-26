@@ -1,8 +1,11 @@
 <?php
-session_start();
+//session_start();
+require_once "Controlador/crl.config.php";
+require_once "Modelos/funciones.user.php";
 
 if(isset($_POST["../Vista/login.php"]))
 {
+    echo "page reached";
     if(empty($_POST["username"]) || empty($_POST["password"]))
     {
         $message = '<label>Se requieren todos los campos</label>';
@@ -29,6 +32,24 @@ if(isset($_POST["../Vista/login.php"]))
         {
             $message = '<label>Algo valio pija xd</label>';
         }
+    }
+}
+
+$noUser = false;
+
+if(isset($_POST["username"]) && isset($_POST["password"])){
+    
+    ["username" => $username,
+    "password" => $password] = $_POST;
+
+    $user = Usuarios::isUser($username,$password);
+
+    if(!$user){
+        $noUser = true;
+    }else{
+        session_start();
+        $_SESSION["user"] = $user["idUsuario"];
+        header("Location: index.php");
     }
 }
 

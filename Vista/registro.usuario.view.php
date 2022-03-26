@@ -7,7 +7,7 @@
             <h1>Registrate</h1>
             <p>Por favor rellena los campos para poder registrarte, es gratis.</p>
         </div>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="formLogin">
+        <form action="registro_usuario.php" method="post" class="formLogin" enctype="multipart/form-data">
         <!-- aca cada input se agrupa en un div(contenedor) con la clase form_group para poder centrarlos y darles el espaciado apropiado -->
             <div class="form-group">
                 <!-- label nos permite poder linkear el texto a un input para que al darle click se nos seleccione el campo y asi poder escribir en el -->
@@ -30,7 +30,7 @@
                 <label for="foto">Subir foto de perfil</label>
                 <!-- este contenedor nos permite poder generar un contenedor para poder mover el elemento con la clase .custom-input-file de manera libre y asi poder ocultar el boton "SUBIR IMAGEN" y solo nos muestre el nombre del archivo -->
                 <div class="custom-input-file">
-                    <input type="file" id="foto" class="input-file">
+                    <input type="file" id="foto" class="input-file" name="user_image">
                 </div>
             </div>
             <div class="form-group">

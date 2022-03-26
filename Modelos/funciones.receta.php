@@ -11,11 +11,12 @@ class Receta
         public string $pasosReceta;
         public string $imagenReceta;
         public string $dateReceta;
+        public int $id;
         public object $db;
 
 #Declaracion del metodo constructor para pasar argumentos
 
-        public function __construct($tituloReceta,$descripcionReceta,$pasosReceta,$imagenReceta,$dateReceta)
+        public function __construct($tituloReceta,$descripcionReceta,$pasosReceta,$imagenReceta,$dateReceta,$id)
             {
                 global $conn;
                 $this->tituloReceta = $tituloReceta;
@@ -23,6 +24,7 @@ class Receta
                 $this->pasosReceta = $pasosReceta;
                 $this->imagenReceta = $imagenReceta;
                 $this->dateReceta = $dateReceta;
+                $this->id = $id;
                 $this->db = $conn;
             }
 
@@ -30,8 +32,8 @@ class Receta
 
         public function createReceta()
             {
-                $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost, fecha) 
-                            VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost , :fecha)";
+                $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost, fecha, id_usuario) 
+                            VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost , :fecha, :id_usuario)";
 
                 $statement = $this->db->prepare($query);
                 $statement->bindValue(":tituloPost", $this->tituloReceta);
@@ -39,6 +41,7 @@ class Receta
                 $statement->bindValue(":imagenPost", $this->imagenReceta);
                 $statement->bindValue(":pasosPost", $this->pasosReceta);
                 $statement->bindValue(":fecha", $this->dateReceta);
+                $statement->bindValue(":id_usuario", $this->id);
 
                 $statement->execute();
                 $statement->closeCursor();
@@ -86,6 +89,22 @@ class Receta
             $statement->closeCursor();
 
             return $result;
+        }
+
+#Obtiene las rectas por usuario
+
+        static public function getRecetaByUserId($id){
+            global $conn;
+            $query = "SELECT * FROM receta WHERE id_usuario = :id_usuario ORDER BY idReceta DESC";
+            $statement = $conn->prepare($query);
+            $statement->bindValue(":id_usuario",$id);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            $statement->closeCursor();
+
+            return $result;
+
         }
 
 #Este bloque borra la receta de la base de datos buscada por ID
