@@ -2,12 +2,17 @@
 
 session_start();
 
-require_once "crl.config.php";
+require_once "./crl.config.php";
 require_once "../Modelos/funciones.receta.php";
 
-#instanciamiento de la funcion sin parametros para mostrar todas las recetas
+#Aqui evaluamos si hay algo escrito en $POST search que viene de la pagina principal
 
-$recetas = Receta::getAllRecetas();
-
-
+if(isset($_POST["search"]))
+    {
+        $recetas = Receta::getRecetaByTitle($_POST["search"]);
+    }
+else 
+{
+    header("Location: index.php");
+}
 ?>
