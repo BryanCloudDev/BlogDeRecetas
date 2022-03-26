@@ -32,24 +32,30 @@ main {
         <img id="" src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w" width="100px" height="100px" />
         <h1>Admin dashboard</h1>
     </header>
+    <style>
+    body {
+  font-family: "Helvetica", Sans-Serif;
+  background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/cool-website-background-02.jpg");
+}
+    </style>
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
 
             <div class="navbar nav_title" style="border: 0;">
                 <a href="1.html" class="site_title">Voy a dejar esto por aquí por si me sirve después</a>
             </div>
-
+<!--
             <div class="profile">
-                <!--img_2 -->
+                img_2 
                 <div class="profile_pic">
-                    <img src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w" alt="..." class="img-circle pro_img">
+                    <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t39.30808-6/277094461_704707294244512_2713239271986007966_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=a26aad&_nc_ohc=hrQTpfZzTjIAX9Sy2kg&_nc_oc=AQmFeP2jzAtAWOKqP7GPYhrsv2WcgtIHj-Hu7Fgp5OcdqbLh85yiLlCw8lMkyy0uen8&_nc_ht=scontent-ort2-2.xx&oh=00_AT8-aJsZwErP6x4z-107Ij5wuIK3711OcH1vB8O0xO8HEA&oe=62442995" alt="..." class="float-right" width="304" height="236">
                 </div>
                 <div class="profile_info">
                     <span>Admin area</span>
                     <h2>Admin</h2>
                 </div>
             </div>
-
+        -->
             <br>
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
