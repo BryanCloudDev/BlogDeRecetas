@@ -35,7 +35,7 @@
             <a href="./index.php">Recetas en 5 minutos</a>
         </div>
         <!-- formulario de busqueda -->
-        <form action="index.php" method="POST">
+        <form action="resultados.php" method="POST">
                 <input type="search" name="search" placeholder="Buscar...">
         </form>
         <!-- contenedor de los links -->
