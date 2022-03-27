@@ -29,22 +29,21 @@ main {
 }
 </style>
         <!-- La siguiente linea necesita mejorarse y/o completarse -->
-        <img id="" src="https://brandsitesplatform-res.cloudinary.com/image/fetch/w_1540,c_scale,q_auto:eco,f_auto,fl_lossy,dpr_1.0,e_sharpen:85/https://assets.brandplatform.generalmills.com%2F-%2Fmedia%2FProject%2FGMI%2Foldelpaso%2Foldelpaso-us%2FRecipes%2Feasy-shredded-chicken-tacos.png%3Fw%3D1100%26rev%3D6644262a781f454fa99fff52f40312b0%201540w" width="100px" height="100px" />
         <h1>Admin dashboard</h1>
     </header>
     <style>
     body {
   font-family: "Helvetica", Sans-Serif;
-  background-image: url("https://wallpaperboat.com/wp-content/uploads/2019/10/cool-website-background-02.jpg");
+  background-image: url("http://sfwallpaper.com/images/background-image-for-website-5.jpg");
 }
     </style>
     <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
-
+<!--
             <div class="navbar nav_title" style="border: 0;">
                 <a href="1.html" class="site_title">Voy a dejar esto por aquí por si me sirve después</a>
             </div>
-<!--
+
             <div class="profile">
                 img_2 
                 <div class="profile_pic">
@@ -60,29 +59,29 @@ main {
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
                 <div class="menu_section">
-                    <h3>Ajustes</h3>
+                    <h2><strong>Ajustes</strong></h2>
                     <ul class="nav side-menu">
-                        <li><a><i class="fa fa-home"></i> Eliminar usuario <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-home"></i> <strong>Eliminar usuario </strong><span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="2.html"><button>Eliminar usuario</button></a></li>
+                                <li><a href="2.html"><button><strong>Eliminar usuario</strong></button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-edit"></i> Crear post <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-edit"></i><strong> Crear post </strong><span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="3.html"><button>Crear post</button></a></li>
+                                <li><a href="3.html"><button><strong>Crear post</strong></button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-desktop"></i> Comentar post <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-desktop"></i><strong> Comentar post </strong><span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="4.html"><button>Comentar post</button></a></li>
+                                <li><a href="4.html"><button><strong>Comentar post</strong></button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-table"></i> Eliminar post <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-table"></i> <strong>Eliminar post </strong> <span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
-                                <li><a href="5.html"><button>Eliminar post</button></a></li>
+                                <li><a href="5.html"><button><strong>Eliminar post</strong></button></a></li>
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-bar-chart-o"></i> Ajustes 4 <span class="fa fa-chevron-down"></span></a>
+                        <li><a><i class="fa fa-bar-chart-o"></i><strong> Ajustes 4 </strong><span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 <li><a href="6.html">Chart JS</a></li>
                             </ul>
