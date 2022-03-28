@@ -55,6 +55,8 @@ main {
                 </div>
             </div>
         -->
+        <?PHP require 'header.php'; ?>
+
             <br>
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 
@@ -131,7 +133,9 @@ main {
     </div>
 -->
 
-<?PHP /*
+<?PHP
+
+/*
 //Conexion con la base
 function mysql_connect("localhost","root","");
 
@@ -168,11 +172,17 @@ username: string
 usuarios: string
 logout: bool
 */
-?>
-</body>
+require 'footer.php';
 
-</html>
+?>
+<!--
 </select>
 <br>
 <INPUT TYPE="SUBMIT" value="Borrar">
-</FORM>
+</FORM> -->
+
+
+
+</body>
+
+</html>
