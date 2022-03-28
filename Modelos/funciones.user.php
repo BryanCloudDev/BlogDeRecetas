@@ -1,5 +1,5 @@
 <?php 
- 
+
 $conn = Conexion::conn();
 #clase que modifica usuarios
 class Usuarios{
@@ -26,11 +26,10 @@ class Usuarios{
 
     public function makeUser(){
 
-        $query = "INSERT INTO usuarios (rol, nombre, username, password, correo, imagenUsuario) 
-                VALUES(:rol, :nombre, :username, :password, :correo, :imagenUsuario)";
+        $query = "INSERT INTO usuarios (nombre, username, password, correo, imagenUsuario) 
+                VALUES(:nombre, :username, :password, :correo, :imagenUsuario)";
         
         $statement = $this->db->prepare($query);
-        $statement->bindValue(":rol", 1);
         $statement->bindValue(":nombre", $this->nombre);
         $statement->bindValue(":username", $this->username);
         $statement->bindValue(":password", $this->password);
@@ -56,6 +55,41 @@ class Usuarios{
         $statement->closeCursor();
 
         return $resultado;
+    }
+
+    static public function getUsernameById($id){
+        global $conn;
+        $query = "SELECT username FROM usuarios WHERE idUsuario = :id";
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":id",$id);
+        $statement->execute();
+        
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $resultado["username"];
+    }
+
+    static public function getUserImagePathById($id){
+        global $conn;
+        $query = "SELECT imagenUsuario FROM usuarios WHERE idUsuario = :id";
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":id",$id);
+        $statement->execute();
+        
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $resultado["imagenUsuario"];
+    }
+
+    static public function getUserRolById($id){
+        global $conn;
+        $query = "SELECT rol FROM usuarios WHERE idUsuario = :id";
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":id",$id);
+        $statement->execute();
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $resultado["rol"];
     }
 
 }

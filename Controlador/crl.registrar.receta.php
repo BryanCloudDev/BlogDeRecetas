@@ -1,5 +1,6 @@
 <?php
 
+require_once "Controlador/crl.isuser.php";
 require_once "crl.config.php";
 require_once "Modelos/funciones.receta.php";
 require_once "Modelos/funciones.spanishdate.php";
