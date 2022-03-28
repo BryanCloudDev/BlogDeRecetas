@@ -81,6 +81,7 @@ main {
                                 <li><a href="5.html"><button><strong>Eliminar post</strong></button></a></li>
                             </ul>
                         </li>
+                        <!--
                         <li><a><i class="fa fa-bar-chart-o"></i><strong> Ajustes 4 </strong><span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu">
                                 <li><a href="6.html">Chart JS</a></li>
@@ -128,12 +129,31 @@ main {
             </div>
         </div>
     </div>
-</body>
+-->
 
-</html>
+<?PHP /*
+//Conexion con la base
+function mysql_connect("localhost","root","");
 
-<?PHP
-/*
+//selección de la base de datos con la que vamos a trabajar 
+mysql_select_db("mysql:host=$servername;port=3306;dbname=blogreceta"); 
+
+echo '<FORM METHOD="POST" ACTION="borrar2.php">Nombre<br>';
+
+//Creamos la sentencia SQL y la ejecutamos
+$sSQL="Select";
+$result=mysql_query($sSQL);
+
+echo '<select name="nombre">';
+
+//Mostramos los registros en forma de menú desplegable
+while ($row=mysql_fetch_array($result))
+{
+  echo '<option>'.$row["nombre"];
+}
+mysql_free_result($result)
+
+
 usuarios()
 eliminarUsuario()
 posts()
@@ -148,6 +168,11 @@ username: string
 usuarios: string
 logout: bool
 */
-
-
 ?>
+</body>
+
+</html>
+</select>
+<br>
+<INPUT TYPE="SUBMIT" value="Borrar">
+</FORM>
