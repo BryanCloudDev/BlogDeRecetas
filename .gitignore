@@ -29,4 +29,5 @@
 *.txt
 *.gif
 Controlador/images/
+Controlador/User_Images/
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
