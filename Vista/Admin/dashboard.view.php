@@ -133,6 +133,9 @@ main {
     </div>
 -->
 
+</body>
+
+</html>
 <?PHP
 
 /*
