@@ -178,14 +178,4 @@ logout: bool
 require 'footer.php';
 
 ?>
-<!--
-</select>
-<br>
-<INPUT TYPE="SUBMIT" value="Borrar">
-</FORM> -->
 
-
-
-</body>
-
-</html>
