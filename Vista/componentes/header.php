@@ -49,7 +49,7 @@
             </div>
             <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"])  ?>!</p>
             <a href="Controlador/crl.logout.php">Cerrar sesion</a>
-            <?php if(Usuarios::getUserRolById($_SESSION["user"]) === 2): ?>
+            <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2): ?>
                 <a href="dashboard.php">Ir a mi dashboard</a>
             <?php endif ?>
         </div>
