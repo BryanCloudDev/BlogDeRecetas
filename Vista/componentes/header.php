@@ -1,5 +1,8 @@
+<?php 
+ require_once "Modelos/funciones.user.php";
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,7 +30,8 @@
 <body>
     <!-- contenedor general de la pagina web -->
     <div class="wrap">
-        <!-- header -->
+<?php if(isset($_SESSION["user"])): ?>
+    <!-- header -->
     <header class="header">
         <!-- contenedor principal -->
     <div class="container">
@@ -41,10 +45,14 @@
         <!-- contenedor de los links -->
         <div class="links">
             <div class="imgContainer">
-                <a href="perfil.php"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="Foto de perfil"></a>
+                <a href="perfil.php"><img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]) ?>" alt="Foto de perfil"></a>
             </div>
-            <p>Hola <?php //echo $_POST["nombre"]; ?>!</p>
+            <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"])  ?>!</p>
             <a href="Controlador/crl.logout.php">Cerrar sesion</a>
+            <?php if(Usuarios::getUserRolById($_SESSION["user"]) === 2): ?>
+                <a href="dashboard.php">Ir a mi dashboard</a>
+            <?php endif ?>
         </div>
     </div>
     </header>
+<?php endif ?>

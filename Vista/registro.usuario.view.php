@@ -12,30 +12,30 @@
             <div class="form-group">
                 <!-- label nos permite poder linkear el texto a un input para que al darle click se nos seleccione el campo y asi poder escribir en el -->
                 <label for="usuario">Nombre</label>
-                <input id="usuario" type="text" name="nombre" class="form-control" placeholder="John Doe">
+                <input id="usuario" type="text" name="nombre" class="form-control" placeholder="John Doe" required>
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input id="usuario" type="text" name="username" class="form-control" placeholder="MiUsuario01">
+                <input id="usuario" type="text" name="username" class="form-control" placeholder="MiUsuario01" required>
             </div>
             <div class="form-group">
                 <label for="usuario">Correo</label>
-                <input id="usuario" type="text" name="correo" class="form-control" placeholder="micorreo@micorreo.com">
+                <input id="usuario" type="text" name="correo" class="form-control" placeholder="micorreo@micorreo.com" required>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
-                <input id="password" type="password" name="password" class="form-control" placeholder="********">
+                <input id="password" type="password" name="password" class="form-control" placeholder="********" required>
             </div>
             <div class="form-group">
                 <label for="foto">Subir foto de perfil</label>
                 <!-- este contenedor nos permite poder generar un contenedor para poder mover el elemento con la clase .custom-input-file de manera libre y asi poder ocultar el boton "SUBIR IMAGEN" y solo nos muestre el nombre del archivo -->
                 <div class="custom-input-file">
-                    <input type="file" id="foto" class="input-file" name="user_image">
+                    <input type="file" id="foto" class="input-file" name="user_image" required>
                 </div>
             </div>
             <div class="form-group">
                 <!-- este input:submit nos permite poder enviar el formulario atraves del metodo seleccionado, POST o GET -->
-                <input type="submit" class="btn btn-primary" value="Sign Up">
+                <input type="submit" class="btn btn-primary" value="Sign Up" required>
             </div>
         </form>
     </div>

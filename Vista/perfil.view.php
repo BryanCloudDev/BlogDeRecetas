@@ -5,7 +5,7 @@
         <section class="card">
             <div class="header">
                 <div class="profileContainer">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY2EKP-MTDTyv4CGl76i1hdceSUsocqwE-uA&usqp=CAU" alt="">
+                    <img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]) ?>" alt="foto de perfil">
                 </div>
             </div>
             <div class="body">
