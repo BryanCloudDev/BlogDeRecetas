@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de recetas </title>
     <!-- estilos de bootstrap y JS -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -23,34 +24,33 @@
     <!-- links de estilos css del proyecto -->
     <link rel="stylesheet" href="Vista/componentes/styles/styles.css">
     <!-- titulo -->
-    <title>Blog de recetas - Landing</title>
 </head>
 <body>
     <!-- contenedor general de la pagina web -->
     <div class="wrap">
-<?php if(isset($_SESSION["user"])): ?>
     <!-- header -->
     <header class="header">
         <!-- contenedor principal -->
-    <div class="container">
-        <div class="logo">
-            <a href="./index.php">Recetas en 5 minutos</a>
-        </div>
-        <!-- formulario de busqueda -->
-        <form action="resultados.php" method="POST">
-            <input type="search" name="search" placeholder="Buscar...">
-        </form>
-        <!-- contenedor de los links -->
-        <div class="links">
-            <div class="imgContainer">
-                <a href="perfil.php"><img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]);?>" alt="Foto de perfil"></a>
+        <div class="container">
+            <div class="logo">
+                <a href="./index.php">Recetas en 5 minutos</a>
             </div>
-            <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"]);?>!</p>
-            <a href="Controlador/crl.logout.php">Cerrar sesion</a>
-            <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2):?>
-                <a href="dashboard.php">Ir a dashboard</a>
+            <!-- formulario de busqueda -->
+            <?php if(isset($_SESSION["user"])): ?>
+            <form action="resultados.php" method="POST">
+                <input type="search" name="search" placeholder="Buscar...">
+            </form>
+            <!-- contenedor de los links -->
+            <div class="links">
+                <div class="imgContainer">
+                    <a href="perfil.php"><img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]);?>" alt="Foto de perfil"></a>
+                </div>
+                <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"]);?>!</p>
+                <a href="Controlador/crl.logout.php">Cerrar sesion</a>
+                <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2):?>
+                    <a href="dashboard.php">Ir a dashboard</a>
+                <?php endif; ?>
+            </div>
             <?php endif; ?>
         </div>
-    </div>
     </header>
-<?php endif; ?>

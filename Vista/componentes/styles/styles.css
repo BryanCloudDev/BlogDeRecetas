@@ -109,10 +109,12 @@ body {
 }
 
 .header .logo a {
+	display: inline-block;
 	text-decoration: none;
 	font-family: var(--secondary-font-family);
 	color: white;
 	font-size: 23px;
+	margin: 9px 8px;
 }
 
 /*estilos del main login*/
