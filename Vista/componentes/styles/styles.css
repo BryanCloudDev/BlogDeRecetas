@@ -239,6 +239,7 @@ body {
 /*Estilos del main del perfil*/
 
 .main.perfil .card {
+	margin-top: 30px;
 	width: 100%;
 	max-width: 820px;
 	background-color: white;
@@ -257,8 +258,10 @@ body {
 
 .main.perfil .card .profileContainer{
 	width: 100px;
+	height: 100px;
 	border-radius: 50%;
 	overflow: hidden;
+	display: flex;
 }
 
 .main.perfil .card .profileContainer img{
@@ -352,12 +355,12 @@ body {
 	border-radius: 5px;
 }
 
-.main.index h2 a {
+.main h2 a {
 	text-decoration: none;
 	color: black;
 }
 
-.main.index p a {
+.main p a {
 	text-decoration: none;
 	color: rgb(107, 107, 107);
 }
