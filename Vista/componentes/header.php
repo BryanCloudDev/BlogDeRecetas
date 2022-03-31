@@ -1,6 +1,4 @@
-<?php 
- require_once "Modelos/funciones.user.php";
-?>
+<?php require_once "Modelos/funciones.user.php";?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,19 +38,19 @@
         </div>
         <!-- formulario de busqueda -->
         <form action="resultados.php" method="POST">
-                <input type="search" name="search" placeholder="Buscar...">
+            <input type="search" name="search" placeholder="Buscar...">
         </form>
         <!-- contenedor de los links -->
         <div class="links">
             <div class="imgContainer">
-                <a href="perfil.php"><img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]) ?>" alt="Foto de perfil"></a>
+                <a href="perfil.php"><img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]);?>" alt="Foto de perfil"></a>
             </div>
-            <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"])  ?>!</p>
+            <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"]);?>!</p>
             <a href="Controlador/crl.logout.php">Cerrar sesion</a>
-            <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2): ?>
-                <a href="dashboard.php">Ir a mi dashboard</a>
-            <?php endif ?>
+            <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2):?>
+                <a href="dashboard.php">Ir a dashboard</a>
+            <?php endif; ?>
         </div>
     </div>
     </header>
-<?php endif ?>
+<?php endif; ?>
