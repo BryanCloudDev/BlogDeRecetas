@@ -370,30 +370,30 @@ body {
 	width: 100%;
 }
 
+.post .texto{
+	width: 100%;
+	margin-top: 20px;
+}
+.post .date{
+	color: #ccc;
+	font-size: 14px;
+}
+
 /*Estilos de paginacion*/
 
-.paginacion {
-	width: 100%;
-	margin-bottom: 10px;
-	padding: 15px;
-}
-.paginacion ul {
-	height: auto;
-	display: flex;
-	justify-content: center;
-}
-.paginacion ul li {
-	margin: 0px 5px;
-	list-style: none;
-}
-.paginacion a {
-	background-color: gray;
+.newPost {
+	display: inline-block;
+	margin: 20px;
 	text-decoration: none;
-	color: white;
+	color: #000;
+	background-color: #fff;
 	padding: 10px 20px;
+	border-radius: 5px;
+	transition: ease 0.5s;
 }
-.paginacion a:hover {
-	background-color: rgb(161, 161, 161);
+.newPost:hover{
+	color: #000;
+	background-color: rgb(219, 219, 219);
 }
 
 /*Estilos del footer*/
