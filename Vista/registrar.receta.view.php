@@ -1,25 +1,29 @@
 <?php require_once "./Vista/componentes/header.php" ?>
 
-<a href="index.php">Volver al sitio</a>
-<form name="form" action="registrar_receta.php" method="post" enctype="multipart/form-data">
-    
-    <div class="form-group-2">
-        <label for="tituloPost">Titulo de la receta</label>
-        <input type="text" name="tituloPost" id="tituloPost" required>    
+<main class="main crearReceta">
+    <div class="container">
+        <form name="form" action="registrar_receta.php" method="post" enctype="multipart/form-data">
+            <div class="rowi">
+                <h1>Crear receta</h1>
+            </div>
+            <div class="rowi">
+                <label for="tituloPost">Titulo de la receta</label>
+                <input type="text" name="tituloPost" id="tituloPost" required>    
+            </div>
+            <div class="rowi">
+                <label for="descripcionPost">Descripcion de la receta</label>
+                <input type="text" name="descripcionPost" id="descripcionPost" require>
+            </div>
+            <div class="rowi">
+                <label for="pasosPost">Pasos a seguir</label>
+                <textarea name="pasosPost" id="pasosPost" required></textarea>            
+            </div>
+            <div class="rowi">
+                <label for="pasosPost">Foto del platillo</label>
+                <input type="file" name="imagenPost">
+            </div>
+            <input type="submit" name="Publicar">
+        </form>
     </div>
-    <div class="form-group-2">
-        <label for="descripcionPost">Breve descripcion de la receta</label>
-        <input type="text" name="descripcionPost" id="descripcionPost" require>
-    </div>
-    <div class="form-group-2">
-        <label for="pasosPost">Paso a Paso</label>
-        <textarea name="pasosPost" id="pasosPost" required></textarea>            
-    </div>
-    <div class="form-group-2">
-        <input type="file" name="imagenPost">
-    </div>
-    
-    <input type="submit" name="Publicar">
-    
-</form>
+</main>
 <?php require_once "./Vista/componentes/footer.php" ?>

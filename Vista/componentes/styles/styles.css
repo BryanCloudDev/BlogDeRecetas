@@ -399,10 +399,65 @@ body {
 	background-color: rgb(219, 219, 219);
 }
 
+.crearReceta form{
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	margin: 10px 0px;
+}
+
+/* Estilos de crear receta*/
+
+.crearReceta form .rowi{
+	width: 100%;
+}
+.crearReceta form .rowi h1{
+	margin: 0;
+}
+
+.crearReceta form .rowi label{
+	margin: 20px 0px 10px 0px;
+	width: 100%;
+}
+
+.crearReceta form .rowi input[type="text"],
+.crearReceta form .rowi textarea{
+	width: 100%;
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.crearReceta form .rowi textarea,
+.crearReceta form .rowi input[type="text"]{
+	padding: 8px 8px;
+}
+.crearReceta form .rowi textarea{
+	max-height: 300px;
+	min-height: 300px;
+}
+
+.crearReceta form .rowi input[type="file"]{
+	margin-bottom: 20px;
+}
+
+.crearReceta form  input[type="submit"]{
+	display: inline-block;
+	width: 200px;
+	margin: 0 auto;
+	border: none;
+	padding: 6px;
+	border-radius: 5px;
+	transition: ease 0.5s;
+}
+
+
+/* Estilos del dashboard*/
 .dashboard .container {
 	justify-content: space-between;
 }
-/* Estilos del dashboard*/
 
 .dashboard .users,
 .dashboard .recipes{
