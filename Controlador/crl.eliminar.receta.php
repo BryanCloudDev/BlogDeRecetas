@@ -1,10 +1,13 @@
 <?php
-
+session_start();
 require_once('./Controlador/crl.config.php');
 require_once('./Modelos/funciones.receta.php');
 require_once('./Modelos/funciones.user.php');
 
-function deleteReceta($id){
+function deleteReceta($id,$recetas){
+    if($recetas == []){
+        return "No hay recetas de momento";
+    }
     if(isset($id)){
         Receta::deleteById($id);
     }
@@ -33,7 +36,6 @@ $recetas = Receta::getAllRecetas();
 
 $recetaId = isset($_GET['recetaid']) ? $_GET['recetaid'] : NULL;
 $userId = isset($_GET['userid']) ? $_GET['userid'] : NULL;
-deleteReceta($recetaId);
 deleteUserById($userId);
 
 ?>

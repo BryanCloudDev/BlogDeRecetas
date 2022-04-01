@@ -402,6 +402,7 @@ body {
 .dashboard .container {
 	justify-content: space-between;
 }
+/* Estilos del dashboard*/
 
 .dashboard .users,
 .dashboard .recipes{
@@ -411,6 +412,26 @@ body {
 	border-radius: 5px;
 	display: flex;
 	flex-wrap: wrap;
+	margin: 10px;
+}
+
+.dashboard .users{
+	width: 40%;
+}
+
+.dashboard .users .row .links .disabled{
+	background-color: #ccc;
+}
+
+.dashboard .users .row .links a{
+	width: 100%;
+}
+.dashboard .recipes{
+	width: 60%;
+}
+
+.dashboard .recipes{
+	width: 100%;
 }
 
 .dashboard h2,
@@ -420,12 +441,13 @@ body {
 .dashboard .row{
 	display: flex;
 	margin: 10px 0px;
+	align-items: baseline;
 }
 
 .dashboard .row h2,
 .dashboard .row .links{
-	width: 50%;
 	font-size: 16px;
+	width: 50%;
 }
 .dashboard .row .links{
 	display: flex;
@@ -434,7 +456,7 @@ body {
 .dashboard .row .links a{
 	width: 50%;
 	margin-right:5px;
-	padding: 5px 10px;
+	padding: 5px 6px;
 	border-radius: 5px;
 	text-decoration: none;
 }
