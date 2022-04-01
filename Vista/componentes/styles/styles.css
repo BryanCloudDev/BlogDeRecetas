@@ -508,6 +508,20 @@ body {
 	display: flex;
 }
 
+.dashboard .row .links form{
+	width: 50%;
+	margin-right:5px;
+	text-decoration: none;
+}
+
+.dashboard .row .links input[type="submit"]{
+	width: 100%;
+	border-radius: 5px;
+	height: 100%;
+	outline: none;
+	border: none;
+}
+
 .dashboard .row .links a{
 	width: 50%;
 	margin-right:5px;
@@ -521,7 +535,7 @@ body {
 	color: white;
 }
 
-.dashboard .row .links a:nth-child(2){
+.dashboard .row .links input[type="submit"]{
 	background-color: blue;
 	color: white;
 }

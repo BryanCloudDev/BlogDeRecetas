@@ -28,7 +28,10 @@
                     <h2><?= $receta['tituloPost']?></h2>
                     <div class="links">
                         <a href="dashboard.php?recetaid=<?= $receta['idReceta']?>">Eliminar</a>
-                        <a href="actualizar.php?recetaid=<?= $receta['idReceta']?>">Actualizar</a>
+                        <form action="actualizar.php">
+                            <input type="hidden" value="<?= $receta['idReceta']?>" name="recetaid">
+                            <input type="submit" value="actualizar">
+                        </form>
                     </div>
                 </div>
             <?php endforeach;?>
