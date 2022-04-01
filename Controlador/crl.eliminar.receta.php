@@ -10,6 +10,7 @@ function deleteReceta($id,$recetas){
     }
     if(isset($id)){
         Receta::deleteById($id);
+        header("Location: dashboard.php");
     }
 }
 
