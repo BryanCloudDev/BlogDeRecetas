@@ -174,7 +174,7 @@ username: string
 usuarios: string
 logout: bool
 */
-require 'footer.php';
+require './Vista/componentes/footer.php';
 
 ?>
 

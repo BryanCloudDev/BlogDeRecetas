@@ -1,6 +1,6 @@
 <?php
 
-//require_once "../Controlador/crl.config.php";
+require_once "./Controlador/crl.config.php";
 
 //Copiamos y pegamos el codigo que habia sudido el profe XD
 //Bienvenidos al mundo de la Programacion, en donde no hay codigo tuyo o mio, sino NUESTRO XD
