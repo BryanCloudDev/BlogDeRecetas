@@ -2,7 +2,8 @@
 
 $conn = Conexion::conn();
 #clase que modifica usuarios
-class Usuarios{
+class Usuarios
+{
     #propiedades necesarias
     public string $nombre;
     public string $username;
@@ -91,5 +92,15 @@ class Usuarios{
         $statement->closeCursor();
         return $resultado["rol"];
     }
+
+    static public function deleteUserById($id)
+        {
+            global $conn;
+            $query = "DELETE * FROM usuarios WHERE idUsuario = :id";
+            $stmt = $conn->prepare($query);
+            $stmt->bindValue(":id",$id);
+            $stmt->execute();
+            $stmt->closeCursor();
+        }
 
 }
