@@ -28,7 +28,7 @@
                     <h2><?= $receta['tituloPost']?></h2>
                     <div class="links">
                         <a href="dashboard.php?recetaid=<?= $receta['idReceta']?>">Eliminar</a>
-                        <a href="dashboard.php?recetaid=<?= $receta['idReceta']?>">Actualizar</a>
+                        <a href="actualizar.php?recetaid=<?= $receta['idReceta']?>">Actualizar</a>
                     </div>
                 </div>
             <?php endforeach;?>
