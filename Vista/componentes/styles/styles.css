@@ -382,7 +382,7 @@ body {
 	font-size: 14px;
 }
 
-/*Estilos de paginacion*/
+/*Estilos de boton agregar*/
 
 .newPost {
 	display: inline-block;
@@ -397,6 +397,55 @@ body {
 .newPost:hover{
 	color: #000;
 	background-color: rgb(219, 219, 219);
+}
+
+.dashboard .container {
+	justify-content: space-between;
+}
+
+.dashboard .users,
+.dashboard .recipes{
+	background-color: #fff;
+	padding: 20px;
+	text-align: center;
+	border-radius: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.dashboard h2,
+.dashboard .row{
+	width: 100%;
+}
+.dashboard .row{
+	display: flex;
+}
+
+.dashboard .row h2,
+.dashboard .row .links{
+	width: 50%;
+	font-size: 16px;
+}
+.dashboard .row .links{
+	display: flex;
+}
+
+.dashboard .row .links a{
+	width: 50%;
+	margin-right:5px;
+	padding: 5px 10px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.dashboard .row .links a:nth-child(1){
+	background-color: red;
+	color: white;
+}
+
+.dashboard .row .links a:nth-child(2){
+	background-color: blue;
+	color: white;
 }
 
 /*Estilos del footer*/
