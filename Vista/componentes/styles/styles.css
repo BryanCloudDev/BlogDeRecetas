@@ -419,6 +419,7 @@ body {
 }
 .dashboard .row{
 	display: flex;
+	margin: 10px 0px;
 }
 
 .dashboard .row h2,

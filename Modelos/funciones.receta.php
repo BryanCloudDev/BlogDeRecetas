@@ -1,5 +1,7 @@
 <?php
 
+require_once('./Controlador/crl.config.php');
+
 $conn = Conexion::conn();
 class Receta
     {

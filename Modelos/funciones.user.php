@@ -1,5 +1,7 @@
 <?php 
 
+require_once('./Controlador/crl.config.php');
+
 $conn = Conexion::conn();
 #clase que modifica usuarios
 class Usuarios
@@ -96,7 +98,7 @@ class Usuarios
     static public function deleteUserById($id)
         {
             global $conn;
-            $query = "DELETE * FROM usuarios WHERE idUsuario = :id";
+            $query = "DELETE FROM usuarios WHERE idUsuario = :id";
             $stmt = $conn->prepare($query);
             $stmt->bindValue(":id",$id);
             $stmt->execute();

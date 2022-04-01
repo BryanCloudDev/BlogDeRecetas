@@ -1,26 +1,39 @@
 <?php
 
-// require_once "./crl.isuser.php";
-require_once "./crl.config.php";
-require_once "../Modelos/funciones.receta.php";
+require_once('./Controlador/crl.config.php');
+require_once('./Modelos/funciones.receta.php');
+require_once('./Modelos/funciones.user.php');
 
+function deleteReceta($id){
+    if(isset($id)){
+        Receta::deleteById($id);
+    }
+}
 
-$conn = Conexion::conn();
-$query = "SELECT idReceta FROM receta WHERE idReceta = 2";
-$stmt = $conn->prepare($query);
-$stmt->execute();
+function getUsers(){
+    $conn = Conexion::conn();
+    $query = "SELECT * FROM usuarios";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $resultados;
+}
 
-$resultados = $stmt->fetch(PDO::FETCH_ASSOC);
-
-$stmt->closeCursor();
-
-    if(isset($resultados))
+function deleteUserById($id)
+{
+    if(isset($id))
         {
-            $delete_receta = Receta::deleteById($resultados["idReceta"]);
+            Usuarios::deleteUserById($id);
         }
-    else
-        {
-            header("Location: index.php");
-        }
+}
+
+$users = getUsers();
+$recetas = Receta::getAllRecetas();
+
+$recetaId = isset($_GET['recetaid']) ? $_GET['recetaid'] : NULL;
+$userId = isset($_GET['userid']) ? $_GET['userid'] : NULL;
+deleteReceta($recetaId);
+deleteUserById($userId);
 
 ?>
