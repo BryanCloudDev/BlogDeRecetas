@@ -1,22 +1,26 @@
 <?php
 
-require_once "./Controlador/crl.isuser.php";
-require_once "./Controlador/crl.config.php";
+// require_once "./crl.isuser.php";
+require_once "./crl.config.php";
 require_once "../Modelos/funciones.receta.php";
 
 
+$conn = Conexion::conn();
+$query = "SELECT idReceta FROM receta WHERE idReceta = 2";
+$stmt = $conn->prepare($query);
+$stmt->execute();
 
-    if(isset($_POST["idReceta"]))
+$resultados = $stmt->fetch(PDO::FETCH_ASSOC);
+
+$stmt->closeCursor();
+
+    if(isset($resultados))
         {
-            ["idReceta" => $idReceta] = $_POST;
+            $delete_receta = Receta::deleteById($resultados["idReceta"]);
         }
     else
         {
             header("Location: index.php");
         }
-
-$delete_receta = Receta::deleteById($_POST);
-
-echo $delete_receta;
 
 ?>
