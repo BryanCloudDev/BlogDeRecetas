@@ -1,21 +1,18 @@
 <?php require("./Vista/componentes/header.php");?>
-
-<!-- Tu codigo HTML va aca-->
-
-
-<!--aqui la variable receta se manda a un foreach para que se pueda mostrar en pantalla dato por dato -->
-<?php foreach($recetas as $receta): ?>
-    <div>
-        <div>
+<main class="main">
+    <div class="container">
+    <?php foreach($recetas as $receta): ?>
+    <article class="post">
+        <div class="imgContainer">
             <img src="<?php echo $receta["imagenPost"]?>">
         </div>
-        <div>
-        <h1><?php echo $receta['tituloPost']?></h1>
-        <span>Este post fue creado el <?php echo $receta["fecha"]?> </span>
+        <div class="texto">
+            <h2><a href="receta.php?id=<?= $receta["idReceta"] ?>"><?= $receta["tituloPost"] ?></a></h2>
+            <p class="date">Creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
+            <p><?= $receta["descripcionPost"] ?></p>
         </div>
-        <p> <?php echo $receta["pasosPost"]?> </p>
-        </div>
-    </div>
+    </article>
 <?php endforeach; ?>
-
+    </div>
+</main>
 <?php require("./Vista/componentes/footer.php"); ?>
