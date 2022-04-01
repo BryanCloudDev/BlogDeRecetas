@@ -4,6 +4,10 @@ require_once('./Controlador/crl.config.php');
 require_once('./Modelos/funciones.receta.php');
 require_once('./Modelos/funciones.user.php');
 
+if(!(Usuarios::getUserRolById($_SESSION["user"]) == 2)){
+    header("Location: index.php");
+}
+
 function deleteReceta($id,$recetas){
     if($recetas == []){
         return "No hay recetas de momento";
