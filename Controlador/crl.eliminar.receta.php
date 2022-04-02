@@ -13,6 +13,7 @@ function deleteReceta($id,$recetas){
         return "No hay recetas de momento";
     }
     if(isset($id)){
+        DeleteImageReceta($id);
         Receta::deleteById($id);
         header("Location: dashboard.php");
     }

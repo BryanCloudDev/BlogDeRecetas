@@ -137,6 +137,17 @@ class Receta
                 $statement->execute();
                 $statement->closeCursor();
             }
+
+        public static function getImagePathById($id){
+            global $conn;
+            $query = "SELECT imagenPost FROM receta WHERE idReceta = :id";
+            $statement = $conn->prepare($query);
+            $statement->bindValue(":id",$id);
+            $statement->execute();
+            $result = $statement->fetch(PDO::FETCH_ASSOC);
+            $statement->closeCursor();
+            return $result["imagenPost"];
+        }
     }
 
 
@@ -157,5 +168,11 @@ function randomDIR($n)
         return $result;
     }
 
-
-?>
+function DeleteImageReceta($id){
+    $recetaImage = Receta::getImagePathById($id);
+    unlink($recetaImage);
+    $recetaImage = explode("/",$recetaImage);
+    array_pop($recetaImage);
+    $recetaImage = implode("/",$recetaImage);
+    rmdir($recetaImage);
+}
