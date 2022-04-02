@@ -2,7 +2,7 @@
     //traemos la clase de usuarios
     require('./Modelos/funciones.user.php');
     //verificamos que el usuario venga de la pagina dashboard de otra manera sera rdireccionado al index
-    if($_SERVER['HTTP_REFERER'] == __DIR__ . 'dashboard.php'){
+    if($_SERVER['HTTP_REFERER'] == 'http://localhost/BlogDeRecetas/dashboard.php'){
         //una vez este validado traemos en controlador que tiene la sesion del usuario
         //y comparamos para verificar que sea un admin
         require('./Controlador/crl.actualizar.php');
