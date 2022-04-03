@@ -291,6 +291,16 @@ body {
 .main.perfil .container{
 	flex-wrap: wrap;
 }
+
+.main.perfil .info{
+	text-align: center;
+	width: 100%;
+}
+
+.main.perfil .info h1,
+.main.perfil .info h2{
+	font-size: 20px;
+}
 .main.perfil .post{
 	width: 100%;
 }
