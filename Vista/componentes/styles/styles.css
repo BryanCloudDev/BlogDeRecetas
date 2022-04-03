@@ -419,6 +419,13 @@ body {
 	margin: 10px 0px;
 }
 
+.tiny_image{
+	width: 200px;
+	height: 200px;
+	object-fit: scale-down;
+	display: block;
+}
+
 /* Estilos de crear receta*/
 
 .crearReceta form .rowi{
