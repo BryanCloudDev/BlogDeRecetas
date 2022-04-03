@@ -360,7 +360,7 @@ body {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	background-color: white;
+	background-color: #fff;
 	padding: 20px 50px;
 	border-radius: 5px;
 }
@@ -380,7 +380,10 @@ body {
 }
 
 .post .imgContainer img {
-	width: 100%;
+	width: 90%;
+	height: 250px;
+	object-fit: cover;
+	border-radius: 4px;
 }
 
 .post .texto{
@@ -388,7 +391,7 @@ body {
 	margin-top: 20px;
 }
 .post .date{
-	color: #ccc;
+	color: #949494;
 	font-size: 14px;
 }
 
