@@ -33,6 +33,7 @@ function deleteUserById($id)
 {
     if(isset($id))
         {
+            DeleteImageUser($id);
             Usuarios::deleteUserById($id);
             header("Location: dashboard.php");
         }

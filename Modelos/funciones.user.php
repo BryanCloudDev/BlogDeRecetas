@@ -130,3 +130,12 @@ class Usuarios
         }
 
 }
+
+function DeleteImageUser($id){
+    $recetaImage = Usuarios::getUserImagePathById($id);
+    unlink($recetaImage);
+    $recetaImage = explode("/",$recetaImage);
+    array_pop($recetaImage);
+    $recetaImage = implode("/",$recetaImage);
+    rmdir($recetaImage);
+}
