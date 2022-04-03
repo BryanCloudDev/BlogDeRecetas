@@ -105,4 +105,26 @@ class Usuarios
             $stmt->closeCursor();
         }
 
+    static public function getUserNameId($id)
+        {
+        global $conn;
+        $query = "SELECT nombre FROM usuarios WHERE idUsuario = :id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+        $stmt->closeCursor();
+        }
+    static public function getUserEmailById($id)
+        {
+        global $conn;
+        $query = "SELECT correo FROM usuarios WHERE idUsuario = :id";
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":id",$id);
+        $statement->execute();
+        
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $resultado["username"];
+        }
+
 }
