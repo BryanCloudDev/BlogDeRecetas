@@ -25,7 +25,7 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
         move_uploaded_file($imagenPost["tmp_name"],$imagenPostPath);
     }
 
-    session_start();
+    //session_start(); Este volado daba error asi que lo comentarie porque ya existe una sesion activa en el header :v
     $id_usuario = $_SESSION["user"];
 
     $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $imagenPostPath,$spanishDate,$id_usuario);
