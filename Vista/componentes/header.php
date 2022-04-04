@@ -1,6 +1,4 @@
-<?php require_once "Modelos/funciones.user.php";
-    $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
-?>
+<?php require_once "Modelos/funciones.user.php";?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -38,7 +36,9 @@
                 <a href="./index.php">Recetas en 5 minutos</a>
             </div>
             <!-- formulario de busqueda -->
-            <?php if(isset($_SESSION["user"])): ?>
+            <?php if(isset($_SESSION["user"])):
+                $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
+            ?>
             <form action="resultados.php" method="POST">
                 <input type="search" name="search" placeholder="Buscar...">
             </form>

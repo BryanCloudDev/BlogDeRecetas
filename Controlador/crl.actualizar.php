@@ -9,10 +9,6 @@ require_once "./Modelos/funciones.referer.php";
 if(isset($_POST["recetaid"])){
     $receta = Receta::getRecetaById($_POST["recetaid"]);
 }else if(isset($_POST["publicar"])){
-    echo "<pre>";
-    print_r($_POST);
-    print_r($_FILES);
-    echo "</pre>";
     
     ["tituloPost" => $title,
      "descripcionPost" => $descripcion,
