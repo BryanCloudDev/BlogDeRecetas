@@ -7,12 +7,14 @@
                 <div class="row">
                 <h2><?= $user['username']?></h2>
                 <div class="links">
+
                     <?php if($user['idUsuario'] == $_SESSION["user"]):?>
-                        <a class="disabled" href="">Eliminar</a>
+                        <a class="disable" href="">Eliminar</a>
                     <?php else:?>
                         <a href="dashboard.php?userid=<?= $user['idUsuario']?>">Eliminar</a>
                     <?php endif;?>
                 </div>
+                
             </div>
             <?php endforeach;?>
         </section>
@@ -30,7 +32,7 @@
                         <a href="dashboard.php?recetaid=<?= $receta['idReceta']?>">Eliminar</a>
                         <form action="actualizar.php" method="post">
                             <input type="hidden" value="<?= $receta['idReceta']?>" name="recetaid">
-                            <input type="submit" value="actualizar">
+                            <input type="submit" value="Actualizar">
                         </form>
                     </div>
                 </div>
