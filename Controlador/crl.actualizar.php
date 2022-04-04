@@ -6,7 +6,7 @@ require_once "./Modelos/funciones.referer.php";
 
 #tu backend ira aca
 
-if(isset($_POST["recetaid"]) && $_SERVER["HTTP_REFERER"] == getReferer("dashboard.php")){
+if(isset($_POST["recetaid"])){
     $receta = Receta::getRecetaById($_POST["recetaid"]);
 }else if(isset($_POST["publicar"])){
     echo "<pre>";
