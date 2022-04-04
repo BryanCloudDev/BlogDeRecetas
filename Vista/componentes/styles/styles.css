@@ -291,6 +291,16 @@ body {
 .main.perfil .container{
 	flex-wrap: wrap;
 }
+
+.main.perfil .info{
+	text-align: center;
+	width: 100%;
+}
+
+.main.perfil .info h1,
+.main.perfil .info h2{
+	font-size: 20px;
+}
 .main.perfil .post{
 	width: 100%;
 }
@@ -350,7 +360,7 @@ body {
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
-	background-color: white;
+	background-color: #fff;
 	padding: 20px 50px;
 	border-radius: 5px;
 }
@@ -371,6 +381,7 @@ body {
 
 .post .imgContainer img {
 	width: 100%;
+	border-radius: 4px;
 }
 
 .post .texto{
@@ -378,7 +389,7 @@ body {
 	margin-top: 20px;
 }
 .post .date{
-	color: #ccc;
+	color: #949494;
 	font-size: 14px;
 }
 
@@ -407,6 +418,13 @@ body {
 	padding: 20px;
 	border-radius: 5px;
 	margin: 10px 0px;
+}
+
+.tiny_image{
+	width: 200px;
+	height: 200px;
+	object-fit: scale-down;
+	display: block;
 }
 
 /* Estilos de crear receta*/

@@ -9,5 +9,8 @@ require_once "Modelos/funciones.user.php";
 $id = $_SESSION["user"];
 
 $recetas = Receta::getRecetaByUserId($id);
+$username = Usuarios::getUsernameById($id);
+$nombre = Usuarios::getUserNombreById($id);
+$correo = Usuarios::getUserEmailById($id);
 
 ?>

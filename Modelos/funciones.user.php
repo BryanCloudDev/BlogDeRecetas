@@ -105,4 +105,37 @@ class Usuarios
             $stmt->closeCursor();
         }
 
+    static public function getUserNombreById($id)
+        {
+        global $conn;
+        $query = "SELECT nombre FROM usuarios WHERE idUsuario = :id";
+        $stmt = $conn->prepare($query);
+        $stmt->bindValue(":id",$id);
+        $stmt->execute();
+        $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->closeCursor();
+        return $resultado['nombre'];
+        }
+
+    static public function getUserEmailById($id)
+        {
+        global $conn;
+        $query = "SELECT correo FROM usuarios WHERE idUsuario = :id";
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":id",$id);
+        $statement->execute();
+        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
+        $statement->closeCursor();
+        return $resultado["correo"];
+        }
+
+}
+
+function DeleteImageUser($id){
+    $recetaImage = Usuarios::getUserImagePathById($id);
+    unlink($recetaImage);
+    $recetaImage = explode("/",$recetaImage);
+    array_pop($recetaImage);
+    $recetaImage = implode("/",$recetaImage);
+    rmdir($recetaImage);
 }

@@ -12,8 +12,8 @@ class Receta
         public string $descripcionReceta;
         public string $pasosReceta;
         public string $imagenReceta;
-        public string $dateReceta;
-        public int $id;
+        public ?string $dateReceta;
+        public ?int $id;
         public object $db;
 
 #Declaracion del metodo constructor para pasar argumentos
@@ -120,6 +120,7 @@ class Receta
                 $statement->bindValue(":id",$id);
                 $statement->execute();
                 $statement->closeCursor();
+                $conn = null;
             }
 
 #Este bloque actualiza una receta buscada por ID dentro de la base de datos
@@ -133,6 +134,7 @@ class Receta
                 $statement->bindValue(":descripcionPost",$this->descripcionReceta);
                 $statement->bindValue(":imagenPost",$this->imagenReceta);
                 $statement->bindValue(":pasosPost",$this->pasosReceta);
+                $statement->bindValue(":id",$id);
                 
                 $statement->execute();
                 $statement->closeCursor();

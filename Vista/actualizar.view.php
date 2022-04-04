@@ -2,7 +2,7 @@
 
 <main class="main crearReceta">
     <div class="container">
-        <form name="form" action="registrar_receta.php" method="post" enctype="multipart/form-data">
+        <form name="form" action="actualizar.php" method="post" enctype="multipart/form-data">
             <div class="rowi">
                 <h1>Actualizar receta</h1>
             </div>
@@ -16,13 +16,15 @@
             </div>
             <div class="rowi">
                 <label for="pasosPost">Pasos a seguir</label>
-                <textarea name="pasosPost" id="pasosPost" required value="<?= $receta['pasosPost']?>"></textarea>            
+                <textarea name="pasosPost" id="pasosPost" required><?= $receta["pasosPost"] ?></textarea>            
             </div>
             <div class="rowi">
                 <label for="pasosPost">Foto del platillo</label>
+                <img src="<?= $receta["imagenPost"] ?>" alt="Imagen Ingresada" class="tiny_image">
                 <input type="file" name="imagenPost">
             </div>
-            <input type="submit" name="Publicar" value="Actualizar">
+            <input type="hidden" name="actualizarId" value="<?= $_POST["recetaid"] ?>">
+            <input type="submit" name="publicar">
         </form>
     </div>
 </main>
