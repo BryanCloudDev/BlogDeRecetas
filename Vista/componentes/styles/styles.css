@@ -380,9 +380,7 @@ body {
 }
 
 .post .imgContainer img {
-	width: 90%;
-	height: 250px;
-	object-fit: cover;
+	width: 100%;
 	border-radius: 4px;
 }
 

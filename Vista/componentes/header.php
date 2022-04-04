@@ -1,4 +1,6 @@
-<?php require_once "Modelos/funciones.user.php";?>
+<?php require_once "Modelos/funciones.user.php";
+    $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -43,7 +45,7 @@
             <!-- contenedor de los links -->
             <div class="links">
                 <div class="imgContainer">
-                    <a href="perfil.php"><img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]);?>" alt="Foto de perfil"></a>
+                    <a href="perfil.php"><img src="<?= str_contains($userImage,"/") ? $userImage : "./Controlador/default/guest.webp" ?>" alt="Foto de perfil"></a>
                 </div>
                 <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"]);?>!</p>
                 <a href="Controlador/crl.logout.php">Cerrar sesion</a>
