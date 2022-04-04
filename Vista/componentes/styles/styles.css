@@ -1,5 +1,13 @@
 /*Aca creamos variables para poder hacer cambios mas rapidos si asi se desea, se puede utilizar dede colore, tipos de letra y medidas como en pixeles, em, rem*/
 
+#button_share img {
+	width: 36px;
+	box-shadow: 0;
+	padding: 6px;
+	display: inline;
+	border: 0;
+	}
+	
 :root {
 	--main-bg-color: #2ba05a;
 	/* background-color: #36c970; */

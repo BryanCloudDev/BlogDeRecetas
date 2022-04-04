@@ -14,6 +14,7 @@
                     <p class="date">Creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
                     <p><?= $receta["descripcionPost"] ?></p>
                 </div>
+                <?php require ("./Vista/share.view.php");?>
             </article>
         <?php endforeach ?>
         <a class="newPost" href="registrar_receta.php">Crear Post <i class="fa fa-plus" aria-hidden="true"></i></a>
