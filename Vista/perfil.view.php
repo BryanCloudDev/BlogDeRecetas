@@ -1,11 +1,13 @@
-<?php require("./Vista/componentes/header.php");?>
+<?php require("./Vista/componentes/header.php");
+    $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
+?>
 
 <main class="main perfil">
     <div class="container">
         <section class="card">
             <div class="header">
                 <div class="profileContainer">
-                    <img src="<?= Usuarios::getUserImagePathById($_SESSION["user"]) ?>" alt="foto de perfil">
+                    <img src="<?= str_contains($userImage,"/") ? $userImage : "./Controlador/default/guest.webp" ?>" alt="foto de perfil">
                 </div>
             </div>
             <div class="body">
