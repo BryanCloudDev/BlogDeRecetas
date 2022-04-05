@@ -1,8 +1,9 @@
 <?php require("./Vista/componentes/header.php");?>
 <!-- contenedor main del index -->
 <main class="main index">
-    <!-- contenedor para centrar el sitio web -->
+    <!-- Contenedor para centrar el sitio web -->
     <div class="container">
+    <a class="newPost" href="registrar_receta.php">Crear Post <i class="fa fa-plus" aria-hidden="true"></i></a>
         <!-- ciclo para mandar a llamra los posts de los usuarios -->
         <?php foreach($recetas as $receta): ?>
             <article class="post">
@@ -17,7 +18,6 @@
                 <?php require ("./Vista/share.view.php");?>
             </article>
         <?php endforeach ?>
-        <a class="newPost" href="registrar_receta.php">Crear Post <i class="fa fa-plus" aria-hidden="true"></i></a>
     </div>
 </main>
 <?php require("./Vista/componentes/footer.php"); ?>
