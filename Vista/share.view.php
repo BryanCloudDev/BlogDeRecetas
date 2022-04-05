@@ -6,24 +6,17 @@
 ?>
 
 <!-- <a> Tab para el Blog de Recetas -->
-<div id="button_share">
-<div class="space">
-  </div>
+<div  id="button_share">
     <!-- Email Social Media -->
-    <a href="mailto:?Subject=<?=$site_title?>&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 <?=$site_url?>">
+    <a style="margin:5px;" href="mailto:?Subject=<?=$site_title?>&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 <?=$site_url?>">
         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email share link" />
     </a>
-    <div class="space">
-  </div>    <!-- Facebook Social Media -->
-    <a href="http://www.facebook.com/sharer.php?u=<?=$site_url?>" target="_blank">
-        <img src="https://spng.pngfind.com/pngs/s/439-4392840_facebook-link-icon-image-dynamic-spectrum-alliance-pink.png" alt="Facebook share link" />
+    <!-- Facebook Social Media -->
+    <a style="margin:5px;" href="http://www.facebook.com/sharer.php?u=<?=$site_url?>" target="_blank">
+        <img src="https://www.freepnglogos.com/uploads/facebook-logo-icon/facebook-logo-icon-file-facebook-icon-svg-wikimedia-commons-4.png" alt="Facebook share link" />
     </a>
-    <div class="space">
-  </div>
     <!-- Twitter Social Media -->
-    <a href="https://twitter.com/share?url=<?=$site_url?>&amp;text=Simple%20Share%20Buttons&amp;hashtags=simplesharebuttons" target="_blank">
-        <img src="https://img.icons8.com/color/344/twitter--v1.png" alt="Twitter share link" />
+    <a style="margin:5px;" href="https://twitter.com/share?url=<?=$site_url?>&amp;text=Recetas%20en%205min&amp;hashtags=RecetasEn5min" target="_blank">
+        <img src="https://www.iconpacks.net/icons/2/free-twitter-logo-icon-2429-thumb.png" alt="Twitter share link" />
     </a>
-    <div class="space">
-  </div>
 </div>
