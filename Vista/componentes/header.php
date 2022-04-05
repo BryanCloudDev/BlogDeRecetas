@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog de recetas </title>
+    <title>Recetas en 5 Min⌚</title>
     <!-- estilos de bootstrap y JS -->
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -33,7 +33,7 @@
         <!-- contenedor principal -->
         <div class="container">
             <div class="logo">
-                <a href="./index.php">Recetas en 5 minutos</a>
+                <a href="./index.php">Recetas en 5 min ⌚</a>
             </div>
             <!-- formulario de busqueda -->
             <?php if(isset($_SESSION["user"])):
@@ -48,10 +48,10 @@
                     <a href="perfil.php"><img src="<?= str_contains($userImage,"/") ? $userImage : "./Controlador/default/guest.webp" ?>" alt="Foto de perfil"></a>
                 </div>
                 <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"]);?>!</p>
-                <a href="Controlador/crl.logout.php">Cerrar sesion</a>
                 <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2):?>
                     <a href="dashboard.php">Ir a dashboard</a>
                 <?php endif; ?>
+                <a href="Controlador/crl.logout.php">Cerrar sesion</a>
             </div>
             <?php endif; ?>
         </div>
