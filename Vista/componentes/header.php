@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="Vista/componentes/styles/normalize.css">
     <!-- links de estilos css del proyecto -->
     <link rel="stylesheet" href="Vista/componentes/styles/styles.css">
+    <link rel="stylesheet" href="Vista/componentes/assets/css/styles.css">
     <!-- titulo -->
 </head>
 <body>

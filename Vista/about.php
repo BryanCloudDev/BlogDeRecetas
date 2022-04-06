@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -64,9 +65,11 @@
             <!--===== ABOUT =====-->
             <section class="about section " id="about">
                 <h2 class="section-title">About</h2>
+                <div class="about__container bd-grid">
                 <div>
                     <h2 class="about__subtitle">Since 2K22</h2>
                     <p class="about__text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate cum expedita quo culpa tempora, assumenda, quis fugiat ut voluptates soluta, aut earum nemo recusandae cumque perferendis! Recusandae alias accusamus atque.</p>           
+                </div>
                 </div>
                 <br>
                 <br>
@@ -87,7 +90,7 @@
             <section class="about section " id="about">
                 <div class="about__container bd-grid">
                     <div class="about__img">
-                        <img src="./componentes/assets/img/about.jpg" alt="">
+                        <img src="./componentes/assets/img/perfil.jpeg" alt="">
                     </div>
                     
                     <div>
