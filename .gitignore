@@ -31,4 +31,7 @@
 Controlador/images/
 Controlador/User_Images/
 *.idea
+/vendor
+*.json
+*.lock
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode
