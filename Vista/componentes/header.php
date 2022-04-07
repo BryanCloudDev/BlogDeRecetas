@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="Vista/componentes/styles/normalize.css">
     <!-- links de estilos css del proyecto -->
     <link rel="stylesheet" href="Vista/componentes/styles/styles.css">
+    <link rel="javascript" href="Vista/componentes/styles/javascript.js"
     <!-- titulo -->
 </head>
 <body>
@@ -35,6 +36,7 @@
             <div class="logo">
                 <a href="./index.php">Recetas en 5 min ⌚</a>
             </div>
+            <button id='button-darkMode' class="button-darkMode" role="button" onclick="myDarkMode()">Dark Mode</button>
             <!-- formulario de busqueda -->
             <?php if(isset($_SESSION["user"])):
                 $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
