@@ -3,7 +3,7 @@
 <main class="main index">
     <!-- Contenedor para centrar el sitio web -->
     <div class="container">
-    <a class="newPost" href="registrar_receta.php">Crear Post <i class="fa fa-plus" aria-hidden="true"></i></a>
+    <a class="newPost" href="registrar_receta.php"> <i class="button-crearReceta" aria-hidden="true">Crear Receta</i></a>
         <!-- ciclo para mandar a llamra los posts de los usuarios -->
         <?php foreach($recetas as $receta): ?>
             <article class="post">
