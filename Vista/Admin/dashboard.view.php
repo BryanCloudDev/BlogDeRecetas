@@ -1,4 +1,7 @@
-<?php require("./Vista/componentes/header.php");?>
+<?php 
+include 'rutas.php';
+rutaHeader; 
+?>
 <main class="main dashboard">
     <div class="container">
         <section class="users">

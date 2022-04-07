@@ -1,4 +1,7 @@
-<?php require_once "./Vista/componentes/header.php" ?>
+<?php 
+include 'rutas.php';
+rutaHeader; 
+?>
 
 <main class="main crearReceta">
     <div class="container">

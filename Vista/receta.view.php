@@ -1,4 +1,7 @@
-<?php require("./Vista/componentes/header.php"); ?>
+<?php 
+include 'rutas.php';
+rutaHeader; 
+?>
 
 <main class="main index">
     <!-- contenedor para centrar el sitio web -->

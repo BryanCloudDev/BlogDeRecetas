@@ -1,4 +1,5 @@
-<?php require("Vista/componentes/header.php");?>
+<?php include 'rutas.php';
+rutaHeader;?>
 
 <main class="main login">
     <div class="container">

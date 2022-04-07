@@ -1,5 +1,7 @@
-<?php require("./Vista/componentes/header.php");
-    $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
+<?php 
+include 'rutas.php';
+rutaHeader;
+$userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
 ?>
 
 <main class="main perfil">

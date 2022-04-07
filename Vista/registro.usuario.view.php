@@ -1,4 +1,7 @@
-<?php require("./Vista/componentes/header.php"); ?>
+<?php 
+include 'rutas.php';
+rutaHeader; 
+?>
 <!-- contenedor del main de crear ussuario -->
 <main class="main register">
     <!-- contenedor para centrar pagina -->
