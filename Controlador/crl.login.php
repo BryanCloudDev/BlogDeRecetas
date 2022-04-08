@@ -9,8 +9,8 @@ $errors = [];
 
 if(isset($_POST['submit'])){
     //la funcion clean data nos ayuda a reducir alguna inyeccion de  scripts js vease en Controlador/functions.php
-    $userEmail = clean_data($_POST['username']);
-    $password = clean_data($_POST['password']);
+    $userEmail = strtolower(clean_data($_POST['username']));
+    $password = strtolower(clean_data($_POST['password']));
 
     if(!empty($userEmail) && !empty($password)){
         //verificamos que haya una coincodencia con el usuario/correo introducido
