@@ -1,4 +1,4 @@
-<?php $rutaFuncionesUser = require_once "Modelos/funciones.user.php";?>
+<?php require_once "Modelos/funciones.user.php";?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

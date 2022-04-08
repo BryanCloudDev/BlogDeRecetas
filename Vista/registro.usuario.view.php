@@ -1,6 +1,6 @@
 <?php 
-include 'rutas.php';
-rutaHeader; 
+include_once 'rutas.php';
+rutaHeader;
 ?>
 <!-- contenedor del main de crear ussuario -->
 <main class="main register">
@@ -44,4 +44,7 @@ rutaHeader;
     </div>
 </main>
 
-<?php require("./Vista/componentes/footer.php"); ?>
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>

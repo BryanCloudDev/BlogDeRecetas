@@ -1,5 +1,4 @@
 <?php
-
 require_once "./Controlador/crl.config.php";
 
 //Copiamos y pegamos el codigo que habia sudido el profe XD

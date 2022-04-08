@@ -1,6 +1,6 @@
 <?php 
-include 'rutas.php';
-rutaHeader; 
+include_once 'rutas.php';
+rutaHeader;
 ?>
 
 <main class="main crearReceta">
@@ -29,4 +29,7 @@ rutaHeader;
         </form>
     </div>
 </main>
-<?php require_once "./Vista/componentes/footer.php" ?>
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>

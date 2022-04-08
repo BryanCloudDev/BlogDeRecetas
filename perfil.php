@@ -1,2 +1,2 @@
-<?php require('./Controlador/crl.perfil.php')?>
-<?php require('./Vista/perfil.view.php')?>
+<?php require_once('./Controlador/crl.perfil.php')?>
+<?php require_once('./Vista/perfil.view.php')?>

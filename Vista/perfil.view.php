@@ -1,5 +1,5 @@
 <?php 
-include 'rutas.php';
+include_once 'rutas.php';
 rutaHeader;
 $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
 ?>
@@ -45,7 +45,10 @@ $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
             </div>
         </article>
         <?php endforeach; ?>
-        <a class="newPost" href="registrar_receta.php">Crear Post <i class="fa fa-plus" aria-hidden="true"></i></a>
+        <a class="newPost" href="registrar_receta.php">Crear Post <i class="button-crearReceta" aria-hidden="true"></i></a>
     </div>
 </main>
-<?php require("./Vista/componentes/footer.php"); ?>
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>

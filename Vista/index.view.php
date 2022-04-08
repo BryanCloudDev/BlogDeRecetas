@@ -1,5 +1,5 @@
 <?php 
-include 'rutas.php';
+include_once 'rutas.php';
 rutaHeader;
 ?>
 <!-- contenedor main del index -->
@@ -23,4 +23,7 @@ rutaHeader;
         <?php endforeach ?>
     </div>
 </main>
-<?php require("./Vista/componentes/footer.php"); ?>
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>

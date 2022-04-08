@@ -1,6 +1,6 @@
 <?php 
-include 'rutas.php';
-rutaHeader; 
+include_once 'rutas.php';
+rutaHeader;
 ?>
 <main class="main">
     <div class="container">
@@ -18,4 +18,8 @@ rutaHeader;
 <?php endforeach; ?>
     </div>
 </main>
-<?php require("./Vista/componentes/footer.php"); ?>
+
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>

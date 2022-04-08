@@ -1,5 +1,7 @@
-<?php include 'rutas.php';
-rutaHeader;?>
+<?php 
+include_once 'rutas.php';
+rutaHeader
+?>
 
 <main class="main login">
     <div class="container">
@@ -30,5 +32,7 @@ rutaHeader;?>
         </form>
     </div>
 </main>
-
-<?php require("Vista/componentes/footer.php") ?>
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>
