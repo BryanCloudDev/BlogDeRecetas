@@ -1,6 +1,6 @@
 <?php 
 include_once 'rutas.php';
-rutaHeader;
+$rutaHeader;
 ?>
 <!-- contenedor del main de crear ussuario -->
 <main class="main register">
@@ -45,6 +45,5 @@ rutaHeader;
 </main>
 
 <?php 
-include_once 'rutas.php';
-rutaFooter;
+require_once realpath('Vista/componentes/footer.php');
 ?>

@@ -1,6 +1,6 @@
 <?php 
-include 'rutas.php';
-rutaHeader; 
+include_once 'rutas.php';
+$rutaHeader; 
 ?>
 <main class="main dashboard">
     <div class="container">
@@ -45,6 +45,5 @@ rutaHeader;
     </div>
 </main>
 <?php 
-include_once 'rutas.php';
-rutaFooter;
+require_once realpath('Vista/componentes/footer.php');
 ?>

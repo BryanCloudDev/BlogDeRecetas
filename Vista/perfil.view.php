@@ -1,6 +1,6 @@
 <?php 
 include_once 'rutas.php';
-rutaHeader;
+$rutaHeader;
 $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
 ?>
 
@@ -49,6 +49,5 @@ $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
     </div>
 </main>
 <?php 
-include_once 'rutas.php';
-rutaFooter;
+require_once realpath('Vista/componentes/footer.php');
 ?>
