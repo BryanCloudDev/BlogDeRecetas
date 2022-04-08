@@ -118,7 +118,6 @@ if(isset($_POST['submit'])){
 
         header('Location: login.php');
     }
-    var_dump($errors);
 }
 
 //por lo que lei es bueno dejar los controladores sin cerrar para evitar XSS

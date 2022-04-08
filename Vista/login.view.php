@@ -24,6 +24,15 @@ $rutaHeader;
             <p>Aun no tienes una cuenta?</p>
             <a href="./registro_usuario.php">Crea una ahora</a>
         </form>
+        <?php if($errors != []):?>
+            <div class="error">
+                <ul>
+                <?php foreach($errors as $error):?>
+                    <li><?= $error;?></li>
+                <?php endforeach;?>
+                </ul>
+            </div>
+        <?php endif;?>
     </div>
 </main>
 <?php 

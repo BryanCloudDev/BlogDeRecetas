@@ -46,6 +46,15 @@ $rutaHeader;
                 <input type="submit" name="submit" class="btn btn-primary" value="Sign Up">
             </div>
         </form>
+        <?php if($errors != []):?>
+            <div class="error">
+                <ul>
+                <?php foreach($errors as $error):?>
+                    <li><?= $error;?></li>
+                <?php endforeach;?>
+                </ul>
+            </div>
+        <?php endif;?>
     </div>
 </main>
 

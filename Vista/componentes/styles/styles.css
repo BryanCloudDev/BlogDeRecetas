@@ -185,12 +185,17 @@ body {
 	width: 100%;
 }
 
+.main.login,
+.main.register{
+	margin: 20px 0px;
+}
 
 .main.login .container,
 .main.register .container {
 	width: 70%;
 	align-items: center;
 	max-width: 715px;
+	flex-wrap: wrap;
 }
 
 .main.login .container .texto,
@@ -237,6 +242,28 @@ body {
 	background-color: var(--main-bg-color);
 }
 
+.error{
+    width: 100%;
+	padding: 10px;
+    margin-top: 20px;
+    border-radius: 25px;
+    background-color: rgb(243, 42, 42);
+	color: white;
+}
+
+.error ul{
+	margin: 0px;
+}
+
+.error ul li{
+    font-size: 12px;
+    color: var(--primary-color);
+}
+
+.error ul li a{
+    color: var(--primary-color);
+}
+
 /*Redimensiones de contenedores de registrar usuario porque contiene mas inputs y por ende debe de ser mas grande*/
 .main.register .container .texto {
 	height: 336px;
@@ -244,7 +271,7 @@ body {
 
 .main.register .container .formLogin {
 	max-width: 330px;
-	height: 420px;
+	height: auto;
 }
 
 /* Estilos de formularios del login y de el registrar usuario*/
@@ -261,7 +288,8 @@ body {
 }
 .formLogin .form-group label,
 .formLogin .form-group input[type="text"],
-.formLogin .form-group input[type="password"] {
+.formLogin .form-group input[type="password"],
+.formLogin .form-group input[type="email"] {
 	width: 100%;
 	padding: 3px 5px;
 	outline: none;
@@ -270,7 +298,8 @@ body {
 }
 .formLogin .form-group input[type="text"],
 .formLogin .form-group input[type="password"],
-.formLogin .form-group input[type="file"] {
+.formLogin .form-group input[type="file"],
+.formLogin .form-group input[type="email"] {
 	margin: 3px 0px;
 	border: none;
 	border-bottom: 1px solid var(--main-bg-color);
@@ -278,7 +307,8 @@ body {
 }
 
 .formLogin .form-group input[type="text"]::placeholder,
-.formLogin .form-group [type="password"]::placeholder {
+.formLogin .form-group [type="password"]::placeholder,
+.formLogin .form-group input[type="email"]::placeholder {
 	color: rgba(255, 255, 255, 0.5);
 }
 

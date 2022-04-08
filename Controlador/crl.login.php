@@ -23,11 +23,11 @@ if(isset($_POST['submit'])){
                 header('Location: index.php');
             }
             else{
-                $errors['errors'] = 'Incorrect username or password';
+                $errors['errors'] = 'Nombre de usuario/correo o contraseña incorrectos';
             }
         }
         else{
-            $errors['errors'] = 'Incorrect username or password';
+            $errors['errors'] = 'Nombre de usuario/correo o contraseña incorrectos';
         }
     }
     else{
