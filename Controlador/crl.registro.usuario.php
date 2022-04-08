@@ -5,6 +5,7 @@ require_once ('Modelos/funciones.registro.php');
 require_once ('Modelos/funciones.receta.php');
 require_once ('Modelos/funciones.user.php');
 
+//inicializamos un array vacio para almacenar los errores
 $errors = [];
 
 if(isset($_POST['submit'])){
@@ -75,6 +76,7 @@ if(isset($_POST['submit'])){
     }
 
     //verificando el tipo de archivo
+    //no es obligatorio subir una foto de perfil
     if(isset($_FILES['user_image']) && $_FILES['user_image']['error'] === UPLOAD_ERR_OK){
         //para saber que es la funcion 'uploadImage()' revisar en Controlador/functions.php
         $dest_path = uploadImage($_FILES['user_image'],'Media/profilePhoto/',true);
@@ -86,13 +88,19 @@ if(isset($_POST['submit'])){
             $dest_path = $dest_path[0];
         }
     }
+    //si no se sube se tomara esta ruta por defecto
     else{
         $dest_path = 'https://i.imgur.com/GvUsGWz.jpg';
     }
+    //si no hay errores podemos crear el usuario
     if($errors == []){
+        //key es una llave aleatoria solo para encriptar el texto plano usando md5
         $key = '5e83b87c6ff6b1cc4d941bf315281da1';
+        //este token nos permitira validar a la hora de hacer cambios mas adelante
         $token = md5($email.$password.$key);
+        //encriptamos la contraseña
         $password = Usuarios::encPass($password);
+        //convertimos el nombre de usuario a minusculas para evitar problems por mayusculas
         $username = strtolower($username);
         $user = new Usuarios($token,$name,$lastName,$username,$password,$email,$dest_path);
         $user->makeUser();

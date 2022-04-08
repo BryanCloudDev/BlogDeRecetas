@@ -115,12 +115,15 @@ class Usuarios
         $statement->closeCursor();
         return $resultado["correo"];
         }
-    
+
+    //metodo para encriptar la contra con un costo de 10
+    //el costo es la cantidad de veces que se palica el mismo algoritmo a la contra
     static function encPass($password){
         $password = password_hash($password,PASSWORD_DEFAULT,['cost' => 10]);
         return $password;
     }
 
+    //metodo para verificar si ya hay un usuario que use el mismo nombre de usuario
     static public function existsUser($username){
         global $conn;
         $stmt = $conn->prepare(
@@ -135,6 +138,7 @@ class Usuarios
         return $result;
     }
 
+    //metodo para verificar si ya hay un usuario que use el mismo correo
     static public function existsEmail($email){
         global $conn;
         $stmt = $conn->prepare(
@@ -149,6 +153,7 @@ class Usuarios
         return $result;
     }
 
+    //metodo para verificar si hay un usuatio con el corre introducido
     static function verifyUserEmail($value){
         global $conn;
         $stmt = $conn->prepare(
@@ -163,8 +168,8 @@ class Usuarios
         $stmt = null;
         return $result;
     }
-
-    static function verifyUserPassword($value){
+    //metodo para obtener contra de usuario
+    static function getUserPassword($value){
         global $conn;
         $stmt = $conn->prepare(
             "SELECT password FROM usuarios WHERE correo = :email OR username = :username;"
@@ -178,7 +183,7 @@ class Usuarios
         $stmt = null;
         return $result;
     }
-
+    //metodo para traernos toda la info del usuario
     static function getUserbyEmailUser($value){
         global $conn;
         $stmt = $conn->prepare(
@@ -193,14 +198,4 @@ class Usuarios
         $stmt = null;
         return $result;
     }
-
-}
-
-function DeleteImageUser($id){
-    $recetaImage = Usuarios::getUserImagePathById($id);
-    unlink($recetaImage);
-    $recetaImage = explode("/",$recetaImage);
-    array_pop($recetaImage);
-    $recetaImage = implode("/",$recetaImage);
-    rmdir($recetaImage);
 }

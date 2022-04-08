@@ -3,13 +3,13 @@ require_once ('Controlador/crl.isuser.php');
 require_once ('Controlador/crl.config.php');
 require_once ('Modelos/funciones.receta.php');
 require_once ('Modelos/funciones.referer.php');
-require_once ('./Controlador/functions.php');
+require_once ('Controlador/functions.php');
 
 if(isset($_POST["recetaid"])){
     $receta = Receta::getRecetaById($_POST["recetaid"]);
 }
 else if(isset($_POST["publicar"])){
-
+    //la funcion clean data nos ayuda a reducir alguna inyeccion de  scripts js vease en Controlador/functions.php
     $title = clean_data($_POST['tituloPost']);
     $descripcion = clean_data($_POST['descripcionPost']);
     $pasosPost = clean_data($_POST['pasosPost']);
