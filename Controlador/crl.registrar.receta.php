@@ -13,35 +13,18 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     $pasosPost = clean_data($_POST['pasosPost']);
 
     $imagenPost = $_FILES["imagenPost"] ?? null;
+     //para saber que es la funcion 'uploadImage()' revisar en Controlador/functions.php
+    $dest_path = uploadImage($_FILES["imagenPost"],'Media/recipe/');
 
-    $fileTmpPath = $imagenPost['tmp_name'];
-    $fileName = $imagenPost['name'];
-    $fileSize = $imagenPost['size'];
-    $fileNameCmps = explode(".", $fileName);
-    $fileExtension = strtolower(end($fileNameCmps));
-    $newFileName = md5($fileName) . '.' . $fileExtension;
-    $uploadFileDir = 'Media/recipe/';
-
-    if(!typeOfPhoto($fileExtension)){
-        $errors['profilePhoto'] = 'Solo puedes subir archivos .jpg, .gif y .png';
+    if(!$dest_path[1]){
+        $errors['recipeImage'] = $dest_path[0];
     }
-    elseif($fileSize > 2097152){
-        $errors['profilePhoto'] = 'Tamaño maximo para el archivo es de 2MB';
+    if($errors == []){
+        $spanishDate = SpanishDate();
+        $id_usuario = $_SESSION["user"];
+        $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $dest_path[0],$spanishDate,$id_usuario);
+        $receta->createReceta();
+        header("Location: index.php");
     }
-    else{
-        if($errors == []){
-            if(!is_dir("Media/recipe/")){
-                mkdir("Media/recipe/");
-            }
-            $dest_path = $uploadFileDir . $newFileName;
-            move_uploaded_file($fileTmpPath, $dest_path);
-            $spanishDate = SpanishDate();
-            $id_usuario = $_SESSION["user"];
-            $receta = new Receta($tituloPost, $descripcionPost, $pasosPost, $dest_path,$spanishDate,$id_usuario);
-            $receta->createReceta();
-            header("Location: index.php");
-        }
-    }
-    //session_start(); Este volado daba error asi que lo comentarie porque ya existe una sesion activa en el header :v
 }
 ?>

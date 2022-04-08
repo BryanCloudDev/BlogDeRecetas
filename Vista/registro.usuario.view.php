@@ -15,24 +15,24 @@ $rutaHeader;
             <div class="form-group">
                 <!-- label nos permite poder linkear el texto a un input para que al darle click se nos seleccione el campo y asi poder escribir en el -->
                 <label for="usuario">Nombre</label>
-                <input id="usuario" type="text" name="nombre" class="form-control" placeholder="John" required value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($name);};?>">
+                <input id="usuario" type="text" name="nombre" class="form-control" placeholder="John" required value="<?php $message =  $errors == [] ? '' : $name; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <!-- label nos permite poder linkear el texto a un input para que al darle click se nos seleccione el campo y asi poder escribir en el -->
                 <label for="usuario">Apellido</label>
-                <input id="usuario" type="text" name="apellido" class="form-control" placeholder="Doe" required value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($lastName);};?>">
+                <input id="usuario" type="text" name="apellido" class="form-control" placeholder="Doe" required value="<?php $message =  $errors == [] ? '' : $lastName; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input id="usuario" type="text" name="username" class="form-control" placeholder="MiUsuario01" required value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($username);};?>">
+                <input id="usuario" type="text" name="username" class="form-control" placeholder="MiUsuario01" required value="<?php $message =  $errors == [] ? '' : $userName; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <label for="usuario">Correo</label>
-                <input id="usuario" type="email" name="correo" class="form-control" placeholder="micorreo@micorreo.com" required value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($email);};?>">
+                <input id="usuario" type="email" name="correo" class="form-control" placeholder="micorreo@micorreo.com" required value="<?php $message =  $errors == [] ? '' : $email; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
-                <input id="password" type="password" name="password" class="form-control" placeholder="********" required value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($password);};?>">
+                <input id="password" type="password" name="password" class="form-control" placeholder="********" required value="<?php $message =  $errors == [] ? '' : $password; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <label for="foto">Foto de perfil</label>

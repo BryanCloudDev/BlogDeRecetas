@@ -12,11 +12,11 @@ $rutaHeader;
         <form action="login.php" method="post" class="formLogin">
             <div class="form-group">
                 <label for="usuario">Usuario</label>
-                <input id="usuario"type="text" name="username" class="form-control" placeholder="MiUsuario" value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($userEmail);};?>">
+                <input id="usuario"type="text" name="username" class="form-control" placeholder="MiUsuario" value="<?php $message =  $errors == [] ? '' : $userEmail; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
-                <input id="password" type="password" name="password" class="form-control" placeholder="*******" value="<?php if($errors == []){echo htmlspecialchars('');}else{echo htmlspecialchars($password);};?>">
+                <input id="password" type="password" name="password" class="form-control" placeholder="*******" value="<?php $message =  $errors == [] ? '' : $password; echo htmlspecialchars($message);?>">
             </div>
             <div class="form-group">
                 <input type="submit" name="submit" class="btn btn-primary" value="Login">

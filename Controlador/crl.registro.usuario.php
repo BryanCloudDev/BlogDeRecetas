@@ -76,37 +76,18 @@ if(isset($_POST['submit'])){
 
     //verificando el tipo de archivo
     if(isset($_FILES['user_image']) && $_FILES['user_image']['error'] === UPLOAD_ERR_OK){
-        $fileTmpPath = $_FILES['user_image']['tmp_name'];
-        $fileName = $_FILES['user_image']['name'];
-        $fileSize = $_FILES['user_image']['size'];
-        $fileNameCmps = explode(".", $fileName);
-        $fileExtension = strtolower(end($fileNameCmps));
-        $newFileName = md5($fileName) . '.' . $fileExtension;
-        $uploadFileDir = 'Media/profilePhoto/';
+        //para saber que es la funcion 'uploadImage()' revisar en Controlador/functions.php
+        $dest_path = uploadImage($_FILES['user_image'],'Media/profilePhoto/',true);
 
-        if(!typeOfPhoto($fileExtension)){
-            $errors['profilePhoto'] = 'Solo puedes subir archivos .jpg, .gif y .png';
-        }
-        elseif($fileSize > 2097152){
-            $errors['profilePhoto'] = 'Tamaño maximo para el archivo es de 2MB';
+        if(!$dest_path[1]){
+            $errors['user_image'] = $dest_path[0];
         }
         else{
-            if($errors == []){
-
-                if(!is_dir("Media/")){
-                    mkdir("Media/");
-                    mkdir("Media/profilePhoto/");
-                }
-
-                $dest_path = $uploadFileDir . $newFileName;
-                move_uploaded_file($fileTmpPath, $dest_path);
-            }
+            $dest_path = $dest_path[0];
         }
     }
     else{
-        if($errors == []){
-            $dest_path = 'https://i.imgur.com/GvUsGWz.jpg';
-        }
+        $dest_path = 'https://i.imgur.com/GvUsGWz.jpg';
     }
     if($errors == []){
         $key = '5e83b87c6ff6b1cc4d941bf315281da1';
