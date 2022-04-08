@@ -1,55 +1,38 @@
 <?php
+session_start();
+
 require_once ('Controlador/crl.config.php');
 require_once ('Modelos/funciones.user.php');
+require_once ('Controlador/functions.php');
 
-if(isset($_POST["../Vista/login.php"]))
-{
-    echo "page reached";
-    if(empty($_POST["username"]) || empty($_POST["password"]))
-    {
-        $message = '<label>Se requieren todos los campos</label>';
+$errors = [];
+
+if(isset($_POST['submit'])){
+
+    $userEmail = clean_data($_POST['username']);
+    $password = clean_data($_POST['password']);
+
+    if(!empty($userEmail) && !empty($password)){
+
+        if(Usuarios::verifyUserEmail($userEmail) == 1){
+            $hash = Usuarios::verifyUserPassword($userEmail);
+
+            if(password_verify($password,$hash)){
+                $user = Usuarios::getUserbyEmailUser($userEmail);
+                $_SESSION['user'] =  $user['idUsuario'];
+                header('Location: index.php');
+            }
+            else{
+                $errors['errors'] = 'Incorrect username or password';
+            }
+        }
+        else{
+            $errors['errors'] = 'Incorrect username or password';
+        }
     }
-    else
-    {
-        $query = "SELECT * FROM users WHERE username = :username AND password = :password";
-        $statement = $conn->prepare($query);
-        $statement->execute(
-            array(
-                'username'     =>     $_POST["username"],
-                'password'     =>     $_POST["password"]
-            )
-        );
-        $count = $statement->rowCount();
-        
-        if($count > 0)
-        {
-            $_SESSION["username"] = $_POST["username"];
-            echo "FUNCIONA PERRO";
-            //header("location: ../Controlador/ctl.index.php");
-        }
-        else
-        {
-            $message = '<label>Algo valio pija xd</label>';
-        }
+    else{
+        $errors['errors'] = 'Todos los campos son requeridos';
     }
 }
 
-$noUser = false;
-
-if(isset($_POST["username"]) && isset($_POST["password"])){
-    
-    ["username" => $username,
-    "password" => $password] = $_POST;
-
-    $user = Usuarios::isUser($username,$password);
-
-    if(!$user){
-        $noUser = true;
-    }else{
-        session_start();
-        $_SESSION["user"] = $user["idUsuario"];
-        header("Location: index.php");
-    }
-}
-
-?>
+//por lo que lei es bueno dejar los controladores sin cerrar para evitar XSS

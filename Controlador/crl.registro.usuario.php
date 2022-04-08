@@ -5,10 +5,6 @@ require_once ('Modelos/funciones.registro.php');
 require_once ('Modelos/funciones.receta.php');
 require_once ('Modelos/funciones.user.php');
 
-ini_set('display_startup_errors', 1);
-ini_set('display_errors', 1);
-error_reporting(-1);
-
 $errors = [];
 
 if(isset($_POST['submit'])){
@@ -125,4 +121,4 @@ if(isset($_POST['submit'])){
     var_dump($errors);
 }
 
-?>
+//por lo que lei es bueno dejar los controladores sin cerrar para evitar XSS

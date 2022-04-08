@@ -47,22 +47,6 @@ class Usuarios
 
     }
 
-    #funcion que obtiene usuarios
-
-    static public function isUser($username,$password){
-        global $conn;
-        $query = "SELECT * FROM usuarios WHERE username = :username AND password = :password";  
-        $statement = $conn->prepare($query);
-        $statement->bindValue(":username", $username);     
-        $statement->bindValue(":password", $password);
-        $statement->execute();
-        
-        $resultado = $statement->fetch(PDO::FETCH_ASSOC);
-        $statement->closeCursor();
-
-        return $resultado;
-    }
-
     static public function getUsernameById($id){
         global $conn;
         $query = "SELECT username FROM usuarios WHERE idUsuario = :id";
@@ -160,6 +144,51 @@ class Usuarios
             ':correo' => $email
         ]);
         $result = $stmt->fetch(PDO::FETCH_COLUMN);
+        $stmt->closeCursor();
+        $stmt = null;
+        return $result;
+    }
+
+    static function verifyUserEmail($value){
+        global $conn;
+        $stmt = $conn->prepare(
+            "SELECT COUNT(*) FROM usuarios WHERE correo = :email OR username = :username;"
+        );
+        $stmt->execute([
+            ':email' => $value,
+            ':username' => $value
+        ]);
+        $result = $stmt->fetch(PDO::FETCH_COLUMN);
+        $stmt->closeCursor();
+        $stmt = null;
+        return $result;
+    }
+
+    static function verifyUserPassword($value){
+        global $conn;
+        $stmt = $conn->prepare(
+            "SELECT password FROM usuarios WHERE correo = :email OR username = :username;"
+        );
+        $stmt->execute([
+            ':email' => $value,
+            ':username' => $value
+        ]);
+        $result = $stmt->fetch(PDO::FETCH_COLUMN);
+        $stmt->closeCursor();
+        $stmt = null;
+        return $result;
+    }
+
+    static function getUserbyEmailUser($value){
+        global $conn;
+        $stmt = $conn->prepare(
+            "SELECT * FROM usuarios WHERE correo = :email OR username = :username;"
+        );
+        $stmt->execute([
+            ':email' => $value,
+            ':username' => $value
+        ]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         $stmt->closeCursor();
         $stmt = null;
         return $result;
