@@ -1,5 +1,5 @@
 <?php 
- //devuelve un string con fecha en español
+ //Devuelve un string con fecha en español
 function SpanishDate(){
 
    date_default_timezone_set ('America/El_Salvador');

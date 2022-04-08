@@ -1,8 +1,8 @@
 <?php
-require_once "Controlador/crl.isuser.php";
-require_once "crl.config.php";
-require_once "Modelos/funciones.receta.php";
-require_once "Modelos/funciones.spanishdate.php";
+require_once ('Controlador/crl.isuser.php');
+require_once ('crl.config.php');
+require_once ('Modelos/funciones.receta.php');
+require_once ('Modelos/funciones.spanishdate.php');
 
 if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"])){
 

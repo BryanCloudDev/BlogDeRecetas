@@ -1,10 +1,8 @@
 <?php
-require_once "./Controlador/crl.isuser.php";
-require_once "./Controlador/crl.config.php";
-require_once "./Modelos/funciones.receta.php";
-require_once "./Modelos/funciones.referer.php";
-
-#tu backend ira aca
+require_once ('Controlador/crl.isuser.php');
+require_once ('Controlador/crl.config.php');
+require_once ('Modelos/funciones.receta.php');
+require_once ('Modelos/funciones.referer.php');
 
 if(isset($_POST["recetaid"])){
     $receta = Receta::getRecetaById($_POST["recetaid"]);

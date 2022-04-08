@@ -1,13 +1,13 @@
 <?php
 //require_once "./Controlador/crl.isuser.php";
-require_once "./Controlador/crl.config.php";
-require_once "./Modelos/funciones.actualizarUsuarios.php";
-require_once "./Modelos/funciones.referer.php";
+require_once ('Controlador/crl.config.php');
+require_once ('Modelos/funciones.actualizarUsuarios.php');
+require_once ('Modelos/funciones.referer.php');
 
 #tu backend ira aca
 
 if(isset($_POST["idUsuario"])){
-    $usuario = Usuario::updateUsuarioById($_POST["idUsuario"]);
+    //$usuario = Usuario::updateUsuarioById($_POST["idUsuario"]);
 }else if(isset($_POST["publicar"])){
     
     ["nombre" => $nombre,

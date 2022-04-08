@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Unset all the session variables
 if(!isset($_SESSION["user"])){
     header("Location: ../login.php");

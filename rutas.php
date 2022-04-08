@@ -1,7 +1,7 @@
 <?php
 
 global $rutaHeader; 
-$rutaHeader = require("Vista/componentes/header.php");
+$rutaHeader = require('Vista/componentes/header.php');
 
 // global $rutaFooter;
 // $rutaFooter = require_once realpath('Vista/componentes/footer.php');

@@ -1,10 +1,8 @@
 <?php
-
-//require_once "Controlador/crl.isuser.php";
-require_once "Controlador/crl.config.php";
-require_once "Modelos/funciones.registro.php";
-require_once "Modelos/funciones.receta.php";
-require_once "Modelos/funciones.user.php";
+require_once ('Controlador/crl.config.php');
+require_once ('Modelos/funciones.registro.php');
+require_once ('Modelos/funciones.receta.php');
+require_once ('Modelos/funciones.user.php');
 
 class RegistroUsuario{
         
@@ -100,7 +98,6 @@ class RegistroUsuario{
 
         $User = new Usuarios($name,$username,$password,$correo,$UserImagePath);
         $User->makeUser();
-
 
         header("Location: login.php");
 

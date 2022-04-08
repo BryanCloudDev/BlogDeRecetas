@@ -1,6 +1,6 @@
 <?php
-require_once "Controlador/crl.config.php";
-require_once "Modelos/funciones.user.php";
+require_once ('Controlador/crl.config.php');
+require_once ('Modelos/funciones.user.php');
 
 if(isset($_POST["../Vista/login.php"]))
 {
