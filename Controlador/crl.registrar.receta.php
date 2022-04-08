@@ -20,7 +20,7 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
     $newFileName = md5($fileName) . '.' . $fileExtension;
-    $uploadFileDir = 'Media/profilePhoto/';
+    $uploadFileDir = 'Media/recipe/';
 
     if(!typeOfPhoto($fileExtension)){
         $errors['profilePhoto'] = 'Solo puedes subir archivos .jpg, .gif y .png';
