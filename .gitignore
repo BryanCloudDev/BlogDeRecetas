@@ -28,8 +28,7 @@
 *.svg
 *.txt
 *.gif
-Controlador/images/
-Controlador/User_Images/
+/Media
 *.idea
 /vendor
 *.json

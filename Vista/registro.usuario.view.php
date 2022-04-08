@@ -23,22 +23,22 @@ $rutaHeader;
             </div>
             <div class="form-group">
                 <label for="usuario">Correo</label>
-                <input id="usuario" type="text" name="correo" class="form-control" placeholder="micorreo@micorreo.com" required>
+                <input id="usuario" type="email" name="correo" class="form-control" placeholder="micorreo@micorreo.com" required>
             </div>
             <div class="form-group">
                 <label for="password">Contraseña</label>
                 <input id="password" type="password" name="password" class="form-control" placeholder="********" required>
             </div>
             <div class="form-group">
-                <label for="foto">Subir foto de perfil</label>
+                <label for="foto">Foto de perfil</label>
                 <!-- este contenedor nos permite poder generar un contenedor para poder mover el elemento con la clase .custom-input-file de manera libre y asi poder ocultar el boton "SUBIR IMAGEN" y solo nos muestre el nombre del archivo -->
                 <div class="custom-input-file">
-                    <input type="file" id="foto" class="input-file" name="user_image" required>
+                    <input type="file" id="foto" class="input-file" name="user_image">
                 </div>
             </div>
             <div class="form-group">
                 <!-- este input:submit nos permite poder enviar el formulario atraves del metodo seleccionado, POST o GET -->
-                <input type="submit" class="btn btn-primary" value="Sign Up" required>
+                <input type="submit" name="submit" class="btn btn-primary" value="Sign Up">
             </div>
         </form>
     </div>
