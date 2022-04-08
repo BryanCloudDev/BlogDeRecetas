@@ -14,11 +14,12 @@ class Usuarios
     public string $imagen;
     public object $db;
 
-    public function __construct($token,$nombre,$username,$password,$correo,$imagen)
+    public function __construct($token,$nombre,$apellido,$username,$password,$correo,$imagen)
     {
         global $conn;
-        $this->nombre = $nombre;
         $this->token = $token;
+        $this->nombre = $nombre;
+        $this->apellido = $apellido;
         $this->username = $username;
         $this->password = $password;
         $this->correo = $correo;
@@ -30,12 +31,13 @@ class Usuarios
 
     public function makeUser(){
 
-        $query = "INSERT INTO usuarios (token, nombre, username, password, correo, imagenUsuario) 
-                VALUES(:token, :nombre, :username, :password, :correo, :imagenUsuario)";
+        $query = "INSERT INTO usuarios (token, nombre, apellido, username, password, correo, imagenUsuario) 
+                VALUES(:token, :nombre, :apellido, :username, :password, :correo, :imagenUsuario)";
         
         $statement = $this->db->prepare($query);
-        $statement->bindValue(":nombre", $this->nombre);
         $statement->bindValue(":token", $this->token);
+        $statement->bindValue(":nombre", $this->nombre);
+        $statement->bindValue(":apellido", $this->apellido);
         $statement->bindValue(":username", $this->username);
         $statement->bindValue(":password", $this->password);
         $statement->bindValue(":correo", $this->correo);

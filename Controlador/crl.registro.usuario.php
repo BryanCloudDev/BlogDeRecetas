@@ -13,6 +13,7 @@ $errors = [];
 
 if(isset($_POST['submit'])){
     $name = clean_data($_POST['nombre']);
+    $lastName = clean_data($_POST['apellido']);
     $username = clean_data($_POST['username']);
     $email = clean_data($_POST['correo']);
     $password = clean_data($_POST['password']);
@@ -26,6 +27,17 @@ if(isset($_POST['submit'])){
     }
     else{
         $errors['name'] = 'El nombre debe de ser entre 4 y 20 caracteres';
+    }
+
+    //verificar appellido
+    if(strlen($name) >= 4 && strlen($name) <= 20){
+        $regExp = '/^[a-zA-ZáéíóúÁÉÍÓÚñÑ]+$/';
+        if(!preg_match($regExp,$name)){
+            $errors['lastName'] = 'Porfavor ingresa un apellido valido';
+        }
+    }
+    else{
+        $errors['lastName'] = 'El apellido debe de ser entre 4 y 20 caracteres';
     }
 
     // verificar correo
@@ -104,7 +116,8 @@ if(isset($_POST['submit'])){
         $key = '5e83b87c6ff6b1cc4d941bf315281da1';
         $token = md5($email.$password.$key);
         $password = Usuarios::encPass($password);
-        $user = new Usuarios($token,$name,$username,$password,$email,$dest_path);
+        $username = strtolower($username);
+        $user = new Usuarios($token,$name,$lastName,$username,$password,$email,$dest_path);
         $user->makeUser();
 
         header('Location: login.php');
