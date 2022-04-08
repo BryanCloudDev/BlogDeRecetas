@@ -44,4 +44,7 @@ rutaHeader;
         </section>
     </div>
 </main>
-<?php require("./Vista/componentes/footer.php");?>
+<?php 
+include_once 'rutas.php';
+rutaFooter;
+?>
