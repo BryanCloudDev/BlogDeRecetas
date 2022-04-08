@@ -30,8 +30,7 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
     }
     else{
         if($errors == []){
-            if(!is_dir("Media/")){
-                mkdir("Media/");
+            if(!is_dir("Media/recipe/")){
                 mkdir("Media/recipe/");
             }
             $dest_path = $uploadFileDir . $newFileName;
