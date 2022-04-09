@@ -6,7 +6,7 @@ $rutaHeader;
 <main class="main index">
     <!-- contenedor para centrar el sitio web -->
     <div class="container">
-        <article class="post">
+        <article id="idArticulo" class="post">
             <div class="imgContainer">
                 <img src="<?= $receta["imagenPost"] ?>" alt="Comida o algo">
             </div>
