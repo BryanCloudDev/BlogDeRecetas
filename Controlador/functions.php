@@ -53,7 +53,7 @@ function SpanishDate(){
 //el segundo es la ruta a donde se gurdara si la carpeta Media/ ya existe
 //el tercero por default viene false, si lo usamos para crear algun usuario y la carpeta no existe ponemos true y se pasara como parametro
 //la carpeta madre del pathToSave
-function uploadImage($file,$pathToSave,$root = false){
+function uploadImage($file,$pathToSave,$root = ''){
 
     $fileTmpPath = $file['tmp_name'];
     $fileName = $file['name'];
