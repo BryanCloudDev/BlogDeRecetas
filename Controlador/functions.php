@@ -78,7 +78,7 @@ function uploadImage($file,$pathToSave,$root = false){
         ];
     }
     else{
-        if($root){
+        if($root != ''){
             if(!is_dir($root)){
                 mkdir($root);
                 mkdir($pathToSave);

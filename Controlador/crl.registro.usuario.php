@@ -79,7 +79,7 @@ if(isset($_POST['submit'])){
     //no es obligatorio subir una foto de perfil
     if(isset($_FILES['user_image']) && $_FILES['user_image']['error'] === UPLOAD_ERR_OK){
         //para saber que es la funcion 'uploadImage()' revisar en Controlador/functions.php
-        $dest_path = uploadImage($_FILES['user_image'],'Media/profilePhoto/',true);
+        $dest_path = uploadImage($_FILES['user_image'],'Media/profilePhoto/','Media/');
 
         if(!$dest_path[1]){
             $errors['user_image'] = $dest_path[0];
@@ -101,8 +101,8 @@ if(isset($_POST['submit'])){
         //encriptamos la contraseña
         $password = Usuarios::encPass($password);
         //convertimos el nombre de usuario a minusculas para evitar problems por mayusculas
-        $username = strtolower($username);
-        $email = strtolower($email);
+        // $username = strtolower($username);
+        // $email = strtolower($email);
         $user = new Usuarios($token,$name,$lastName,$username,$password,$email,$dest_path);
         $user->makeUser();
 
