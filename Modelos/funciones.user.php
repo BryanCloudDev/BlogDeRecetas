@@ -28,7 +28,6 @@ class Usuarios
     }
 
     #funcion que crea usuarios
-
     public function makeUser(){
 
         $query = "INSERT INTO usuarios (token, nombre, apellido, username, password, correo, imagenUsuario) 
@@ -46,6 +45,25 @@ class Usuarios
         $statement->closeCursor();
 
     }
+
+    #Funcion para actualizar usuarios
+    #AUN EN PROCESO :v
+    // static function updateUsuarioById($idUsuario)
+    //         {
+    //             $query = "UPDATE usuario SET nombre = :nombre, username = :username, 
+    //                     password = :password, correo = :correo, imagenUsuario = :imagenUsuario WHERE idUsuario = :idUsuario";
+    //             $statement = $this->db->prepare($query);
+    //             $statement->bindValue(":usuario",$this->usuario);
+    //             $statement->bindValue(":username",$this->username);
+    //             $statement->bindValue(":password",$this->password);
+    //             $statement->bindValue(":correo",$this->correo);
+    //             $statement->bindValue(":imagenUsuario",$this->imagenUsuario);
+    //             $statement->bindValue(":idUsuario",$idUsuario);
+                
+    //             $statement->execute();
+    //             $statement->closeCursor();
+    //         }
+            
 
     static public function getUsernameById($id){
         global $conn;
