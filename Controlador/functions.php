@@ -106,4 +106,35 @@ function DeleteImageUser($id){
     $recetaImage = implode("/",$recetaImage);
     rmdir($recetaImage);
 }
+
+function deleteReceta($id,$recetas){
+    if($recetas == []){
+        return "No hay recetas de momento";
+    }
+    if(isset($id)){
+        DeleteImageReceta($id);
+        Receta::deleteById($id);
+        header("Location: dashboard.php");
+    }
+}
+
+function getUsers(){
+    $conn = Conexion::conn();
+    $query = "SELECT * FROM usuarios";
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $resultados;
+}
+
+function deleteUserById($id)
+{
+    if(isset($id))
+        {
+            DeleteImageUser($id);
+            Usuarios::deleteUserById($id);
+            header("Location: dashboard.php");
+        }
+}
 ?>
