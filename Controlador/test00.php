@@ -1,7 +1,7 @@
 <?php
 #todas las excepciones arrojadas dentro de las funciones y las pruebas unitarias 
 #deben estar aqui declaradas como validaciones
-
+#agregando...
 class Operations
     {
         public function sum($n1,$n2)
@@ -12,3 +12,4 @@ class Operations
 
             }
     }
+
