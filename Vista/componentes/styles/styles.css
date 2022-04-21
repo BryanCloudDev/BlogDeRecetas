@@ -516,9 +516,8 @@ body {
 }
 
 .tiny_image{
-	width: 200px;
+	margin: 20px;
 	height: 200px;
-	object-fit: scale-down;
 	display: block;
 }
 
@@ -613,6 +612,7 @@ body {
 	background-color: var(--main-bg-color);
 	color: #ffff;
 	border-radius: 5px;
+	padding: 3px 12px;
 }
 
 .crearReceta form .items ol .pasoRow a{
@@ -623,6 +623,8 @@ body {
 	font-size: 12px;
 	margin-right: 5px;
 }
+
+
 
 /* Estilos del dashboard*/
 .dashboard .container {
