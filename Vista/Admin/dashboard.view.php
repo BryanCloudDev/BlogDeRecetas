@@ -33,9 +33,9 @@ $rutaHeader;
                     <h2><?= $receta['tituloPost']?></h2>
                     <div class="links">
                         <a href="dashboard.php?recetaid=<?= $receta['idReceta']?>">Eliminar</a>
-                        <form action="actualizar.php" method="post">
+                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">
                             <input type="hidden" value="<?= $receta['idReceta']?>" name="recetaid">
-                            <input type="submit" value="Actualizar">
+                            <input type="submit" value="Actualizar" name="actualizar">
                         </form>
                     </div>
                 </div>

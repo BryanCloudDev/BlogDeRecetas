@@ -13,7 +13,15 @@ $rutaHeader;
             <div class="texto">
                 <h2><?= $receta["tituloPost"] ?></h2>
                 <p class="date">Creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
-                <p><?= $receta["pasosPost"] ?></p>
+                <p>
+                    <ol>
+                    <?php
+                        foreach($pasos as $paso){
+                            echo "<li>$paso</li>";
+                        };
+                    ?>
+                    </ol>
+                </p>
             </div>
         </article>
     </div>

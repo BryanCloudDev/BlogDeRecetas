@@ -13,4 +13,7 @@ if(isset($_GET["id"])){
     header("Location: index.php");
 }
 
+$pasos = explode('.',$receta['pasosPost']);
+
+
 ?>

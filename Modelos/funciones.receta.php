@@ -149,6 +149,49 @@ class Receta
             $statement->closeCursor();
             return $result["imagenPost"];
         }
+        public static function temporalSteps($pasos){
+            $conn = Conexion::conn();
+            $query = "INSERT INTO pasos(pasos) VALUES (:pasos)";
+            $statement = $conn->prepare($query);
+            $statement->bindValue(":pasos",$pasos);
+            $statement->execute();
+            $statement->closeCursor();
+        }
+        
+        public static function getTemporalSteps(){
+            $conn = Conexion::conn();
+            $query = "SELECT * FROM pasos";
+            $statement = $conn->prepare($query);
+            $statement->execute();
+            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+            $statement->closeCursor();
+            return $result;
+        }
+        
+        public static function deleteTemporalSteps(){
+            $conn = Conexion::conn();
+            $query = "DELETE FROM pasos";
+            $statement = $conn->prepare($query);
+            $statement->execute();
+            $statement->closeCursor();
+        }
+        
+        public static function deleteTemporalStep($id){
+            $conn = Conexion::conn();
+            $query = "DELETE FROM pasos WHERE id = :id";
+            $statement = $conn->prepare($query);
+            $statement->bindValue(":id",$id);
+            $statement->execute();
+            $statement->closeCursor();
+        }
+        public static function checkRows(){
+            $query = "SELECT COUNT(*) FROM pasos";
+            $statement = Conexion::conn()->prepare($query);
+            $statement->execute();
+            $result = $statement->fetch();
+            $statement->closeCursor();
+            return $result[0];
+        }
     }
 
 

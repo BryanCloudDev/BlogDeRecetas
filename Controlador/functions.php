@@ -137,4 +137,14 @@ function deleteUserById($id)
             header("Location: dashboard.php");
         }
 }
+
+function getTemporalSteps(){
+    $conn = Conexion::conn();
+    $query = "SELECT * FROM pasos";
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $result;
+}
 ?>

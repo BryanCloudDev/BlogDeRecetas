@@ -552,6 +552,25 @@ body {
 	min-height: 300px;
 }
 
+.crearReceta form .rowi:nth-child(4){
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.crearReceta form .rowi:nth-child(4) label{
+	width: 100%;
+}
+
+.crearReceta form .itemsInput{
+	width: 70%;
+}
+
+.crearReceta form .items.Submit{
+	width: 30%;
+	display: inline-block;
+	margin-top: 10px;
+}
+
 .crearReceta form .rowi input[type="file"]{
 	margin-bottom: 20px;
 }
@@ -566,14 +585,52 @@ body {
 	transition: ease 0.5s;
 }
 
+.crearReceta form .items{
+	margin-top: 20px;
+}
+
+.crearReceta form .items ol{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.crearReceta form .items ol .pasoRow{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px 0px;
+}
+
+.crearReceta form .items ol .pasoRow li{
+	margin-left: 20px;
+}
+
+.crearReceta form .items ol .pasoRow button{
+	border: none;
+	background-color: var(--main-bg-color);
+	color: #ffff;
+	border-radius: 5px;
+}
+
+.crearReceta form .items ol .pasoRow a{
+	margin-left: 10px;
+}
+
+.crearReceta form .items ol .pasoRow .fa.fa-book{
+	font-size: 12px;
+	margin-right: 5px;
+}
 
 /* Estilos del dashboard*/
 .dashboard .container {
 	justify-content: space-between;
 }
 
-.dashboard .users,
-.dashboard .recipes{
+.dashboard .users, 
+ol .recipes{
 	background-color: #fff;
 	padding: 20px;
 	text-align: center;
