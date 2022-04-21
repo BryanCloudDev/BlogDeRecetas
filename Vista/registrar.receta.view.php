@@ -11,21 +11,31 @@ $rutaHeader;
             </div>
             <div class="rowi">
                 <label for="tituloPost">Titulo de la receta</label>
-                <input type="text" name="tituloPost" id="tituloPost" required>    
+                <input type="text" name="tituloPost" id="tituloPost" value="<?php $message =  !isset($_POST['tituloPost']) ? '' : $_POST['tituloPost']; echo htmlspecialchars($message);?>" required>    
             </div>
             <div class="rowi">
                 <label for="descripcionPost">Descripcion de la receta</label>
-                <input type="text" name="descripcionPost" id="descripcionPost" require>
+                <input type="text" name="descripcionPost" id="descripcionPost" value="<?php $message =  !isset($_POST['descripcionPost']) ? '' : $_POST['descripcionPost']; echo htmlspecialchars($message);?>" required>
             </div>
             <div class="rowi">
                 <label for="pasosPost">Pasos a seguir</label>
-                <textarea name="pasosPost" id="pasosPost" required></textarea>            
+                <input class="itemsInput" type="text" name="pasosPost[]" id="pasosPost">
+                <input class="items Submit" type="submit" value="Agregar" name="agregar">
+            </div>
+            <div class="items">
+                <ul>
+                <?php
+                    foreach(Receta::getTemporalSteps() as $step){
+                        echo "<div class='pasoRow'><li>{$step['pasos']}</li><button type='submit' name='paso' value='{$step['id']}'>Borrar</button></div>";
+                    }
+                ?>
+                </ul>
             </div>
             <div class="rowi">
                 <label for="pasosPost">Foto del platillo</label>
                 <input type="file" name="imagenPost">
             </div>
-            <input type="submit" name="Publicar">
+            <input type="submit" name="publicar" value="Publicar">
         </form>
     </div>
 </main>
