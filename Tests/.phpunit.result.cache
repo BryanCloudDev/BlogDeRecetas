@@ -1,1 +1,0 @@
-C:37:"PHPUnit\Runner\DefaultTestResultCache":242:{a:2:{s:7:"defects";a:2:{s:36:"OperationsTest::testSumWithTwoValues";i:4;s:37:"OperationsTest::testSumWithNullValues";i:4;}s:5:"times";a:2:{s:36:"OperationsTest::testSumWithTwoValues";d:0.005;s:37:"OperationsTest::testSumWithNullValues";d:0;}}}
