@@ -12,7 +12,7 @@ $rutaHeader;
             </div>
             <div class="texto">
                 <h2><?= $rec["tituloPost"] ?></h2>
-                <p class="date">Creado el <?= $rec["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
+                <p class="date">Creado el <?= $rec["fecha"];?></p>
                 <p><?= $rec["descripcionPost"] ?></p>
                 <p>
                     <ol>
