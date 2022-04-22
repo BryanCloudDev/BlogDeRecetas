@@ -23,13 +23,13 @@ $rutaHeader;
                 <input class="items Submit" type="submit" value="Agregar" name="agregar">
             </div>
             <div class="items">
-                <ul>
+                <ol>
                 <?php
                     foreach(Rec::getTemporalSteps() as $step){
                         echo "<div class='pasoRow'><li>{$step['pasos']}</li><button type='submit' name='paso' value='{$step['id']}'>Borrar</button></div>";
                     }
                 ?>
-                </ul>
+                </ol>
             </div>
             <div class="rowi">
                 <label for="pasosPost">Foto del platillo</label>
