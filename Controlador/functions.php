@@ -99,33 +99,33 @@ function uploadImage($file,$pathToSave,$root = ''){
 }
 
 function DeleteImageUser($id){
-    $recetaImage = Usuarios::getUserImagePathById($id);
-    unlink($recetaImage);
-    $recetaImage = explode("/",$recetaImage);
-    array_pop($recetaImage);
-    $recetaImage = implode("/",$recetaImage);
-    rmdir($recetaImage);
+    $recImage = User::getUserImagePath($id);
+    unlink($recImage);
+    $recImage = explode("/",$recImage);
+    array_pop($recImage);
+    $recImage = implode("/",$recImage);
+    rmdir($recImage);
 }
 
-function deleteReceta($id,$recetas){
-    if($recetas == []){
+function deleteRec($id,$rec){
+    if($rec == []){
         return "No hay recetas de momento";
     }
     if(isset($id)){
-        DeleteImageReceta($id);
-        Receta::deleteById($id);
+        deleteImageRec($id);
+        Rec::deleteRecById($id);
         header("Location: dashboard.php");
     }
 }
 
 function getUsers(){
-    $conn = Conexion::conn();
+    $conn = Connection::conn();
     $query = "SELECT * FROM usuarios";
-    $stmt = $conn->prepare($query);
-    $stmt->execute();
-    $resultados = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $stmt->closeCursor();
-    return $resultados;
+    $statement = $conn->prepare($query);
+    $statement->execute();
+    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+    $statement->closeCursor();
+    return $result;
 }
 
 function deleteUserById($id)
@@ -133,13 +133,13 @@ function deleteUserById($id)
     if(isset($id))
         {
             DeleteImageUser($id);
-            Usuarios::deleteUserById($id);
+            User::deleteUser($id);
             header("Location: dashboard.php");
         }
 }
 
 function getTemporalSteps(){
-    $conn = Conexion::conn();
+    $conn = Connection::conn();
     $query = "SELECT * FROM pasos";
     $statement = $conn->prepare($query);
     $statement->execute();

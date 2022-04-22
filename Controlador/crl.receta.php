@@ -7,13 +7,13 @@ require_once ('Modelos/funciones.receta.php');
 
 if(isset($_GET["id"])){
 
-    $receta = Receta::getRecetaById($_GET["id"]);
+    $rec = Rec::getRec($_GET["id"]);
 
 }else{
     header("Location: index.php");
 }
 
-$pasos = explode('.',$receta['pasosPost']);
+$steps = explode('.',$rec['pasosPost']);
 
 
 ?>

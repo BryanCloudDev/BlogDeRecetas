@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
             $errors['email'] = 'Pordavor ingresa un correo valido';
         }
-        if(Usuarios::existsEmail($email) > 0){
+        if(User::existsEmail($email) > 0){
             $errors['email'] = 'El correo ya esta en uso. <a href="login.php">Iniciar sesion?<a>';
         }
     }
@@ -67,7 +67,7 @@ if(isset($_POST['submit'])){
         if(!preg_match($regExp,$password)){
             $errors['username'] = 'Nombre de usuario solo puede contener numeros y guion bajo "_"';
         }
-        if(Usuarios::existsUser($username) > 0){
+        if(User::existsUser($username) > 0){
             $errors['username'] = 'El nombre de usuario ya ha sido tomado, selecciona otro';
         }
     }
@@ -99,11 +99,11 @@ if(isset($_POST['submit'])){
         //este token nos permitira validar a la hora de hacer cambios mas adelante
         $token = md5($email.$password.$key);
         //encriptamos la contraseña
-        $password = Usuarios::encPass($password);
+        $password = User::encPass($password);
         //convertimos el nombre de usuario a minusculas para evitar problems por mayusculas
         $username = strtolower($username);
         $email = strtolower($email);
-        $user = new Usuarios($token,$name,$lastName,$username,$password,$email,$dest_path);
+        $user = new User($token,$name,$lastName,$username,$password,$email,$dest_path);
         $user->makeUser();
 
         header('Location: login.php');

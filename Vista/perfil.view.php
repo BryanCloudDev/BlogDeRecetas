@@ -1,7 +1,7 @@
 <?php 
 include_once 'rutas.php';
 $rutaHeader;
-$userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
+$userImage = User::getUserImagePath($_SESSION["user"]);
 ?>
 
 <main class="main perfil">
@@ -16,7 +16,7 @@ $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
                 <table>
                 <tr>
                     <td>Nombre</td>
-                    <td><?= $nombre;?></td>
+                    <td><?= $name;?></td>
                 </tr>
                 <tr>
                     <td>Nombre de usuario</td>
@@ -24,24 +24,24 @@ $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
                 </tr>
                 <tr>
                     <td>Correo</td>
-                    <td><?= $correo;?></td>
+                    <td><?= $email;?></td>
                 </tr>
                 </table>
             </div>
         </section>
         <section class="info">
-            <h1>Posts creados por <?= $nombre?>:</h1>
-            <h2><?php echo count($recetas) ?> <?php echo count($recetas) === 1 ? "post" : "posts" ?></h2>
+            <h1>Posts creados por <?= $name?>:</h1>
+            <h2><?php echo count($rec) ?> <?php echo count($rec) === 1 ? "post" : "posts" ?></h2>
         </section>
-        <?php foreach($recetas as $receta): ?>
+        <?php foreach($rec as $recipe): ?>
         <article class="post">
             <div class="imgContainer">
-                <img src="<?= $receta["imagenPost"]; ?>" alt="Comida o algo">
+                <img src="<?= $recipe["imagenPost"]; ?>" alt="Comida o algo">
             </div>
             <div class="texto">
-                <h2><a href="receta.php?id=<?= $receta["idReceta"]; ?>"><?= $receta["tituloPost"]; ?></a></h2>
-                <p class="date">Creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022"; ?></p>
-                <p><?= $receta["descripcionPost"] ?></p>
+                <h2><a href="receta.php?id=<?= $recipe["idReceta"]; ?>"><?= $recipe["tituloPost"]; ?></a></h2>
+                <p class="date">Creado el <?= $recipe["fecha"] ?? "Miercoles 16 de Marzo de 2022"; ?></p>
+                <p><?= $recipe["descripcionPost"] ?></p>
             </div>
         </article>
         <?php endforeach; ?>

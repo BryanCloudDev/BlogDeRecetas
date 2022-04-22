@@ -1,5 +1,5 @@
 <?php
-class Conexion {
+class Connection {
 
     static public function conn() {
         $servername = "localhost";

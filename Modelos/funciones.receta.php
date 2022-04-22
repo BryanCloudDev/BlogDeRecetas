@@ -1,47 +1,49 @@
 <?php
 require_once ('Controlador/crl.config.php');
 
-$conn = Conexion::conn();
-class Receta
+# rec es igual a decir receta
+
+$conn = Connection::conn();
+class Rec
     {
 
 #Declaracion de variables dentro de la clase tambien llamado atributos de clase
 
-        public string $tituloReceta;
-        public string $descripcionReceta;
-        public string $pasosReceta;
-        public string $imagenReceta;
-        public ?string $dateReceta;
+        public string $recTitle;
+        public string $recDescription;
+        public string $recSteps;
+        public string $recImage;
+        public ?string $recDate;
         public ?int $id;
         public object $db;
 
 #Declaracion del metodo constructor para pasar argumentos
 
-        public function __construct($tituloReceta,$descripcionReceta,$pasosReceta,$imagenReceta,$dateReceta,$id)
+        public function __construct($recTitle,$recDescription,$recSteps,$recImage,$recDate,$id)
             {
                 global $conn;
-                $this->tituloReceta = $tituloReceta;
-                $this->descripcionReceta = $descripcionReceta;
-                $this->pasosReceta = $pasosReceta;
-                $this->imagenReceta = $imagenReceta;
-                $this->dateReceta = $dateReceta;
+                $this->recTitle = $recTitle;
+                $this->recDescription = $recDescription;
+                $this->recSteps = $recSteps;
+                $this->recImage = $recImage;
+                $this->recDate = $recDate;
                 $this->id = $id;
                 $this->db = $conn;
             }
 
 # Este bloque crea una receta dentro de la base de datos
 
-        public function createReceta()
+        public function createRec()
             {
                 $query = "INSERT INTO receta (tituloPost, descripcionPost, imagenPost, pasosPost, fecha, id_usuario) 
-                            VALUES (:tituloPost, :descripcionPost, :imagenPost,:pasosPost , :fecha, :id_usuario)";
+                            VALUES (:recTitle, :recDescription, :recImage,:recSteps , :recDate, :id_usuario)";
 
                 $statement = $this->db->prepare($query);
-                $statement->bindValue(":tituloPost", $this->tituloReceta);
-                $statement->bindValue(":descripcionPost", $this->descripcionReceta);
-                $statement->bindValue(":imagenPost", $this->imagenReceta);
-                $statement->bindValue(":pasosPost", $this->pasosReceta);
-                $statement->bindValue(":fecha", $this->dateReceta);
+                $statement->bindValue(":recTitle", $this->recTitle);
+                $statement->bindValue(":recDescription", $this->recDescription);
+                $statement->bindValue(":recImage", $this->recImage);
+                $statement->bindValue(":recSteps", $this->recSteps);
+                $statement->bindValue(":recDate", $this->recDate);
                 $statement->bindValue(":id_usuario", $this->id);
 
                 $statement->execute();
@@ -51,7 +53,7 @@ class Receta
 
 #Este bloque busca una receta por ID
 
-        static public function getRecetaById($id)
+        static public function getRec($id)
             {
                 global $conn;
                 $query = "SELECT * FROM receta WHERE idReceta = :id";
@@ -66,7 +68,7 @@ class Receta
 
 #Este bloque obtiene todas las recetas de la base de datos
 
-        static public function getAllRecetas()
+        static public function getAllRec()
             {
                 global $conn;
                 $query = "SELECT * FROM receta ORDER BY idReceta DESC";
@@ -80,11 +82,11 @@ class Receta
 
 #Obtiene las recetas que cumplan un cierto string
 
-        static public function getRecetaByTitle($title){
+        static public function getRecByTitle($title){
             global $conn;
-            $query = "SELECT * FROM receta WHERE tituloPost LIKE :tituloPost ORDER BY idReceta DESC";
+            $query = "SELECT * FROM receta WHERE tituloPost LIKE :recTitle ORDER BY idReceta DESC";
             $statement = $conn->prepare($query);
-            $statement->bindValue(":tituloPost","%$title%");
+            $statement->bindValue(":recTitle","%$title%");
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
             $statement->closeCursor();
@@ -94,7 +96,7 @@ class Receta
 
 #Obtiene las rectas por usuario
 
-        static public function getRecetaByUserId($id){
+        static public function getRecByUserId($id){
             global $conn;
             $query = "SELECT * FROM receta WHERE id_usuario = :id_usuario ORDER BY idReceta DESC";
             $statement = $conn->prepare($query);
@@ -110,7 +112,7 @@ class Receta
 
 #Este bloque borra la receta de la base de datos buscada por ID
 
-        static public function deleteById($id)
+        static public function deleteRecById($id)
             {
 
                 global $conn;
@@ -124,15 +126,15 @@ class Receta
 
 #Este bloque actualiza una receta buscada por ID dentro de la base de datos
 
-        public function updateRecetaById($id)
+        public function updateRecById($id)
             {
-                $query = "UPDATE receta SET tituloPost = :tituloPost, descripcionPost = :descripcionPost, 
-                        imagenPost = :imagenPost, pasosPost = :pasosPost WHERE idReceta = :id";
+                $query = "UPDATE receta SET tituloPost = :recTitle, descripcionPost = :recDescription, 
+                        imagenPost = :recImage, pasosPost = :recSteps WHERE idReceta = :id";
                 $statement = $this->db->prepare($query);
-                $statement->bindValue(":tituloPost",$this->tituloReceta);
-                $statement->bindValue(":descripcionPost",$this->descripcionReceta);
-                $statement->bindValue(":imagenPost",$this->imagenReceta);
-                $statement->bindValue(":pasosPost",$this->pasosReceta);
+                $statement->bindValue(":recTitle",$this->recTitle);
+                $statement->bindValue(":recDescription",$this->recDescription);
+                $statement->bindValue(":recImage",$this->recImage);
+                $statement->bindValue(":recSteps",$this->recSteps);
                 $statement->bindValue(":id",$id);
                 
                 $statement->execute();
@@ -150,7 +152,7 @@ class Receta
             return $result["imagenPost"];
         }
         public static function temporalSteps($pasos){
-            $conn = Conexion::conn();
+            $conn = Connection::conn();
             $query = "INSERT INTO pasos(pasos) VALUES (:pasos)";
             $statement = $conn->prepare($query);
             $statement->bindValue(":pasos",$pasos);
@@ -159,7 +161,7 @@ class Receta
         }
         
         public static function getTemporalSteps(){
-            $conn = Conexion::conn();
+            $conn = Connection::conn();
             $query = "SELECT * FROM pasos";
             $statement = $conn->prepare($query);
             $statement->execute();
@@ -169,15 +171,15 @@ class Receta
         }
         
         public static function deleteTemporalSteps(){
-            $conn = Conexion::conn();
+            $conn = Connection::conn();
             $query = "DELETE FROM pasos";
             $statement = $conn->prepare($query);
             $statement->execute();
             $statement->closeCursor();
         }
         
-        public static function deleteTemporalStep($id){
-            $conn = Conexion::conn();
+        public static function deleteTemporalStepById($id){
+            $conn = Connection::conn();
             $query = "DELETE FROM pasos WHERE id = :id";
             $statement = $conn->prepare($query);
             $statement->bindValue(":id",$id);
@@ -186,7 +188,7 @@ class Receta
         }
         public static function checkRows(){
             $query = "SELECT COUNT(*) FROM pasos";
-            $statement = Conexion::conn()->prepare($query);
+            $statement = Connection::conn()->prepare($query);
             $statement->execute();
             $result = $statement->fetch();
             $statement->closeCursor();
@@ -212,11 +214,11 @@ function randomDIR($n)
         return $result;
     }
 
-function DeleteImageReceta($id){
-    $recetaImage = Receta::getImagePathById($id);
-    unlink($recetaImage);
-    $recetaImage = explode("/",$recetaImage);
-    array_pop($recetaImage);
-    $recetaImage = implode("/",$recetaImage);
-    rmdir($recetaImage);
+function deleteImageRec($id){
+    $recImage = Rec::getImagePathById($id);
+    unlink($recImage);
+    $recImage = explode("/",$recImage);
+    array_pop($recImage);
+    $recImage = implode("/",$recImage);
+    rmdir($recImage);
 }

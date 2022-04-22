@@ -27,7 +27,7 @@ $rutaHeader;
             </div>
             <div class="items">
                 <ol>
-                <?php foreach(Receta::getTemporalSteps() as $step):?>
+                <?php foreach(Rec::getTemporalSteps() as $step):?>
                         <div class='pasoRow'>
                             <li><?= $step['pasos'];?></li>
                             <div class="editButtons">

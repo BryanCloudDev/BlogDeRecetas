@@ -37,7 +37,7 @@
             </div>
             <!-- formulario de busqueda -->
             <?php if(isset($_SESSION["user"])):
-                $userImage = Usuarios::getUserImagePathById($_SESSION["user"]);
+                $userImage = User::getUserImagePath($_SESSION["user"]);
             ?>
             <form action="resultados.php" method="POST">
                 <input type="search" name="search" placeholder="Buscar...">
@@ -47,8 +47,8 @@
                 <div class="imgContainer">
                     <a href="perfil.php"><img src="<?= str_contains($userImage,"/") ? $userImage : "./Controlador/default/guest.webp" ?>" alt="Foto de perfil"></a>
                 </div>
-                <p>Hola <?= Usuarios::getUsernameById($_SESSION["user"]);?>!</p>
-                <?php if(Usuarios::getUserRolById($_SESSION["user"]) == 2):?>
+                <p>Hola <?= User::getUsername($_SESSION["user"]);?>!</p>
+                <?php if(User::getUserRol($_SESSION["user"]) == 2):?>
                     <a href="dashboard.php">Ir a dashboard</a>
                 <?php endif; ?>
                 <a href="Controlador/crl.logout.php">Cerrar sesion</a>

@@ -7,7 +7,7 @@ require_once ('Modelos/funciones.receta.php');
 
 if(isset($_POST["search"]))
     {
-        $recetas = Receta::getRecetaByTitle($_POST["search"]);
+        $rec = Rec::getRecByTitle($_POST["search"]);
     }
 else 
 {

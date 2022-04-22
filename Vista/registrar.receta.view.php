@@ -25,7 +25,7 @@ $rutaHeader;
             <div class="items">
                 <ul>
                 <?php
-                    foreach(Receta::getTemporalSteps() as $step){
+                    foreach(Rec::getTemporalSteps() as $step){
                         echo "<div class='pasoRow'><li>{$step['pasos']}</li><button type='submit' name='paso' value='{$step['id']}'>Borrar</button></div>";
                     }
                 ?>

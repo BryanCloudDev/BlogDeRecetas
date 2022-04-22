@@ -8,16 +8,16 @@ $rutaHeader;
     <div class="container">
         <article id="idArticulo" class="post">
             <div class="imgContainer">
-                <img src="<?= $receta["imagenPost"] ?>" alt="Comida o algo">
+                <img src="<?= $rec["imagenPost"] ?>" alt="Comida o algo">
             </div>
             <div class="texto">
-                <h2><?= $receta["tituloPost"] ?></h2>
-                <p class="date">Creado el <?= $receta["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
+                <h2><?= $rec["tituloPost"] ?></h2>
+                <p class="date">Creado el <?= $rec["fecha"] ?? "Miercoles 16 de Marzo de 2022" ?></p>
                 <p>
                     <ol>
                     <?php
-                        foreach($pasos as $paso){
-                            echo "<li>$paso</li>";
+                        foreach($steps as $step){
+                            echo "<li>$step</li>";
                         };
                     ?>
                     </ol>
