@@ -1,5 +1,4 @@
 <?php
-
 use PHPUnit\Framework\TestCase;
 
 final class UserTest extends TestCase{
@@ -64,3 +63,4 @@ final class UserTest extends TestCase{
         $this->assertIsArray(User::getUserbyEmailUser('bportillo701@gmail.com'));
     }
 }
+?>
