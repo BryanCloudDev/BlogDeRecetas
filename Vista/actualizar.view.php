@@ -11,15 +11,15 @@ $rutaHeader;
             </div>
             <div class="rowi">
                 <label for="tituloPost">Titulo de la receta</label>
-                <input type="text" name="tituloPost" id="tituloPost" required value="<?php $message = !isset($receta['tituloPost']) ? '' : $receta['tituloPost']; echo htmlspecialchars($message);?>">    
+                <input type="text" name="tituloPost" id="tituloPost" required value="<?php $message = !isset($rec['tituloPost']) ? '' : $rec['tituloPost']; echo htmlspecialchars($message);?>">    
             </div>
             <div class="rowi">
                 <label for="descripcionPost">Descripcion de la receta</label>
-                <input type="text" name="descripcionPost" id="descripcionPost" required value="<?php $message =  !isset($receta['descripcionPost']) ? '' : $receta['descripcionPost']; echo htmlspecialchars($message);?>">
+                <input type="text" name="descripcionPost" id="descripcionPost" required value="<?php $message =  !isset($rec['descripcionPost']) ? '' : $rec['descripcionPost']; echo htmlspecialchars($message);?>">
             </div>
             <div class="rowi">
                 <label for="pasosPost">Pasos a seguir</label>
-                <input class="itemsInput" type="text" name="pasosPost[]" id="pasosPost" value="<?php $paso = !empty($_POST['editarPaso']) ? $paso : ''; echo htmlspecialchars($paso);?>">
+                <input class="itemsInput" type="text" name="pasosPost[]" id="pasosPost" value="<?php $paso = !empty($_POST['editarPaso']) ? $recSteps : ''; echo htmlspecialchars($paso);?>">
                 <?php if(!empty($_POST['editarPaso'])):?>
                     <input type="hidden" name="idPaso" value="<?php  if(!empty($_POST['editarPaso'])){echo $idPaso;};?>">
                 <?php endif;?>
@@ -40,7 +40,7 @@ $rutaHeader;
             </div>
             <div class="rowi">
                 <label for="pasosPost">Foto del platillo</label>
-                <img src="<?= $receta["imagenPost"] ?>" alt="Imagen Ingresada" class="tiny_image">
+                <img src="<?= $rec["imagenPost"] ?>" alt="Imagen Ingresada" class="tiny_image">
                 <input type="file" name="imagenPost">
             </div>
             <input type="hidden" name="actualizarId" value="<?= $_SESSION['idReceta']; ?>">

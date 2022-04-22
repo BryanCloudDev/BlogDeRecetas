@@ -65,7 +65,7 @@ if(isset($_POST['idPaso'])){
 }
 
 if(isset($_POST["publicar"]) && $_POST["publicar"] == 'Actualizar'){
-    //la funcion clean data nos ayuda a reducir alguna inyeccion de  scripts js vease en Controlador/functions.php
+    // la funcion clean data nos ayuda a reducir alguna inyeccion de  scripts js vease en Controlador/functions.php
     $title = clean_data($_POST['tituloPost']);
     $descripcion = clean_data($_POST['descripcionPost']);
     $postSteps = '';
@@ -80,15 +80,17 @@ if(isset($_POST["publicar"]) && $_POST["publicar"] == 'Actualizar'){
         $i++;
     }
     Rec::deleteTemporalSteps();
+
     $id = clean_data($_POST['actualizarId']);
     ["imagenPost" => $imagenPost] = $_FILES;
-    
     $imagenLast = Rec::getImagePathById($id);
-    if($imagenPost && $imagenPost["tmp_name"]){
+
+    if(!empty($imagenPost) && !empty($imagenPost["tmp_name"])){
         unlink($imagenLast);
         rename($imagenLast, dirname($imagenLast) . "/" . $imagenPost["name"]);
         move_uploaded_file($imagenPost["tmp_name"], $imagenLast);
     }
+
     $uploadReceta = new Rec($title,$descripcion,$postSteps,$imagenLast,null,null);
     $uploadReceta->updateRecById($id);
     header("Location: index.php");

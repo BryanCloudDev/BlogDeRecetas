@@ -15,8 +15,10 @@ $recId = isset($_GET['recetaid']) ? $_GET['recetaid'] : NULL;
 $userId = isset($_GET['userid']) ? $_GET['userid'] : NULL;
 deleteUserById($userId);
 
-if ($_POST['actualizar'] == 'Actualizar'){
-    $_SESSION['idReceta'] = $_POST['recetaid'];
-    header('Location: actualizar.php');
+if(!empty($_POST['actualizar'])){
+    if ($_POST['actualizar'] == 'Actualizar'){
+        $_SESSION['idReceta'] = $_POST['recetaid'];
+        header('Location: actualizar.php');
+    }
 }
 ?>

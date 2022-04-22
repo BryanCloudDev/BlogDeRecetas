@@ -23,12 +23,12 @@ $rutaHeader;
         </section>
         <section class="recipes">
             <h2>Recetas</h2>
-            <?php if(deleteRec($recetaId,$recetas) == "No hay recetas de momento"):?>
+            <?php if(deleteRec($recId,$rec) == "No hay recetas de momento"):?>
                 <div class="row">
                     <h2 class="empty"><?= deleteRec($recetaId,$recetas);?></h2>
                 </div>
             <?php else:?>
-            <?php foreach($recetas as $receta):?>
+            <?php foreach($rec as $receta):?>
                 <div class="row">
                     <h2><?= $receta['tituloPost']?></h2>
                     <div class="links">

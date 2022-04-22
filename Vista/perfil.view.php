@@ -45,7 +45,7 @@ $userImage = User::getUserImagePath($_SESSION["user"]);
             </div>
         </article>
         <?php endforeach; ?>
-        <a class="newPost" href="registrar_receta.php">Crear Post <i class="button-crearReceta" aria-hidden="true"></i></a>
+        <a class="newPost" href="registrar_receta.php"> <i class="button-crearReceta" aria-hidden="true">Crear Receta</i></a>
     </div>
 </main>
 <?php 
