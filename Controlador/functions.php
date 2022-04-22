@@ -107,10 +107,7 @@ function DeleteImageUser($id){
     rmdir($recImage);
 }
 
-function deleteRec($id,$rec){
-    if($rec == []){
-        return "No hay recetas de momento";
-    }
+function deleteRec($id){
     if(isset($id)){
         deleteImageRec($id);
         Rec::deleteRecById($id);
