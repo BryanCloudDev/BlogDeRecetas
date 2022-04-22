@@ -1,3 +1,3 @@
 <?php 
-#PUTO EL QUE LO LEA
+#logica de pruebas de controlador
 ?>
