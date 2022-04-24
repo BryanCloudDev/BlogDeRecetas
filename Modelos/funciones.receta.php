@@ -1,5 +1,5 @@
 <?php
-require_once ('Controlador/crl.config.php');
+require_once ('db/config.php');
 
 # rec es igual a decir receta
 
