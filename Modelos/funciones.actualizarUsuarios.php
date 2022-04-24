@@ -60,23 +60,6 @@ class UserUpt
             }
     }
 
-
-#Devuelve un nuevo directorio con nombre aleatorio
-
-function randomDIR($n)
-    {
-
-        $options = "abcdefghijklmnoprstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        $result = "";
-        for($i = 0; $i < $n; $i++)
-        {
-            $random = rand(0,strlen($options) - 1);
-            $result .= $options[$random];
-        }
-
-        return $result;
-    }
-
 function deleteUserImage($userId)
     {
         $userImage = UserUpt::getImagePath($userId);

@@ -10,8 +10,7 @@ $rutaHeader;
                 <div class="row">
                 <h2><?= $user['username']?></h2>
                 <div class="links">
-
-                    <?php if($user['idUsuario'] == $_SESSION["user"]):?>
+                    <?php if($user['idUsuario'] == $_SESSION['user']):?>
                         <a class="disable" href="">Eliminar</a>
                     <?php else:?>
                         <a href="dashboard.php?userid=<?= $user['idUsuario']?>">Eliminar</a>
@@ -28,18 +27,18 @@ $rutaHeader;
                     <h2 class="empty">No hay recetas de momento</h2>
                 </div>
             <?php else:?>
-            <?php foreach($rec as $receta):?>
-                <div class="row">
-                    <h2><?= $receta['tituloPost']?></h2>
-                    <div class="links">
-                        <a href="dashboard.php?recetaid=<?= $receta['idReceta']?>">Eliminar</a>
-                        <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">
-                            <input type="hidden" value="<?= $receta['idReceta']?>" name="recetaid">
-                            <input type="submit" value="Actualizar" name="actualizar">
-                        </form>
+                <?php foreach($rec as $recipe):?>
+                    <div class="row">
+                        <h2><?= $recipe['tituloPost']?></h2>
+                        <div class="links">
+                            <a href="dashboard.php?recipeId=<?= $recipe['idReceta']?>">Eliminar</a>
+                            <form action="<?= $_SERVER['PHP_SELF'];?>" method="post">
+                                <input type="hidden" value="<?= $recipe['idReceta']?>" name="recipeId">
+                                <input type="submit" value="Actualizar" name="update">
+                            </form>
+                        </div>
                     </div>
-                </div>
-            <?php endforeach;?>
+                <?php endforeach;?>
             <?php endif;?>
         </section>
     </div>

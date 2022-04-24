@@ -1,37 +1,34 @@
-<?php
-require_once ('Controlador/crl.isuser.php');
-require_once ('crl.config.php');
+<?php session_start();
 require_once ('Modelos/funciones.receta.php');
 require_once ('Controlador/functions.php');
 
-if(isset($_POST['agregar'])){
-    if($_POST['agregar'] == 'Agregar'){
-        Rec::temporalSteps(clean_data(current($_POST['pasosPost'])));
-    }
-}
-
-if(isset($_POST['paso'])){
-    Rec::deleteTemporalStepById($_POST['paso']);
-}
+var_dump($_SESSION['updateSteps']);
 
 $errors = [];
 
-if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["pasosPost"]) && isset($_FILES["imagenPost"]) && isset($_POST['publicar'])){
+if(empty($_SESSION['createRecipeSteps'])){
+    $_SESSION['createRecipeSteps'] = [];
+}
+
+if(!empty($_POST['postSteps']) && !isset($_POST['stepEditId'])){
+    $_SESSION['createRecipeSteps'][] = $_POST['postSteps'];
+}
+
+if(isset($_POST['deleteStep'])){
+    unset($_SESSION['createRecipeSteps'][$_POST['deleteStep']]);
+    $_SESSION['createRecipeSteps'] = array_values($_SESSION['createRecipeSteps']);
+}
+
+if(isset($_POST['stepEditId'])){
+    $_SESSION['createRecipeSteps']["{$_POST['stepEditId']}"] = $_POST['postSteps'];
+}
+
+// if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_POST["postSteps"]) && isset($_FILES["imagenPost"]) && isset($_POST['publicar'])){
+if(isset($_POST['publish']) && $_POST['publish'] == 'Publicar'){
     //limpiamos la data
     $RecTitle = clean_data($_POST['tituloPost']);
     $recDescription = clean_data($_POST['descripcionPost']);
-    $recSteps = '';
-    $i = 1;
-    foreach(Rec::getTemporalSteps() as $step){
-        if($i < count(getTemporalSteps())){
-            $recSteps .= $step['pasos'] . '.';
-        }
-        else{
-            $recSteps .= $step['pasos'];
-        }
-        $i++;
-    }
-    Rec::deleteTemporalSteps();
+    $recSteps = implode('.',$_SESSION['createRecipeSteps']);
     //para saber que es la funcion 'uploadImage()' revisar en Controlador/functions.php
     $dest_path = uploadImage($_FILES["imagenPost"],'Media/recipe/');
     //si lo que nos retorna en la posicion 1 es == false
@@ -46,6 +43,7 @@ if(isset($_POST["tituloPost"]) && isset($_POST["descripcionPost"]) && isset($_PO
         $id_usuario = $_SESSION["user"];
         $rec = new Rec($RecTitle, $recDescription, $recSteps, $dest_path[0],$spanishDate,$id_usuario);
         $rec->createRec();
+        $_SESSION['createRecipeSteps'] = [];
         header("Location: index.php");
     }
 }

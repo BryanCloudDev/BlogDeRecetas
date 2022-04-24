@@ -125,8 +125,7 @@ function getUsers(){
     return $result;
 }
 
-function deleteUserById($id)
-{
+function deleteUserById($id){
     if(isset($id))
         {
             DeleteImageUser($id);
@@ -135,13 +134,27 @@ function deleteUserById($id)
         }
 }
 
-function getTemporalSteps(){
-    $conn = Connection::conn();
-    $query = "SELECT * FROM pasos";
-    $statement = $conn->prepare($query);
-    $statement->execute();
-    $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-    $statement->closeCursor();
-    return $result;
+function checkText(
+    string $input,
+    array $rangeOfSize,
+    string $regExp,
+    array $errorMessages,
+    ) : array{
+    if(strlen($input) >= $rangeOfSize[0] && strlen($input) <= $rangeOfSize[1]){
+        if(!preg_match($regExp,$input)){
+            $errors[] = false;
+            $errors[] = $errorMessages[0];
+        }
+    }
+    else{
+        $errors[] = false;
+        $errors[] = $errorMessages[1];
+    }
+    if(empty($errors)){
+        return [true];
+    }
+    else{
+        return $errors;
+    }
 }
 ?>

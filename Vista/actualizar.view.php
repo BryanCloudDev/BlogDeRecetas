@@ -10,41 +10,41 @@ $rutaHeader;
                 <h1>Actualizar receta</h1>
             </div>
             <div class="rowi">
-                <label for="tituloPost">Titulo de la receta</label>
-                <input type="text" name="tituloPost" id="tituloPost" required value="<?php $message = !isset($rec['tituloPost']) ? '' : $rec['tituloPost']; echo htmlspecialchars($message);?>">    
+                <label for="postTitle">Titulo de la receta</label>
+                <input type="text" name="postTitle" id="postTitle" required value="<?php $message = $rec['tituloPost'] ?? ''; echo htmlspecialchars($message);?>">    
             </div>
             <div class="rowi">
-                <label for="descripcionPost">Descripcion de la receta</label>
-                <input type="text" name="descripcionPost" id="descripcionPost" required value="<?php $message =  !isset($rec['descripcionPost']) ? '' : $rec['descripcionPost']; echo htmlspecialchars($message);?>">
+                <label for="descriptionPost">Descripcion de la receta</label>
+                <input type="text" name="descriptionPost" id="descriptionPost" required value="<?php $message = $rec['descripcionPost'] ?? ''; echo htmlspecialchars($message);?>">
             </div>
             <div class="rowi">
-                <label for="pasosPost">Pasos a seguir</label>
-                <input class="itemsInput" type="text" name="pasosPost[]" id="pasosPost" value="<?php $paso = !empty($_POST['editarPaso']) ? $recSteps : ''; echo htmlspecialchars($paso);?>">
-                <?php if(!empty($_POST['editarPaso'])):?>
-                    <input type="hidden" name="idPaso" value="<?php  if(!empty($_POST['editarPaso'])){echo $idPaso;};?>">
+            <label for="postSteps">Pasos a seguir</label>
+                <input class="itemsInput" type="text" name="postSteps" id="postSteps" value="<?php if(isset($_POST['editStep'])){echo htmlspecialchars($_SESSION['updateSteps']["{$_POST['editStep']}"]);};?>">
+                <?php if(isset($_POST['editStep'])):?>
+                    <input type="hidden" name="stepEditId" value="<?= htmlspecialchars($_POST['editStep']);?>">
                 <?php endif;?>
                 <input class="items Submit" type="submit" value="Agregar" name="agregar">
             </div>
             <div class="items">
                 <ol>
-                <?php foreach(Rec::getTemporalSteps() as $step):?>
-                        <div class='pasoRow'>
-                            <li><?= $step['pasos'];?></li>
-                            <div class="editButtons">
-                                <button type='submit' name='paso' value='<?= $step['id'];?>'>Borrar</button>
-                                <button type='submit' name='editarPaso' value='<?= $step['id'];?>'>Editar</button>
-                            </div>
+                <?php foreach($_SESSION['updateSteps'] as $id => $step):?>
+                    <div class='pasoRow'>
+                        <li><?= $step;?></li>
+                        <div class="editButtons">
+                            <button type='submit' name='deleteStep' value='<?= $id;?>'>Borrar</button>
+                            <button type='submit' name='editStep' value='<?= $id;?>'>Editar</button>
                         </div>
+                    </div>
                 <?php endforeach;?>
                 </ol>
             </div>
             <div class="rowi">
-                <label for="pasosPost">Foto del platillo</label>
-                <img src="<?= $rec["imagenPost"] ?>" alt="Imagen Ingresada" class="tiny_image">
+                <label for="postSteps">Foto del platillo</label>
+                <img src="<?= $rec['imagenPost'] ?>" alt="Imagen Ingresada" class="tiny_image">
                 <input type="file" name="imagenPost">
             </div>
-            <input type="hidden" name="actualizarId" value="<?= $_SESSION['idReceta']; ?>">
-            <input type="submit" name="publicar" value="Actualizar">
+            <input type="hidden" name="actualizarId" value="<?= $_SESSION['recipeId']; ?>">
+            <input type="submit" name="publish" value="Actualizar">
         </form>
     </div>
 </main>

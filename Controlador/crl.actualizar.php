@@ -1,98 +1,54 @@
-<?php
-require_once ('Controlador/crl.isuser.php');
-require_once ('Controlador/crl.config.php');
+<?php session_start();
 require_once ('Modelos/funciones.receta.php');
 require_once ('Modelos/funciones.referer.php');
 require_once ('Controlador/functions.php');
-
 #rec es igual a decir receta
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-if(isset($_SESSION['idReceta'])){
-    $rec = Rec::getRec($_SESSION['idReceta']);
+if(isset($_SESSION['recipeId'])){
+    $rec = Rec::getRec($_SESSION['recipeId']);
+    $recSteps = explode('.',$rec['pasosPost']);
 }
-
-function getTemporalStep($id){
-    $conn = Connection::conn();
-    $query = "SELECT * FROM pasos WHERE id = :id";
-    $statement = $conn->prepare($query);
-    $statement->bindValue(":id",$id);
-    $statement->execute();
-    $result = $statement->fetch();
-    $statement->closeCursor();
-    return $result;
+else{
+    header("Location: index.php");
 }
-function updateTemporalStep($id,$recSteps){
-    $conn = Connection::conn();
-    $query = "UPDATE pasos SET pasos = :recSteps WHERE id = :id";
-    $statement = $conn->prepare($query);
-    $statement->bindValue(":id",$id);
-    $statement->bindValue(":recSteps",$recSteps);
-    $statement->execute();
-    $statement->closeCursor();
+if(!isset($_SESSION['updateSteps'])){
+    $_SESSION['updateSteps'] = [];
 }
-// else{
-//     header("Location: index.php");
-// }
-
-$recSteps = explode('.',$rec['pasosPost']);
-
-//obtemenos los pasos de la receta y los insertamos en la tabla temporal pasos
-if(Rec::checkRows() == 0 && empty($_POST['publicar'])){
-    foreach($recSteps as $recStep){
-        Rec::temporalSteps($recStep);
+if(empty($_SESSION['updateSteps'])){
+    foreach($recSteps as $step){
+        $_SESSION['updateSteps'][] = $step;
     }
 }
-//si agregamos un paso nuevo este se almacenara temporalemte en la abla pasos
-if(isset($_POST['agregar']) && !isset($_POST['idPaso'])){
-    Rec::temporalSteps(current($_POST['pasosPost']));
+if(!empty($_POST['postSteps']) && !isset($_POST['stepEditId'])){
+    $_SESSION['updateSteps'][] = $_POST['postSteps'];
 }
-//si esta set la variable paso entonces se borrara ese valor de la tabla
-if(isset($_POST['paso'])){
-    Rec::deleteTemporalStepById($_POST['paso']);
+if(isset($_POST['deleteStep'])){
+    unset($_SESSION['updateSteps']["{$_POST['deleteStep']}"]);
+    $_SESSION['updateSteps'] = array_values($_SESSION['updateSteps']);
 }
-//si editar paso no esta vacio entonces iniciamos la variable $newpaso y se pasa ese valor 
-if(!empty($_POST['editarPaso'])){
-    $recSteps = getTemporalStep($_POST['editarPaso'])[1];
-    $idPaso = getTemporalStep($_POST['editarPaso'])[0];
+if(isset($_POST['stepEditId'])){
+    $_SESSION['updateSteps']["{$_POST['stepEditId']}"] = $_POST['postSteps'];
 }
-
-if(isset($_POST['idPaso'])){
-    updateTemporalStep($_POST['idPaso'],current($_POST['pasosPost']));
-}
-
-if(isset($_POST["publicar"]) && $_POST["publicar"] == 'Actualizar'){
+if(isset($_POST['publish']) && $_POST['publish'] == 'Actualizar'){
     // la funcion clean data nos ayuda a reducir alguna inyeccion de  scripts js vease en Controlador/functions.php
-    $title = clean_data($_POST['tituloPost']);
-    $descripcion = clean_data($_POST['descripcionPost']);
-    $postSteps = '';
-    $i = 1;
-    foreach(Rec::getTemporalSteps() as $step){
-        if($i < count(getTemporalSteps())){
-            $postSteps .= $step['pasos'] . '.';
-        }
-        else{
-            $postSteps .= $step['pasos'];
-        }
-        $i++;
-    }
-    Rec::deleteTemporalSteps();
-
+    $title = clean_data($_POST['postTitle']);
+    $descripcion = clean_data($_POST['descriptionPost']);
+    $postSteps = implode('.',$_SESSION['updateSteps']);
     $id = clean_data($_POST['actualizarId']);
     ["imagenPost" => $imagenPost] = $_FILES;
     $imagenLast = Rec::getImagePathById($id);
-
     if(!empty($imagenPost) && !empty($imagenPost["tmp_name"])){
         unlink($imagenLast);
         rename($imagenLast, dirname($imagenLast) . "/" . $imagenPost["name"]);
         move_uploaded_file($imagenPost["tmp_name"], $imagenLast);
     }
-
     $uploadReceta = new Rec($title,$descripcion,$postSteps,$imagenLast,null,null);
     $uploadReceta->updateRecById($id);
+    $_SESSION['updateSteps'] = [];
     header("Location: index.php");
 }
 ?>

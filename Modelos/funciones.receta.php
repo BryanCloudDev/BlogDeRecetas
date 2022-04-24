@@ -6,7 +6,6 @@ require_once ('Controlador/crl.config.php');
 $conn = Connection::conn();
 class Rec
     {
-
 #Declaracion de variables dentro de la clase tambien llamado atributos de clase
 
         public string $recTitle;
@@ -103,18 +102,14 @@ class Rec
             $statement->bindValue(":id_usuario",$id);
             $statement->execute();
             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-
             $statement->closeCursor();
-
             return $result;
-
         }
 
 #Este bloque borra la receta de la base de datos buscada por ID
 
         static public function deleteRecById($id)
             {
-
                 global $conn;
                 $query = "DELETE FROM receta WHERE idReceta = :id";
                 $statement = $conn->prepare($query);
@@ -128,8 +123,9 @@ class Rec
 
         public function updateRecById($id)
             {
-                $query = "UPDATE receta SET tituloPost = :recTitle, descripcionPost = :recDescription, 
-                        imagenPost = :recImage, pasosPost = :recSteps WHERE idReceta = :id";
+                $query = "UPDATE receta 
+                        SET tituloPost = :recTitle, descripcionPost = :recDescription, imagenPost = :recImage, pasosPost = :recSteps 
+                        WHERE idReceta = :id";
                 $statement = $this->db->prepare($query);
                 $statement->bindValue(":recTitle",$this->recTitle);
                 $statement->bindValue(":recDescription",$this->recDescription);
@@ -151,68 +147,11 @@ class Rec
             $statement->closeCursor();
             return $result["imagenPost"];
         }
-        public static function temporalSteps($pasos){
-            $conn = Connection::conn();
-            $query = "INSERT INTO pasos(pasos) VALUES (:pasos)";
-            $statement = $conn->prepare($query);
-            $statement->bindValue(":pasos",$pasos);
-            $statement->execute();
-            $statement->closeCursor();
-        }
-        
-        public static function getTemporalSteps(){
-            $conn = Connection::conn();
-            $query = "SELECT * FROM pasos";
-            $statement = $conn->prepare($query);
-            $statement->execute();
-            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $statement->closeCursor();
-            return $result;
-        }
-        
-        public static function deleteTemporalSteps(){
-            $conn = Connection::conn();
-            $query = "DELETE FROM pasos";
-            $statement = $conn->prepare($query);
-            $statement->execute();
-            $statement->closeCursor();
-        }
-        
-        public static function deleteTemporalStepById($id){
-            $conn = Connection::conn();
-            $query = "DELETE FROM pasos WHERE id = :id";
-            $statement = $conn->prepare($query);
-            $statement->bindValue(":id",$id);
-            $statement->execute();
-            $statement->closeCursor();
-        }
-        public static function checkRows(){
-            $query = "SELECT COUNT(*) FROM pasos";
-            $statement = Connection::conn()->prepare($query);
-            $statement->execute();
-            $result = $statement->fetch();
-            $statement->closeCursor();
-            return $result[0];
-        }
     }
 
 
 #Devuelve un nuevo directorio con nombre aleatorio
 
-function randomDIR($n)
-
-    {
-
-        $options = "abcdefghijklmnoprstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        $result = "";
-        for($i = 0; $i < $n; $i++)
-        {
-            $random = rand(0,strlen($options) - 1);
-            $result .= $options[$random];
-        }
-
-        return $result;
-    }
 
 function deleteImageRec($id){
     $recImage = Rec::getImagePathById($id);
