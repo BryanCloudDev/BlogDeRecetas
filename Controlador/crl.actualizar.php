@@ -4,10 +4,6 @@ require_once ('Modelos/funciones.referer.php');
 require_once ('Controlador/functions.php');
 #rec es igual a decir receta
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 if(isset($_SESSION['recipeId'])){
     $rec = Rec::getRec($_SESSION['recipeId']);
     $recSteps = explode('.',$rec['pasosPost']);
@@ -51,4 +47,3 @@ if(isset($_POST['publish']) && $_POST['publish'] == 'Actualizar'){
     $_SESSION['updateSteps'] = [];
     header("Location: index.php");
 }
-?>

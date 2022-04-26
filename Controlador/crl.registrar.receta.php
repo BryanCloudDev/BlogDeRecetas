@@ -2,7 +2,9 @@
 require_once ('Modelos/funciones.receta.php');
 require_once ('Controlador/functions.php');
 
-var_dump($_SESSION['updateSteps']);
+if(!$_SESSION['user']){
+    header('Location: login.php');
+};
 
 $errors = [];
 
